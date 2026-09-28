@@ -197,3 +197,6 @@ images.forEach(function(image) {
     });
 
 });
+function selectSkill(skill) {
+    alert("You selected: " + skill);
+}
