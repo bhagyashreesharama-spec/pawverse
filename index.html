@@ -2,16 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-    >
-
-    <meta
-        name="description"
-        content="PAWVERSE — Every Life Deserves a Safe Tomorrow."
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#163b2d">
+    <meta name="description" content="PAWVERSE — Every Life Deserves a Safe Tomorrow. A growing animal-welfare initiative connecting people, skills and compassion.">
 
     <title>PAWVERSE | Every Life Deserves a Safe Tomorrow</title>
 
@@ -22,56 +15,28 @@
 
 <!-- ================= NAVBAR ================= -->
 
-<header class="navbar">
+<header class="site-header">
+    <div class="container nav-wrap">
 
-    <div class="nav-inner">
-
-        <a href="#home" class="logo-link">
-
-            <img
-                src="images/logo.png"
-                alt="PAWVERSE logo"
-                class="logo"
-            >
-
-            <div class="logo-text">
-                <strong>PAWVERSE</strong>
-                <small>Compassion Has No Species</small>
-            </div>
-
+        <a href="#home" class="brand">
+            <img src="images/logo.png" alt="PAWVERSE Logo">
+            <span>PAWVERSE</span>
         </a>
 
-
-        <button
-            class="menu-btn"
-            id="menuBtn"
-            type="button"
-            aria-label="Open navigation"
-        >
-            <span></span>
-            <span></span>
-            <span></span>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+            ☰
         </button>
 
-
-        <nav class="nav-links" id="navLinks">
-
-            <a href="#home">Home</a>
+        <nav class="nav-menu" id="navMenu">
             <a href="#about">About</a>
             <a href="#mission">Mission</a>
             <a href="#animals">Animals</a>
-            <a href="#help">How to Help</a>
-            <a href="#find">Find Your Way</a>
-            <a href="#founder">Founder</a>
-
-            <a href="#join" class="nav-cta">
-                Join PAWVERSE
-            </a>
-
+            <a href="#help">Get Involved</a>
+            <a href="#opportunities">Opportunities</a>
+            <a href="#join" class="nav-join">Join PAWVERSE</a>
         </nav>
 
     </div>
-
 </header>
 
 
@@ -81,54 +46,54 @@
 
 <section class="hero" id="home">
 
-    <div class="hero-content">
+    <div class="container hero-grid">
 
-        <div class="small-label">
-            ANIMAL WELFARE • COMMUNITY • ACTION
+        <div class="hero-content">
+
+            <p class="eyebrow">
+                ANIMAL WELFARE • COMMUNITY • OPPORTUNITY
+            </p>
+
+            <h1>
+                Every Life Deserves
+                <span>a Safe Tomorrow.</span>
+            </h1>
+
+            <p class="hero-text">
+                PAWVERSE is a growing animal-welfare initiative built to
+                support animals, empower people and bring a compassionate
+                community together.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#about" class="btn btn-primary">
+                    Explore PAWVERSE
+                </a>
+
+                <a href="#opportunities" class="btn btn-outline">
+                    Find Your Way
+                </a>
+            </div>
+
+            <div class="hero-location">
+                <span>📍</span>
+                <span>Delhi, India</span>
+            </div>
+
         </div>
 
-        <h1>
-            Every Life Deserves
-            <em>A Safe Tomorrow.</em>
-        </h1>
+        <div class="hero-visual">
 
-        <p class="hero-description">
-            PAWVERSE is a growing animal-welfare initiative creating
-            meaningful ways for people to care, contribute, learn and
-            build a better future for vulnerable animals.
-        </p>
+            <div class="hero-image-card">
+                <img
+                    src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1000&q=85"
+                    alt="Dog"
+                >
 
-        <div class="hero-location">
-            <span>●</span> Delhi, India
-        </div>
-
-        <div class="hero-actions">
-
-            <a href="#about" class="btn btn-dark">
-                Explore PAWVERSE
-            </a>
-
-            <a href="#find" class="btn btn-light-outline">
-                Find Your Way →
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <div class="hero-visual">
-
-        <div class="hero-image-wrap">
-
-            <img
-                src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1000&q=85"
-                alt="Dog looking toward the camera"
-            >
-
-            <div class="hero-badge">
-                <strong>01</strong>
-                <span>Every life matters.</span>
+                <div class="hero-badge">
+                    <strong>Compassion</strong>
+                    <span>Has No Species.</span>
+                </div>
             </div>
 
         </div>
@@ -138,93 +103,130 @@
 </section>
 
 
-<!-- ================= INTRO STRIP ================= -->
+<!-- ================= QUICK PATHS ================= -->
 
-<section class="intro-strip">
+<section class="paths-section">
 
-    <div>
-        <span>OUR BELIEF</span>
-        <strong>Compassion Has No Species.</strong>
+    <div class="container">
+
+        <div class="section-heading center">
+            <p class="eyebrow">FIND YOUR WAY</p>
+
+            <h2>
+                There is a place for everyone.
+            </h2>
+
+            <p>
+                You don't need to be an animal rescuer to make a difference.
+                Start with what you can do today.
+            </p>
+        </div>
+
+
+        <div class="path-grid">
+
+            <button class="path-card" data-choice="Help Animals">
+                <span class="path-icon">🐾</span>
+                <strong>I Want To Help Animals</strong>
+                <small>Explore ways to contribute</small>
+            </button>
+
+            <button class="path-card" data-choice="No Skills Yet">
+                <span class="path-icon">🌱</span>
+                <strong>I Have No Skills Yet</strong>
+                <small>Learn, participate and grow</small>
+            </button>
+
+            <button class="path-card" data-choice="Student">
+                <span class="path-icon">🎓</span>
+                <strong>I'm A Student</strong>
+                <small>Learn while contributing</small>
+            </button>
+
+            <button class="path-card" data-choice="Professional">
+                <span class="path-icon">💼</span>
+                <strong>I Work / Run A Business</strong>
+                <small>Use your professional skills</small>
+            </button>
+
+        </div>
+
     </div>
-
-    <p>
-        A community can be built by people with different backgrounds,
-        skills and abilities — united by care.
-    </p>
 
 </section>
 
 
 <!-- ================= ABOUT ================= -->
 
-<section class="section" id="about">
+<section class="section about-section" id="about">
 
-    <div class="section-top">
+    <div class="container two-column">
 
         <div>
-            <span class="section-number">01 / ABOUT</span>
+            <p class="eyebrow">ABOUT PAWVERSE</p>
 
             <h2>
-                More than a website.
-                <em>A growing idea.</em>
+                More than animal welfare.
+                <span>A community.</span>
             </h2>
         </div>
 
-        <p>
-            PAWVERSE is being developed as a community-driven animal-welfare
-            initiative from Delhi, India.
-        </p>
+        <div class="about-copy">
 
-    </div>
-
-
-    <div class="about-grid">
-
-        <div class="about-main">
-
-            <p class="large-text">
-                The idea is simple:
-                <strong>people should have meaningful ways to help animals,
-                regardless of their profession, age or experience.</strong>
+            <p>
+                PAWVERSE is being built around a simple idea:
+                animals need compassionate people, and people need
+                meaningful ways to contribute.
             </p>
 
             <p>
-                PAWVERSE aims to bring animal care, awareness, responsible
-                action, community participation and people's skills together.
+                Our vision includes animals of every kind — dogs, cats,
+                cows, birds, monkeys and other vulnerable animals in need.
             </p>
 
             <p>
-                The journey is still beginning. Future work, stories and
-                impact will be documented honestly as they happen.
+                At the same time, PAWVERSE creates space for students,
+                professionals, business owners, volunteers and people
+                who are simply willing to learn.
             </p>
 
         </div>
 
+    </div>
 
-        <div class="about-points">
+</section>
 
-            <div>
+
+<!-- ================= VALUES ================= -->
+
+<section class="values-section">
+
+    <div class="container">
+
+        <div class="value-grid">
+
+            <div class="value-box">
                 <span>01</span>
-                <strong>CARE</strong>
-                <p>Kindness with responsibility.</p>
+                <h3>CARE</h3>
+                <p>Put compassion into action.</p>
             </div>
 
-            <div>
+            <div class="value-box">
                 <span>02</span>
-                <strong>ACTION</strong>
-                <p>Turning concern into useful action.</p>
+                <h3>ACTION</h3>
+                <p>Start small and keep moving.</p>
             </div>
 
-            <div>
+            <div class="value-box">
                 <span>03</span>
-                <strong>COMMUNITY</strong>
-                <p>People working together.</p>
+                <h3>COMMUNITY</h3>
+                <p>Bring people together.</p>
             </div>
 
-            <div>
+            <div class="value-box">
                 <span>04</span>
-                <strong>OPPORTUNITY</strong>
-                <p>Everyone can contribute something.</p>
+                <h3>OPPORTUNITY</h3>
+                <p>Give everyone a way to contribute.</p>
             </div>
 
         </div>
@@ -236,76 +238,87 @@
 
 <!-- ================= MISSION ================= -->
 
-<section class="dark-section" id="mission">
+<section class="section" id="mission">
 
-    <div class="section dark-inner">
+    <div class="container">
 
-        <div class="section-top">
+        <div class="section-heading">
+            <p class="eyebrow">OUR MISSION</p>
 
-            <div>
-                <span class="section-number light">02 / MISSION</span>
-
-                <h2>
-                    Turning compassion
-                    <em>into action.</em>
-                </h2>
-            </div>
+            <h2>
+                What we want to build.
+            </h2>
 
             <p>
-                These are the areas PAWVERSE hopes to develop as the
+                These are the areas PAWVERSE aims to develop as the
                 initiative grows.
             </p>
-
         </div>
 
 
         <div class="mission-grid">
 
-            <button class="info-card dark-card" data-title="Rescue & Emergency Support" data-text="Supporting responsible responses when animals are in urgent situations and helping people find appropriate assistance.">
+            <button class="info-card mission-card"
+                    data-title="Rescue & Emergency Support"
+                    data-text="Build community support around animals facing emergencies and situations where immediate help may be needed.">
                 <span>01</span>
-                <h3>Rescue & Emergency Support</h3>
+                <strong>Rescue & Emergency Support</strong>
                 <small>Learn more →</small>
             </button>
 
-            <button class="info-card dark-card" data-title="Animal Care" data-text="Promoting responsible everyday care, safety, kindness and understanding of animal needs.">
+            <button class="info-card mission-card"
+                    data-title="Animal Care"
+                    data-text="Encourage responsible care, safety and compassionate treatment of animals.">
                 <span>02</span>
-                <h3>Animal Care</h3>
+                <strong>Animal Care</strong>
                 <small>Learn more →</small>
             </button>
 
-            <button class="info-card dark-card" data-title="Medical Assistance" data-text="Encouraging access to appropriate veterinary and medical support for animals in need.">
+            <button class="info-card mission-card"
+                    data-title="Medical Assistance"
+                    data-text="Create pathways for supporting animals that need medical attention and responsible care.">
                 <span>03</span>
-                <h3>Medical Assistance</h3>
+                <strong>Medical Assistance</strong>
                 <small>Learn more →</small>
             </button>
 
-            <button class="info-card dark-card" data-title="Food & Basic Needs" data-text="Supporting responsible efforts around food, water, shelter and other basic needs.">
+            <button class="info-card mission-card"
+                    data-title="Food & Basic Needs"
+                    data-text="Support access to basic necessities such as food, water and safe surroundings.">
                 <span>04</span>
-                <h3>Food & Basic Needs</h3>
+                <strong>Food & Basic Needs</strong>
                 <small>Learn more →</small>
             </button>
 
-            <button class="info-card dark-card" data-title="Foster & Adoption" data-text="Promoting responsible foster care and adoption with the safety and needs of animals in mind.">
+            <button class="info-card mission-card"
+                    data-title="Foster & Adoption"
+                    data-text="Encourage responsible fostering and adoption while promoting the importance of long-term animal care.">
                 <span>05</span>
-                <h3>Foster & Adoption</h3>
+                <strong>Foster & Adoption</strong>
                 <small>Learn more →</small>
             </button>
 
-            <button class="info-card dark-card" data-title="Awareness & Education" data-text="Creating useful awareness content and helping communities understand responsible animal welfare.">
+            <button class="info-card mission-card"
+                    data-title="Awareness & Education"
+                    data-text="Use education, content and community conversations to encourage better understanding of animal welfare.">
                 <span>06</span>
-                <h3>Awareness & Education</h3>
+                <strong>Awareness & Education</strong>
                 <small>Learn more →</small>
             </button>
 
-            <button class="info-card dark-card" data-title="Stories & Documentation" data-text="Documenting genuine stories, learning and future work transparently as PAWVERSE develops.">
+            <button class="info-card mission-card"
+                    data-title="Documentation & Stories"
+                    data-text="As real work begins, document genuine stories, activities and experiences instead of using artificial success claims.">
                 <span>07</span>
-                <h3>Stories & Documentation</h3>
+                <strong>Documentation & Stories</strong>
                 <small>Learn more →</small>
             </button>
 
-            <button class="info-card dark-card" data-title="Community Support" data-text="Creating ways for people to contribute through time, skills, resources and responsible collaboration.">
+            <button class="info-card mission-card"
+                    data-title="Community Support"
+                    data-text="Connect people who want to help with meaningful ways to contribute their time, skills or resources.">
                 <span>08</span>
-                <h3>Community Support</h3>
+                <strong>Community Support</strong>
                 <small>Learn more →</small>
             </button>
 
@@ -318,196 +331,185 @@
 
 <!-- ================= ANIMALS ================= -->
 
-<section class="section" id="animals">
+<section class="section animals-section" id="animals">
 
-    <div class="section-top">
+    <div class="container">
 
-        <div>
-            <span class="section-number">03 / ANIMALS</span>
+        <div class="section-heading">
+            <p class="eyebrow">FOR EVERY LIFE</p>
 
             <h2>
-                Compassion has
-                <em>no species.</em>
+                Animals we care about.
             </h2>
+
+            <p>
+                Compassion has no species.
+            </p>
         </div>
 
-        <p>
-            PAWVERSE's vision includes vulnerable animals across
-            different species and situations.
-        </p>
 
-    </div>
+        <div class="animal-grid">
 
+            <button class="animal-card"
+                    data-title="Dogs"
+                    data-text="Street dogs and companion animals deserve safety, care and responsible human support.">
 
-    <div class="animal-grid">
+                <img
+                    src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=700&q=80"
+                    alt="Dog"
+                >
 
-        <button class="animal-card" data-title="Dogs" data-text="Supporting awareness, responsible care, safety, foster and adoption pathways for dogs who need help.">
+                <div>
+                    <strong>Dogs</strong>
+                    <span>Explore →</span>
+                </div>
 
-            <img
-                src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=800&q=80"
-                alt="Dog"
-            >
-
-            <div>
-                <span>01</span>
-                <h3>Dogs</h3>
-                <small>Care • Safety • Support</small>
-            </div>
-
-        </button>
+            </button>
 
 
-        <button class="animal-card" data-title="Cats" data-text="Promoting responsible care, safety, foster support and adoption awareness for cats and kittens.">
+            <button class="animal-card"
+                    data-title="Cats"
+                    data-text="Cats need safe surroundings, responsible care and compassionate communities.">
 
-            <img
-                src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80"
-                alt="Cat"
-            >
+                <img
+                    src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?auto=format&fit=crop&w=700&q=80"
+                    alt="Cat"
+                >
 
-            <div>
-                <span>02</span>
-                <h3>Cats</h3>
-                <small>Care • Foster • Adoption</small>
-            </div>
+                <div>
+                    <strong>Cats</strong>
+                    <span>Explore →</span>
+                </div>
 
-        </button>
-
-
-        <button class="animal-card" data-title="Cows" data-text="Supporting awareness and responsible care for vulnerable cows and cattle.">
-
-            <img
-                src="https://images.unsplash.com/photo-1546447147-3fc2b8181a5e?auto=format&fit=crop&w=800&q=80"
-                alt="Cow"
-            >
-
-            <div>
-                <span>03</span>
-                <h3>Cows</h3>
-                <small>Care • Safety • Awareness</small>
-            </div>
-
-        </button>
+            </button>
 
 
-        <button class="animal-card" data-title="Birds" data-text="Encouraging responsible awareness and care for birds and vulnerable urban wildlife.">
+            <button class="animal-card"
+                    data-title="Cows"
+                    data-text="Cows and other large animals also deserve dignity, safety and basic care.">
 
-            <img
-                src="https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=800&q=80"
-                alt="Bird"
-            >
+                <img
+                    src="https://images.unsplash.com/photo-1546447147-3fc2b8181a79?auto=format&fit=crop&w=700&q=80"
+                    alt="Cow"
+                >
 
-            <div>
-                <span>04</span>
-                <h3>Birds</h3>
-                <small>Care • Awareness • Rescue</small>
-            </div>
+                <div>
+                    <strong>Cows</strong>
+                    <span>Explore →</span>
+                </div>
 
-        </button>
-
-
-        <button class="animal-card" data-title="Monkeys" data-text="Promoting responsible awareness around monkeys and safer human-animal coexistence.">
-
-            <img
-                src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?auto=format&fit=crop&w=800&q=80"
-                alt="Monkey"
-            >
-
-            <div>
-                <span>05</span>
-                <h3>Monkeys</h3>
-                <small>Awareness • Coexistence</small>
-            </div>
-
-        </button>
+            </button>
 
 
-        <button class="animal-card" data-title="Other Vulnerable Animals" data-text="PAWVERSE's wider vision includes animals beyond commonly discussed species who may need responsible support and awareness.">
+            <button class="animal-card"
+                    data-title="Birds"
+                    data-text="Birds are part of our shared environment and deserve protection and awareness.">
 
-            <img
-                src="https://images.unsplash.com/photo-1452570053594-1b985d6ea890?auto=format&fit=crop&w=800&q=80"
-                alt="Wild bird"
-            >
+                <img
+                    src="https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=700&q=80"
+                    alt="Bird"
+                >
 
-            <div>
-                <span>06</span>
-                <h3>Other Vulnerable Animals</h3>
-                <small>Every life matters.</small>
-            </div>
+                <div>
+                    <strong>Birds</strong>
+                    <span>Explore →</span>
+                </div>
 
-        </button>
+            </button>
+
+
+            <button class="animal-card"
+                    data-title="Monkeys"
+                    data-text="Wild animals such as monkeys require awareness, responsible interaction and appropriate support.">
+
+                <img
+                    src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?auto=format&fit=crop&w=700&q=80"
+                    alt="Monkey"
+                >
+
+                <div>
+                    <strong>Monkeys</strong>
+                    <span>Explore →</span>
+                </div>
+
+            </button>
+
+
+            <button class="animal-card animal-other"
+                    data-title="Other Vulnerable Animals"
+                    data-text="PAWVERSE is not limited to a fixed list. Other vulnerable animals can also be part of the vision.">
+
+                <div class="other-animal-icon">🐾</div>
+
+                <div>
+                    <strong>Other Animals</strong>
+                    <span>Explore →</span>
+                </div>
+
+            </button>
+
+        </div>
 
     </div>
 
 </section>
 
 
-<!-- ================= HOW TO HELP ================= -->
+<!-- ================= HELP ================= -->
 
-<section class="soft-section" id="help">
+<section class="section help-section" id="help">
 
-    <div class="section">
+    <div class="container">
 
-        <div class="section-top">
+        <div class="section-heading center">
+            <p class="eyebrow">GET INVOLVED</p>
 
-            <div>
-                <span class="section-number">04 / HOW TO HELP</span>
-
-                <h2>
-                    There isn't just
-                    <em>one way to help.</em>
-                </h2>
-            </div>
+            <h2>
+                Start somewhere.
+            </h2>
 
             <p>
-                Choose the way that fits your time, ability, resources
-                or interests.
+                Your contribution doesn't have to look like anyone else's.
             </p>
-
         </div>
 
 
         <div class="help-grid">
 
-            <button class="help-card" data-title="Volunteer" data-text="Give your time to awareness, community activities, future field work or other responsible PAWVERSE activities.">
-                <span>01</span>
+            <button class="help-card" data-choice="Volunteer">
+                <span>🤝</span>
                 <strong>Volunteer</strong>
-                <p>Give your time.</p>
-                <small>Explore →</small>
+                <small>Give your time</small>
             </button>
 
-            <button class="help-card" data-title="Foster" data-text="Explore responsible temporary care for animals who need a safe environment.">
-                <span>02</span>
+            <button class="help-card" data-choice="Foster">
+                <span>🏠</span>
                 <strong>Foster</strong>
-                <p>Offer temporary care.</p>
-                <small>Explore →</small>
+                <small>Provide temporary care</small>
             </button>
 
-            <button class="help-card" data-title="Adopt" data-text="Learn about responsible adoption and finding a suitable, safe home for an animal.">
-                <span>03</span>
+            <button class="help-card" data-choice="Adoption">
+                <span>❤️</span>
                 <strong>Adopt</strong>
-                <p>Give a safe home.</p>
-                <small>Explore →</small>
+                <small>Give an animal a home</small>
             </button>
 
-            <button class="help-card" data-title="Use My Skills" data-text="Technology, design, video, writing, social media, marketing, photography, business and many other skills can contribute.">
-                <span>04</span>
-                <strong>Use My Skills</strong>
-                <p>Contribute what you know.</p>
-                <small>Explore →</small>
+            <button class="help-card" data-choice="Use My Skills">
+                <span>💡</span>
+                <strong>Use Your Skills</strong>
+                <small>Technology, design, business & more</small>
             </button>
 
-            <button class="help-card" data-title="Support" data-text="Support can include resources, services, partnerships, sponsorships or other responsible contributions.">
-                <span>05</span>
+            <button class="help-card" data-choice="Support">
+                <span>🌿</span>
                 <strong>Support</strong>
-                <p>Support the mission.</p>
-                <small>Explore →</small>
+                <small>Help the mission grow</small>
             </button>
 
-            <button class="help-card" data-title="Spread Awareness" data-text="Use your social media, network and community to share responsible animal-welfare information.">
-                <span>06</span>
+            <button class="help-card" data-choice="Awareness">
+                <span>📢</span>
                 <strong>Spread Awareness</strong>
-                <p>Make people aware.</p>
-                <small>Explore →</small>
+                <small>Share the message</small>
             </button>
 
         </div>
@@ -517,222 +519,90 @@
 </section>
 
 
-<!-- ================= FIND YOUR WAY ================= -->
+<!-- ================= OPPORTUNITIES ================= -->
 
-<section class="section find-section" id="find">
+<section class="section opportunity-section" id="opportunities">
 
-    <div class="find-heading">
+    <div class="container">
 
-        <span class="section-number">05 / FIND YOUR WAY</span>
+        <div class="section-heading">
+            <p class="eyebrow">OPPORTUNITIES FOR EVERYONE</p>
 
-        <h2>
-            Where do
-            <em>you fit?</em>
-        </h2>
-
-        <p>
-            You don't need a particular job, degree or experience to
-            care about animals. Choose the path closest to you.
-        </p>
-
-    </div>
-
-
-    <div class="path-grid">
-
-
-        <button class="path-card" data-title="I'm a Student" data-text="Students can volunteer, learn new skills, help with content, design, technology, awareness, photography, social media and other beginner-friendly activities.">
-
-            <div class="path-image">
-                <img
-                    src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80"
-                    alt="Students working together"
-                >
-            </div>
-
-            <div class="path-content">
-                <span>01</span>
-                <h3>I'm a Student</h3>
-                <p>Learn, volunteer and gain real experience.</p>
-                <strong>FIND MY PATH →</strong>
-            </div>
-
-        </button>
-
-
-        <button class="path-card" data-title="I'm a Working Professional" data-text="Working professionals can contribute their knowledge, experience, network, mentoring or professional skills alongside their existing work.">
-
-            <div class="path-image">
-                <img
-                    src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80"
-                    alt="Working professionals collaborating"
-                >
-            </div>
-
-            <div class="path-content">
-                <span>02</span>
-                <h3>I'm a Working Professional</h3>
-                <p>Use your professional experience for good.</p>
-                <strong>FIND MY PATH →</strong>
-            </div>
-
-        </button>
-
-
-        <button class="path-card" data-title="I'm a Business / Company" data-text="Businesses and companies can explore partnerships, CSR support, sponsorships, employee volunteering, useful services or resources.">
-
-            <div class="path-image">
-                <img
-                    src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80"
-                    alt="Business team"
-                >
-            </div>
-
-            <div class="path-content">
-                <span>03</span>
-                <h3>Business / Company</h3>
-                <p>Explore partnership and CSR possibilities.</p>
-                <strong>EXPLORE PARTNERSHIP →</strong>
-            </div>
-
-        </button>
-
-
-        <button class="path-card" data-title="I Have Skills" data-text="Your skills may be useful in technology, web development, graphic design, video, content, social media, marketing, writing, photography, communication, finance, documentation and more.">
-
-            <div class="path-image">
-                <img
-                    src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=80"
-                    alt="Creative professional working"
-                >
-            </div>
-
-            <div class="path-content">
-                <span>04</span>
-                <h3>I Have Skills</h3>
-                <p>Bring your existing skills to the mission.</p>
-                <strong>USE MY SKILLS →</strong>
-            </div>
-
-        </button>
-
-
-        <button class="path-card" data-title="I Have No Skills Yet" data-text="That's completely okay. Start small, learn about animal welfare, volunteer responsibly and discover what you enjoy doing. You don't need to know everything before you start.">
-
-            <div class="path-image">
-                <img
-                    src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80"
-                    alt="Person caring for a dog"
-                >
-            </div>
-
-            <div class="path-content">
-                <span>05</span>
-                <h3>I Have No Skills Yet</h3>
-                <p>Start small. Learn. Grow. Contribute.</p>
-                <strong>START AS A BEGINNER →</strong>
-            </div>
-
-        </button>
-
-
-        <button class="path-card" data-title="I Just Want to Help Animals" data-text="You can begin with awareness, volunteering, responsible fostering, adoption or learning how to help animals safely.">
-
-            <div class="path-image">
-                <img
-                    src="https://images.unsplash.com/photo-1601758174114-e711c0cbaa69?auto=format&fit=crop&w=800&q=80"
-                    alt="Person caring for an animal"
-                >
-            </div>
-
-            <div class="path-content">
-                <span>06</span>
-                <h3>I Just Want to Help Animals</h3>
-                <p>Start with your intention to help.</p>
-                <strong>SHOW ME HOW →</strong>
-            </div>
-
-        </button>
-
-
-        <button class="path-card wide-path" data-title="I'm Not Sure Where I Fit" data-text="No problem. Tell us about your interests, availability and background in the Join PAWVERSE form, and we can understand what kind of participation you're looking for.">
-
-            <div class="path-image">
-                <img
-                    src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1000&q=80"
-                    alt="People working together"
-                >
-            </div>
-
-            <div class="path-content">
-                <span>07</span>
-                <h3>I'm Not Sure Where I Fit</h3>
-                <p>You don't have to figure everything out alone.</p>
-                <strong>HELP ME CHOOSE →</strong>
-            </div>
-
-        </button>
-
-    </div>
-
-
-    <!-- SKILLS -->
-
-    <div class="skills-area">
-
-        <div>
-            <span class="section-number light">SKILLS CAN CREATE IMPACT</span>
-
-            <h3>
-                Your profession can be
-                part of your contribution.
-            </h3>
+            <h2>
+                You don't need a perfect background to begin.
+            </h2>
 
             <p>
-                You don't have to leave your career behind to help.
-                Sometimes your existing skill is exactly what a community needs.
+                Whether you already have a skill or are still discovering
+                what you can do, there is room to participate.
             </p>
         </div>
 
 
-        <div class="skill-tags">
+        <div class="opportunity-layout">
 
-            <span>Technology</span>
-            <span>Web Development</span>
-            <span>Graphic Design</span>
-            <span>Video</span>
-            <span>Content</span>
-            <span>Social Media</span>
-            <span>Digital Marketing</span>
-            <span>Photography</span>
-            <span>Writing</span>
-            <span>Communication</span>
-            <span>Business</span>
-            <span>Finance</span>
-            <span>Documentation</span>
-            <span>Transport</span>
-            <span>Animal Care</span>
-            <span>Teaching</span>
+            <div class="opportunity-main">
+
+                <button class="opportunity-item" data-choice="No Skills Yet">
+                    <span>🌱</span>
+                    <div>
+                        <strong>No Skills Yet</strong>
+                        <small>Learn and start with simple contributions.</small>
+                    </div>
+                    <b>→</b>
+                </button>
+
+                <button class="opportunity-item" data-choice="Student">
+                    <span>🎓</span>
+                    <div>
+                        <strong>Students</strong>
+                        <small>Build experience while contributing.</small>
+                    </div>
+                    <b>→</b>
+                </button>
+
+                <button class="opportunity-item" data-choice="Working Professional">
+                    <span>💼</span>
+                    <div>
+                        <strong>Working Professionals</strong>
+                        <small>Use your existing professional skills.</small>
+                    </div>
+                    <b>→</b>
+                </button>
+
+                <button class="opportunity-item" data-choice="Business Owner">
+                    <span>🏢</span>
+                    <div>
+                        <strong>Business Owners</strong>
+                        <small>Support through skills, resources or collaboration.</small>
+                    </div>
+                    <b>→</b>
+                </button>
+
+            </div>
+
+
+            <div class="opportunity-note">
+
+                <span class="quote-mark">“</span>
+
+                <h3>
+                    Help can look different for everyone.
+                </h3>
+
+                <p>
+                    Maybe you can design. Maybe you can write.
+                    Maybe you can build technology. Maybe you can simply
+                    give an hour of your time.
+                </p>
+
+                <button class="text-button" data-scroll="#join">
+                    Tell us what you can do →
+                </button>
+
+            </div>
 
         </div>
-
-    </div>
-
-
-    <div class="beginner-path">
-
-        <span>NO EXPERIENCE? START HERE.</span>
-
-        <strong>
-            REGISTER → UNDERSTAND → LEARN → PRACTICE →
-            GAIN EXPERIENCE → EXPLORE OPPORTUNITIES
-        </strong>
-
-        <p>
-            PAWVERSE may create learning and participation opportunities
-            as the community develops. Participation does not guarantee
-            employment or paid work.
-        </p>
 
     </div>
 
@@ -741,53 +611,51 @@
 
 <!-- ================= FOUNDER ================= -->
 
-<section class="founder-section" id="founder">
+<section class="section founder-section">
 
-    <div class="founder-photo">
+    <div class="container founder-card">
 
-        <img
-            src="images/bhagyashri.jpg"
-            alt="Bhagyashri Sharma, Founder of PAWVERSE"
-        >
+        <div class="founder-photo">
 
-    </div>
+            <img
+                src="images/bhagyashri.jpg"
+                alt="Bhagyashri Sharma, Founder of PAWVERSE"
+            >
 
-
-    <div class="founder-info">
-
-        <span class="section-number light">
-            06 / FOUNDER
-        </span>
-
-        <h2>
-            Bhagyashri
-            <em>Sharma</em>
-        </h2>
-
-        <div class="founder-title">
-            Founder, PAWVERSE
         </div>
 
-        <p>
-            PAWVERSE started from a simple thought:
-            caring about animals should not stop at feeling sorry for them.
-            People need meaningful ways to understand, participate and act.
-        </p>
 
-        <p>
-            The vision is to bring animal welfare, community participation,
-            awareness and people's skills together in one growing initiative.
-        </p>
+        <div class="founder-content">
 
-        <p>
-            This journey is still at its beginning. PAWVERSE will grow
-            through learning, real participation and genuine work —
-            not through made-up numbers or stories.
-        </p>
+            <p class="eyebrow">THE PERSON BEHIND THE IDEA</p>
 
-        <a href="#join" class="btn btn-cream">
-            JOIN THE JOURNEY →
-        </a>
+            <h2>
+                Bhagyashri Sharma
+            </h2>
+
+            <p class="founder-role">
+                Founder, PAWVERSE
+            </p>
+
+            <p>
+                PAWVERSE began with a simple belief: caring for animals
+                should not be limited to a small group of people.
+            </p>
+
+            <p>
+                The idea is to create a space where people can contribute
+                according to their time, abilities and willingness to learn —
+                while building a stronger culture of compassion towards
+                animals.
+            </p>
+
+            <p>
+                The journey is still beginning. The goal is to grow it
+                honestly, document real work and build something that can
+                create meaningful impact over time.
+            </p>
+
+        </div>
 
     </div>
 
@@ -796,72 +664,64 @@
 
 <!-- ================= JOURNEY ================= -->
 
-<section class="section">
+<section class="section journey-section">
 
-    <div class="section-top">
+    <div class="container">
 
-        <div>
-            <span class="section-number">07 / THE JOURNEY</span>
+        <div class="section-heading center">
+            <p class="eyebrow">OUR JOURNEY</p>
 
             <h2>
-                Starting small.
-                <em>Building honestly.</em>
+                From an idea to a community.
             </h2>
+
+            <p>
+                PAWVERSE is at the beginning of its journey.
+            </p>
         </div>
 
-        <p>
-            The journey is just beginning, and every stage will be built
-            step by step.
-        </p>
 
-    </div>
+        <div class="journey">
 
+            <div class="journey-step">
+                <span>01</span>
+                <strong>IDEA</strong>
+                <small>A vision begins.</small>
+            </div>
 
-    <div class="journey">
+            <div class="journey-line"></div>
 
-        <div>
-            <span>01</span>
-            <strong>IDEA</strong>
-            <p>A belief that every life deserves care.</p>
+            <div class="journey-step">
+                <span>02</span>
+                <strong>FOUNDATION</strong>
+                <small>Build the right structure.</small>
+            </div>
+
+            <div class="journey-line"></div>
+
+            <div class="journey-step">
+                <span>03</span>
+                <strong>COMMUNITY</strong>
+                <small>Bring people together.</small>
+            </div>
+
+            <div class="journey-line"></div>
+
+            <div class="journey-step">
+                <span>04</span>
+                <strong>ACTION</strong>
+                <small>Turn intention into work.</small>
+            </div>
+
+            <div class="journey-line"></div>
+
+            <div class="journey-step">
+                <span>05</span>
+                <strong>IMPACT</strong>
+                <small>Document real change.</small>
+            </div>
+
         </div>
-
-        <div>
-            <span>02</span>
-            <strong>FOUNDATION</strong>
-            <p>Creating the vision, identity and structure.</p>
-        </div>
-
-        <div>
-            <span>03</span>
-            <strong>COMMUNITY</strong>
-            <p>Bringing people with different abilities together.</p>
-        </div>
-
-        <div>
-            <span>04</span>
-            <strong>ACTION</strong>
-            <p>Turning intention into responsible work.</p>
-        </div>
-
-        <div>
-            <span>05</span>
-            <strong>IMPACT</strong>
-            <p>Documenting real progress as it happens.</p>
-        </div>
-
-    </div>
-
-
-    <div class="honest-note">
-
-        <strong>
-            THE JOURNEY IS JUST BEGINNING.
-        </strong>
-
-        <p>
-            Real stories, real work and real progress will be shared
-            as PAWVERSE grows.
-        </p>
 
     </div>
 
@@ -870,153 +730,112 @@
 
 <!-- ================= JOIN ================= -->
 
-<section class="join-section" id="join">
+<section class="section join-section" id="join">
 
-    <div class="section join-inner">
+    <div class="container join-grid">
 
-        <div class="join-heading">
+        <div class="join-intro">
 
-            <span class="section-number light">
-                08 / JOIN PAWVERSE
-            </span>
+            <p class="eyebrow">JOIN PAWVERSE</p>
 
             <h2>
-                Start where
-                <em>you are.</em>
+                Your first step can be small.
             </h2>
 
             <p>
-                Student, professional, business owner, beginner or
-                simply someone who cares — tell us how you would like
-                to participate.
+                Tell us a little about yourself and how you would like
+                to learn, contribute or participate.
             </p>
+
+            <div class="join-points">
+                <span>✓ No special background required</span>
+                <span>✓ Students are welcome</span>
+                <span>✓ Working professionals can contribute skills</span>
+                <span>✓ Learn while you participate</span>
+            </div>
 
         </div>
 
 
-        <form id="pawForm" class="paw-form">
+        <form id="pawForm" class="join-form">
 
             <div class="form-row">
 
-                <div>
-                    <label for="name">Full Name *</label>
-                    <input id="name" type="text" required>
-                </div>
-
-                <div>
-                    <label for="age">Age *</label>
-                    <input id="age" type="number" min="13" required>
-                </div>
-
-            </div>
-
-
-            <div class="form-row">
-
-                <div>
-                    <label for="city">City *</label>
-                    <input id="city" type="text" required>
-                </div>
-
-                <div>
-                    <label for="phone">Phone / WhatsApp *</label>
-                    <input id="phone" type="tel" required>
-                </div>
-
-            </div>
-
-
-            <div class="form-row">
-
-                <div>
-                    <label for="email">Email</label>
-                    <input id="email" type="email">
-                </div>
-
-                <div>
-                    <label for="background">Your Background</label>
-
-                    <select id="background">
-
-                        <option value="">Choose</option>
-                        <option>Student</option>
-                        <option>Working Professional</option>
-                        <option>Business / Company</option>
-                        <option>Freelancer</option>
-                        <option>Homemaker</option>
-                        <option>Other</option>
-
-                    </select>
-
-                </div>
-
-            </div>
-
-
-            <div class="form-field">
-
-                <label for="interest">
-                    What would you like to do? *
+                <label>
+                    Full Name *
+                    <input type="text" name="name" required>
                 </label>
 
-                <select id="interest" required>
+                <label>
+                    Age *
+                    <input type="number" name="age" min="10" required>
+                </label>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <label>
+                    City *
+                    <input type="text" name="city" required>
+                </label>
+
+                <label>
+                    Phone / WhatsApp *
+                    <input type="tel" name="phone" required>
+                </label>
+
+            </div>
+
+
+            <label>
+                Email
+                <input type="email" name="email">
+            </label>
+
+
+            <label>
+                What describes you? *
+                <select id="choiceSelect" name="choice" required>
 
                     <option value="">Choose one</option>
+
+                    <option>No Skills Yet</option>
+                    <option>Student</option>
+                    <option>Working Professional</option>
+                    <option>Business Owner</option>
                     <option>Volunteer</option>
                     <option>Foster</option>
-                    <option>Adopt</option>
+                    <option>Adoption</option>
                     <option>Use My Skills</option>
-                    <option>Learn New Skills</option>
-                    <option>Business / CSR Partnership</option>
-                    <option>Support PAWVERSE</option>
-                    <option>Spread Awareness</option>
-                    <option>Not Sure Yet</option>
+                    <option>Help Animals</option>
+                    <option>Support</option>
+                    <option>Awareness</option>
 
                 </select>
-
-            </div>
-
-
-            <div class="form-field">
-
-                <label for="skills">
-                    What would you like to learn or contribute?
-                </label>
-
-                <textarea
-                    id="skills"
-                    rows="4"
-                    placeholder="Example: design, coding, social media, animal care, photography..."
-                ></textarea>
-
-            </div>
+            </label>
 
 
-            <div class="form-field">
-
-                <label for="message">
-                    Tell us about yourself
-                </label>
-
-                <textarea
-                    id="message"
-                    rows="5"
-                    placeholder="Your interests, availability, ideas or anything you'd like us to know..."
-                ></textarea>
-
-            </div>
+            <label>
+                What would you like to learn or contribute?
+                <input type="text" name="skills">
+            </label>
 
 
-            <button
-                type="submit"
-                class="btn btn-cream submit-btn"
-            >
-                TAKE THE FIRST STEP →
+            <label>
+                Tell us about yourself
+                <textarea name="message" rows="5"></textarea>
+            </label>
+
+
+            <button type="submit" class="btn btn-primary form-submit">
+                Register & Take The First Step →
             </button>
 
-            <p class="form-disclaimer">
-                This form is currently a demo. Online submission/email
-                connection can be added after the website design is finalized.
+            <p class="form-note">
+                This form is currently a website prototype. We will connect
+                the actual submission system when PAWVERSE is ready.
             </p>
 
         </form>
@@ -1030,18 +849,23 @@
 
 <section class="final-cta">
 
-    <span>
-        COMPASSION • ACTION • COMMUNITY
-    </span>
+    <div class="container">
 
-    <h2>
-        You don't have to do everything.
-        <em>Just start somewhere.</em>
-    </h2>
+        <p class="eyebrow">PAWVERSE</p>
 
-    <a href="#join" class="btn btn-cream">
-        JOIN PAWVERSE →
-    </a>
+        <h2>
+            Compassion Has No Species.
+        </h2>
+
+        <p>
+            Help animals. Empower people. Build community.
+        </p>
+
+        <a href="#join" class="btn btn-light">
+            Join PAWVERSE →
+        </a>
+
+    </div>
 
 </section>
 
@@ -1052,23 +876,10 @@
 
 <footer class="footer">
 
-    <div class="footer-inner">
+    <div class="container footer-grid">
 
         <div>
-
-            <a href="#home" class="footer-brand">
-
-                <img
-                    src="images/logo.png"
-                    alt="PAWVERSE"
-                >
-
-                <div>
-                    <strong>PAWVERSE</strong>
-                    <span>Compassion Has No Species</span>
-                </div>
-
-            </a>
+            <a href="#home" class="footer-brand">PAWVERSE</a>
 
             <p>
                 Every Life Deserves a Safe Tomorrow.
@@ -1077,29 +888,17 @@
             <small>
                 Delhi, India 🇮🇳
             </small>
-
         </div>
 
 
-        <div class="footer-column">
-
-            <strong>Explore</strong>
+        <div class="footer-links">
 
             <a href="#about">About</a>
             <a href="#mission">Mission</a>
             <a href="#animals">Animals</a>
-            <a href="#help">How to Help</a>
-
-        </div>
-
-
-        <div class="footer-column">
-
-            <strong>Participate</strong>
-
-            <a href="#find">Find Your Way</a>
-            <a href="#founder">Founder</a>
-            <a href="#join">Join PAWVERSE</a>
+            <a href="#help">Get Involved</a>
+            <a href="#opportunities">Opportunities</a>
+            <a href="#join">Join Us</a>
 
         </div>
 
@@ -1107,53 +906,35 @@
 
 
     <div class="footer-bottom">
-
-        <span>
-            © <span id="year"></span> PAWVERSE
-        </span>
-
-        <span>
-            A growing animal-welfare initiative.
-        </span>
-
+        © <span id="year"></span> PAWVERSE. Built with compassion.
     </div>
 
 </footer>
 
 
-<!-- ================= POPUP ================= -->
+<!-- ================= MODAL ================= -->
 
-<div class="popup" id="popup">
+<div class="modal" id="infoModal" aria-hidden="true">
 
-    <div class="popup-box">
+    <div class="modal-box">
 
-        <button
-            type="button"
-            class="popup-close"
-            id="popupClose"
-        >
+        <button class="modal-close" id="modalClose" aria-label="Close">
             ×
         </button>
 
-        <span class="section-number">
-            PAWVERSE
-        </span>
+        <p class="eyebrow">PAWVERSE</p>
 
-        <h2 id="popupTitle">
+        <h2 id="modalTitle">
             Title
         </h2>
 
-        <p id="popupText">
-            Information.
+        <p id="modalText">
+            Information
         </p>
 
-        <a
-            href="#join"
-            class="btn btn-dark"
-            id="popupJoin"
-        >
-            TAKE THE NEXT STEP →
-        </a>
+        <button class="btn btn-primary modal-action" id="modalAction">
+            I Want To Help →
+        </button>
 
     </div>
 
