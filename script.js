@@ -1,202 +1,249 @@
 /* =====================================================
    PAWVERSE — JAVASCRIPT
-===================================================== */
+   ===================================================== */
 
 
 /* ================= MOBILE MENU ================= */
 
-function toggleMenu() {
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
 
-    const nav = document.querySelector(".nav-links");
+if (menuToggle && navMenu) {
 
-    nav.classList.toggle("active");
+    menuToggle.addEventListener("click", () => {
+
+        navMenu.classList.toggle("active");
+
+        if (navMenu.classList.contains("active")) {
+            menuToggle.textContent = "✕";
+        } else {
+            menuToggle.textContent = "☰";
+        }
+
+    });
+
+
+    // Mobile menu link click ke baad menu close
+    const menuLinks = navMenu.querySelectorAll("a");
+
+    menuLinks.forEach((link) => {
+
+        link.addEventListener("click", () => {
+
+            navMenu.classList.remove("active");
+
+            menuToggle.textContent = "☰";
+
+        });
+
+    });
 
 }
 
 
-/* Close mobile menu after clicking a link */
+/* ================= SMOOTH SCROLL ================= */
 
-const navLinks = document.querySelectorAll(".nav-links a");
+const allAnchorLinks = document.querySelectorAll('a[href^="#"]');
 
-navLinks.forEach(function(link) {
+allAnchorLinks.forEach((link) => {
 
-    link.addEventListener("click", function() {
+    link.addEventListener("click", function (event) {
 
-        document.querySelector(".nav-links").classList.remove("active");
+        const targetId = this.getAttribute("href");
+
+        if (!targetId || targetId === "#") {
+            return;
+        }
+
+        const targetSection = document.querySelector(targetId);
+
+        if (targetSection) {
+
+            event.preventDefault();
+
+            const navbar = document.querySelector(".navbar");
+
+            const navbarHeight = navbar
+                ? navbar.offsetHeight
+                : 80;
+
+            const sectionPosition =
+                targetSection.getBoundingClientRect().top +
+                window.scrollY -
+                navbarHeight;
+
+            window.scrollTo({
+
+                top: sectionPosition,
+
+                behavior: "smooth"
+
+            });
+
+        }
 
     });
 
 });
-
-
-
-/* ================= JOIN TEAM FORM ================= */
-
-function joinTeam(event) {
-
-    event.preventDefault();
-
-
-    const name = document.getElementById("name").value.trim();
-
-    const city = document.getElementById("city").value.trim();
-
-    const email = document.getElementById("email").value.trim();
-
-    const skill = document.getElementById("skill").value;
-
-    const message = document.getElementById("message").value.trim();
-
-    const formMessage = document.getElementById("formMessage");
-
-
-    if (!name || !city || !email || !skill) {
-
-        formMessage.textContent =
-            "Please fill in all required fields.";
-
-        return;
-
-    }
-
-
-    /*
-        IMPORTANT:
-
-        Abhi form kisi database ya email
-        par data send nahi karta.
-
-        Backend/database baad mein connect karenge.
-    */
-
-
-    formMessage.textContent =
-        "Thank you, " + name +
-        "! Your interest in joining PAWVERSE has been recorded for now.";
-
-
-    formMessage.style.color = "#30452b";
-
-
-    document.querySelector(".join-form").reset();
-
-}
-
-
-
-/* ================= COMMUNITY COUNT ================= */
-
-/*
-    IMPORTANT:
-
-    Ye abhi REAL community count nahi hai.
-
-    Isliye number 0 se start hoga.
-
-    Jab actual registrations/database connect hoga,
-    tab yahan real number show karenge.
-*/
-
-
-const communityCount =
-    document.getElementById("communityCount");
-
-
-if (communityCount) {
-
-    communityCount.textContent = "0";
-
-}
-
-
-
-/* ================= SCROLL ANIMATION ================= */
-
-const animatedElements =
-    document.querySelectorAll(
-        ".work-card, .animal-card, .support-card, .gallery-item, .community-card"
-    );
-
-
-const observer =
-    new IntersectionObserver(
-
-        function(entries) {
-
-            entries.forEach(function(entry) {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add("show");
-
-                }
-
-            });
-
-        },
-
-        {
-            threshold: 0.15
-        }
-
-    );
-
-
-animatedElements.forEach(function(element) {
-
-    observer.observe(element);
-
-});
-
 
 
 /* ================= CURRENT YEAR ================= */
 
-/*
-    Footer year automatically update hoga
-    agar future mein website continue hoti hai.
-*/
+const yearElement = document.getElementById("year");
 
-const yearText =
-    document.querySelector(".footer-bottom p");
+if (yearElement) {
 
-
-if (yearText) {
-
-    const currentYear =
-        new Date().getFullYear();
-
-    yearText.textContent =
-        "© " + currentYear +
-        " PAWVERSE. Built with purpose and compassion.";
+    yearElement.textContent = new Date().getFullYear();
 
 }
 
 
+/* ================= SCROLL REVEAL ================= */
 
-/* ================= IMAGE FALLBACK ================= */
+const revealElements = document.querySelectorAll(
+    ".topic-card, .value-card, .mission-card, .animal-card, .help-card, .journey-step"
+);
 
-/*
-    Agar koi image abhi upload nahi hui,
-    broken-image icon ke jagah clean placeholder
-    dikhaya jayega.
-*/
+const revealObserver = new IntersectionObserver(
 
-const images =
-    document.querySelectorAll("img");
+    (entries, observer) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+                observer.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold: 0.12
+    }
+
+);
 
 
-images.forEach(function(image) {
+revealElements.forEach((element) => {
 
-    image.addEventListener("error", function() {
+    revealObserver.observe(element);
 
-        this.style.display = "none";
+});
 
-        this.parentElement.classList.add("image-placeholder");
+
+/* ================= FORM ================= */
+
+const pawForm = document.getElementById("pawForm");
+
+if (pawForm) {
+
+    pawForm.addEventListener("submit", function (event) {
+
+        const action = pawForm.getAttribute("action");
+
+        /*
+        Abhi Formspree connect nahi kiya gaya hai.
+        Isliye fake submission nahi hone denge.
+        */
+
+        if (!action || action.includes("YOUR_FORM_ID")) {
+
+            event.preventDefault();
+
+            alert(
+                "PAWVERSE form ready hai! 💚\n\n" +
+                "Abhi email connection setup nahi hua hai. " +
+                "Website design complete hone ke baad Formspree connect karenge."
+            );
+
+            return;
+
+        }
 
     });
 
-});
-function selectSkill(skill) {
-    alert("You selected: " + skill);
 }
+
+
+/* ================= ACTIVE NAVIGATION ================= */
+
+const sections = document.querySelectorAll("section[id]");
+const navigationLinks = document.querySelectorAll(".nav-menu a");
+
+const activeSectionObserver = new IntersectionObserver(
+
+    (entries) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+                const currentId = entry.target.getAttribute("id");
+
+                navigationLinks.forEach((link) => {
+
+                    link.classList.remove("active");
+
+                    if (
+                        link.getAttribute("href") ===
+                        "#" + currentId
+                    ) {
+
+                        link.classList.add("active");
+
+                    }
+
+                });
+
+            }
+
+        });
+
+    },
+
+    {
+        rootMargin: "-35% 0px -55% 0px"
+    }
+
+);
+
+
+sections.forEach((section) => {
+
+    activeSectionObserver.observe(section);
+
+});
+
+
+/* ================= CLOSE MENU ON OUTSIDE CLICK ================= */
+
+document.addEventListener("click", (event) => {
+
+    if (!navMenu || !menuToggle) {
+        return;
+    }
+
+    const clickedInsideMenu =
+        navMenu.contains(event.target);
+
+    const clickedMenuButton =
+        menuToggle.contains(event.target);
+
+    if (
+        !clickedInsideMenu &&
+        !clickedMenuButton &&
+        navMenu.classList.contains("active")
+    ) {
+
+        navMenu.classList.remove("active");
+
+        menuToggle.textContent = "☰";
+
+    }
+
+});
