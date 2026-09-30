@@ -1,36 +1,34 @@
-/* =====================================================
+/* =========================================================
    PAWVERSE — JAVASCRIPT
-   ===================================================== */
+   ========================================================= */
 
 
 /* ================= MOBILE MENU ================= */
 
-const menuToggle = document.getElementById("menuToggle");
+const menuBtn = document.getElementById("menuBtn");
 const navMenu = document.getElementById("navMenu");
 
-if (menuToggle && navMenu) {
+if (menuBtn && navMenu) {
 
-    menuToggle.addEventListener("click", () => {
+    menuBtn.addEventListener("click", () => {
 
         navMenu.classList.toggle("active");
 
-        menuToggle.textContent =
+        menuBtn.textContent =
             navMenu.classList.contains("active")
-                ? "✕"
+                ? "×"
                 : "☰";
 
     });
 
 
-    const menuLinks = navMenu.querySelectorAll("a");
-
-    menuLinks.forEach((link) => {
+    navMenu.querySelectorAll("a").forEach(link => {
 
         link.addEventListener("click", () => {
 
             navMenu.classList.remove("active");
 
-            menuToggle.textContent = "☰";
+            menuBtn.textContent = "☰";
 
         });
 
@@ -41,17 +39,19 @@ if (menuToggle && navMenu) {
 
 /* ================= SMOOTH SCROLL ================= */
 
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
+document.querySelectorAll('a[href^="#"]').forEach(link => {
 
-    link.addEventListener("click", function (event) {
+    link.addEventListener("click", event => {
 
-        const targetId = this.getAttribute("href");
+        const targetId =
+            link.getAttribute("href");
 
         if (!targetId || targetId === "#") {
             return;
         }
 
-        const target = document.querySelector(targetId);
+        const target =
+            document.querySelector(targetId);
 
         if (!target) {
             return;
@@ -59,15 +59,16 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 
         event.preventDefault();
 
-        const navbar = document.querySelector(".navbar");
+        const header =
+            document.querySelector(".site-header");
 
-        const navbarHeight =
-            navbar ? navbar.offsetHeight : 80;
+        const headerHeight =
+            header ? header.offsetHeight : 70;
 
         const targetPosition =
             target.getBoundingClientRect().top +
             window.scrollY -
-            navbarHeight;
+            headerHeight;
 
         window.scrollTo({
             top: targetPosition,
@@ -79,24 +80,22 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 });
 
 
-/* ================= YEAR ================= */
-
-const year = document.getElementById("year");
-
-if (year) {
-
-    year.textContent = new Date().getFullYear();
-
-}
-
-
 /* ================= MODAL ================= */
 
-const modal = document.getElementById("infoModal");
-const modalTitle = document.getElementById("modalTitle");
-const modalText = document.getElementById("modalText");
-const modalClose = document.getElementById("modalClose");
-const modalJoin = document.getElementById("modalJoin");
+const modal =
+    document.getElementById("infoModal");
+
+const modalTitle =
+    document.getElementById("modalTitle");
+
+const modalText =
+    document.getElementById("modalText");
+
+const modalClose =
+    document.getElementById("modalClose");
+
+const modalAction =
+    document.getElementById("modalAction");
 
 
 function openModal(title, text) {
@@ -106,9 +105,12 @@ function openModal(title, text) {
     }
 
     modalTitle.textContent = title;
+
     modalText.textContent = text;
 
     modal.classList.add("active");
+
+    modal.setAttribute("aria-hidden", "false");
 
     document.body.style.overflow = "hidden";
 
@@ -123,6 +125,8 @@ function closeModal() {
 
     modal.classList.remove("active");
 
+    modal.setAttribute("aria-hidden", "true");
+
     document.body.style.overflow = "";
 
 }
@@ -130,19 +134,20 @@ function closeModal() {
 
 if (modalClose) {
 
-    modalClose.addEventListener("click", closeModal);
+    modalClose.addEventListener(
+        "click",
+        closeModal
+    );
 
 }
 
 
 if (modal) {
 
-    modal.addEventListener("click", (event) => {
+    modal.addEventListener("click", event => {
 
         if (event.target === modal) {
-
             closeModal();
-
         }
 
     });
@@ -150,43 +155,27 @@ if (modal) {
 }
 
 
-document.addEventListener("keydown", (event) => {
+document.addEventListener("keydown", event => {
 
     if (event.key === "Escape") {
-
         closeModal();
-
     }
 
 });
 
 
-if (modalJoin) {
-
-    modalJoin.addEventListener("click", () => {
-
-        closeModal();
-
-    });
-
-}
-
-
 /* ================= MISSION CARDS ================= */
 
-const missionCards =
-    document.querySelectorAll(".mission-card");
-
-missionCards.forEach((card) => {
+document.querySelectorAll(".mission-card").forEach(card => {
 
     card.addEventListener("click", () => {
 
         const title =
-            card.dataset.title || "PAWVERSE Mission";
+            card.dataset.title || "PAWVERSE";
 
         const text =
             card.dataset.text ||
-            "Learn more about this part of PAWVERSE.";
+            "Learn more about this area of PAWVERSE.";
 
         openModal(title, text);
 
@@ -197,19 +186,16 @@ missionCards.forEach((card) => {
 
 /* ================= ANIMAL CARDS ================= */
 
-const animalCards =
-    document.querySelectorAll(".animal-card");
-
-animalCards.forEach((card) => {
+document.querySelectorAll(".animal-card").forEach(card => {
 
     card.addEventListener("click", () => {
 
         const title =
-            card.dataset.title || "Animals";
+            card.dataset.title || "PAWVERSE";
 
         const text =
             card.dataset.text ||
-            "Learn more about PAWVERSE's animal-welfare vision.";
+            "Learn more about this animal and ways to support compassionate care.";
 
         openModal(title, text);
 
@@ -218,154 +204,154 @@ animalCards.forEach((card) => {
 });
 
 
-/* ================= HELP CARDS ================= */
+/* ================= CHOICE SELECTION ================= */
 
-const helpCards =
-    document.querySelectorAll(".help-card");
+const choiceSelect =
+    document.getElementById("choiceSelect");
 
-helpCards.forEach((card) => {
 
-    card.addEventListener("click", () => {
+function selectChoice(choice) {
 
-        const type =
-            card.dataset.type || "Help";
+    if (!choiceSelect) {
+        return;
+    }
 
-        const descriptions = {
+    const options =
+        Array.from(choiceSelect.options);
 
-            "Volunteer":
-                "Give your time to support PAWVERSE activities, awareness work, community efforts or future field initiatives.",
-
-            "Foster":
-                "Explore responsible temporary care for animals who may need a safe environment.",
-
-            "Adopt":
-                "Learn about responsible adoption and the importance of choosing a safe, suitable home.",
-
-            "Use My Skills":
-                "Your professional or creative skills may be useful — technology, design, writing, video, marketing, photography, communication and more.",
-
-            "Support":
-                "Support may include resources, partnerships, sponsorships, services or other responsible contributions.",
-
-            "Awareness":
-                "Help spread responsible animal-welfare information through your social media, community or network."
-
-        };
-
-        openModal(
-            type,
-            descriptions[type] ||
-            "Tell PAWVERSE how you would like to contribute."
+    const exactOption =
+        options.find(
+            option =>
+                option.value.toLowerCase() ===
+                choice.toLowerCase()
         );
 
+    if (exactOption) {
 
-        setTimeout(() => {
+        choiceSelect.value =
+            exactOption.value;
 
-            const interest =
-                document.getElementById("interest");
+    } else {
 
-            if (interest) {
+        const partialOption =
+            options.find(
+                option =>
+                    option.textContent
+                        .toLowerCase()
+                        .includes(choice.toLowerCase())
+            );
 
-                interest.value = type;
+        if (partialOption) {
+            choiceSelect.value =
+                partialOption.value;
+        }
 
-            }
+    }
 
-        }, 100);
+}
+
+
+/* ================= SCROLL TO JOIN ================= */
+
+function goToJoin(choice = "") {
+
+    if (choice) {
+        selectChoice(choice);
+    }
+
+    const joinSection =
+        document.getElementById("join");
+
+    if (!joinSection) {
+        return;
+    }
+
+    const header =
+        document.querySelector(".site-header");
+
+    const headerHeight =
+        header ? header.offsetHeight : 70;
+
+    const position =
+        joinSection.getBoundingClientRect().top +
+        window.scrollY -
+        headerHeight;
+
+    window.scrollTo({
+        top: position,
+        behavior: "smooth"
+    });
+
+}
+
+
+/* ================= PATH CARDS ================= */
+
+document.querySelectorAll("[data-choice]").forEach(element => {
+
+    element.addEventListener("click", () => {
+
+        const choice =
+            element.dataset.choice;
+
+        if (!choice) {
+            return;
+        }
+
+        goToJoin(choice);
 
     });
 
 });
 
 
-/* ================= FIND YOUR WAY ================= */
+/* ================= MODAL ACTION ================= */
 
-const pathCards =
-    document.querySelectorAll(".path-card");
+if (modalAction) {
 
-pathCards.forEach((card) => {
+    modalAction.addEventListener("click", () => {
 
-    card.addEventListener("click", () => {
+        closeModal();
 
-        const path =
-            card.dataset.path || "PAWVERSE";
+        goToJoin();
 
-        const descriptions = {
+    });
 
-            "Student":
-                "Students can explore volunteering, learning, creative contribution, awareness, technology, design, social media and other beginner-friendly opportunities.",
-
-            "Working Professional":
-                "Working professionals can contribute through their existing knowledge, experience, network, mentoring or professional skills.",
-
-            "Business / Company":
-                "Businesses and companies can explore partnerships, CSR initiatives, sponsorships, useful services, resources or employee-volunteering opportunities.",
-
-            "I Have Skills":
-                "Useful skills can include web development, technology, graphic design, video editing, social media, digital marketing, writing, photography, communication, finance, documentation and more.",
-
-            "No Skills Yet":
-                "You do not need professional skills to begin. Start small, learn about animal welfare, volunteer responsibly and discover where you can contribute.",
-
-            "I Just Want to Help Animals":
-                "You can start with volunteering, awareness, responsible fostering or adoption, supporting basic needs, or simply learning how to help animals safely.",
-
-            "Not Sure":
-                "That's completely okay. Tell PAWVERSE about your interests, availability and background, and use the registration form to describe what you are looking for."
-
-        };
-
-        openModal(
-            path,
-            descriptions[path] ||
-            "Tell PAWVERSE how you would like to participate."
-        );
+}
 
 
-        setTimeout(() => {
+/* ================= TEXT BUTTONS ================= */
 
-            const background =
-                document.getElementById("background");
+document.querySelectorAll("[data-scroll]").forEach(button => {
 
-            const interest =
-                document.getElementById("interest");
+    button.addEventListener("click", () => {
 
-            if (background) {
+        const targetId =
+            button.dataset.scroll;
 
-                if (path === "Student") {
-                    background.value = "Student";
-                }
+        const target =
+            document.querySelector(targetId);
 
-                if (path === "Working Professional") {
-                    background.value = "Working Professional";
-                }
+        if (!target) {
+            return;
+        }
 
-                if (path === "Business / Company") {
-                    background.value = "Business / Company";
-                }
+        const header =
+            document.querySelector(".site-header");
 
-            }
+        const headerHeight =
+            header ? header.offsetHeight : 70;
 
-            if (interest) {
+        window.scrollTo({
 
-                if (path === "I Have Skills") {
-                    interest.value = "Use My Skills";
-                }
+            top:
+                target.getBoundingClientRect().top +
+                window.scrollY -
+                headerHeight,
 
-                if (path === "No Skills Yet") {
-                    interest.value = "Learn New Skills";
-                }
+            behavior: "smooth"
 
-                if (path === "I Just Want to Help Animals") {
-                    interest.value = "Volunteer";
-                }
-
-                if (path === "Not Sure") {
-                    interest.value = "Not Sure Yet";
-                }
-
-            }
-
-        }, 100);
+        });
 
     });
 
@@ -377,40 +363,24 @@ pathCards.forEach((card) => {
 const pawForm =
     document.getElementById("pawForm");
 
-
 if (pawForm) {
 
-    pawForm.addEventListener("submit", (event) => {
+    pawForm.addEventListener("submit", event => {
 
         event.preventDefault();
 
-
         const name =
-            document.getElementById("name").value.trim();
+            pawForm.elements["name"]?.value.trim();
 
-        const interest =
-            document.getElementById("interest").value;
-
-
-        if (!name || !interest) {
-
-            alert(
-                "Please fill in your name and choose how you would like to participate."
-            );
-
+        if (!name) {
+            alert("Please enter your name.");
             return;
-
         }
 
-
         alert(
-            "Thank you, " +
-            name +
-            "! 💚\n\n" +
-            "Your PAWVERSE interest has been noted as: " +
-            interest +
-            ".\n\n" +
-            "The form is currently in demo mode. Email/online submission will be connected separately."
+            `Thank you, ${name}! 💚\n\n` +
+            "Your PAWVERSE interest form is ready.\n\n" +
+            "The real submission system will be connected when PAWVERSE is ready to accept registrations."
         );
 
     });
@@ -418,29 +388,36 @@ if (pawForm) {
 }
 
 
-/* ================= OUTSIDE MENU CLICK ================= */
+/* ================= YEAR ================= */
 
-document.addEventListener("click", (event) => {
+const year =
+    document.getElementById("year");
 
-    if (!navMenu || !menuToggle) {
+if (year) {
+
+    year.textContent =
+        new Date().getFullYear();
+
+}
+
+
+/* ================= CLOSE MENU OUTSIDE ================= */
+
+document.addEventListener("click", event => {
+
+    if (!navMenu || !menuBtn) {
         return;
     }
 
-    const clickedInside =
-        navMenu.contains(event.target);
-
-    const clickedButton =
-        menuToggle.contains(event.target);
-
     if (
-        !clickedInside &&
-        !clickedButton &&
-        navMenu.classList.contains("active")
+        navMenu.classList.contains("active") &&
+        !navMenu.contains(event.target) &&
+        !menuBtn.contains(event.target)
     ) {
 
         navMenu.classList.remove("active");
 
-        menuToggle.textContent = "☰";
+        menuBtn.textContent = "☰";
 
     }
 
