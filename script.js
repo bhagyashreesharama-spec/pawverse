@@ -1,36 +1,68 @@
-/* =========================================
-   PAWVERSE - JAVASCRIPT
-========================================= */
+/* =====================================================
+   PAWVERSE
+   MAIN JAVASCRIPT
+   ===================================================== */
 
 
-/* =========================================
-   MOBILE MENU
-========================================= */
+/* =====================================================
+   1. MOBILE MENU
+   ===================================================== */
 
-const menuButton = document.querySelector(".menu-button");
-const navLinks = document.querySelector(".nav-links");
+const menuBtn = document.getElementById("menuBtn");
+const navMenu = document.getElementById("navMenu");
 
-if (menuButton && navLinks) {
-    menuButton.addEventListener("click", () => {
-        navLinks.classList.toggle("show");
+if (menuBtn && navMenu) {
+
+    menuBtn.addEventListener("click", function () {
+
+        navMenu.classList.toggle("active");
+
+        if (navMenu.classList.contains("active")) {
+            menuBtn.textContent = "✕";
+        } else {
+            menuBtn.textContent = "☰";
+        }
+
     });
+
+
+    /* Close menu after clicking a navigation link */
+
+    const navLinks = navMenu.querySelectorAll("a");
+
+    navLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            navMenu.classList.remove("active");
+
+            menuBtn.textContent = "☰";
+
+        });
+
+    });
+
 }
 
 
-/* Close mobile menu after clicking a link */
+/* =====================================================
+   2. CURRENT YEAR IN FOOTER
+   ===================================================== */
 
-document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-        navLinks?.classList.remove("show");
-    });
-});
+const yearElement = document.getElementById("year");
+
+if (yearElement) {
+
+    yearElement.textContent = new Date().getFullYear();
+
+}
 
 
-/* =========================================
-   CONTACT FORM
-========================================= */
+/* =====================================================
+   3. CONTACT FORM
+   ===================================================== */
 
-const contactForm = document.querySelector(".contact-form");
+const contactForm = document.getElementById("contactForm");
 
 if (contactForm) {
 
@@ -38,20 +70,44 @@ if (contactForm) {
 
         event.preventDefault();
 
-        const name = document.querySelector("#name")?.value.trim();
-        const email = document.querySelector("#email")?.value.trim();
-        const message = document.querySelector("#message")?.value.trim();
 
-        if (!name || !email || !message) {
-            alert("Please fill all required fields.");
+        const name = document.getElementById("name").value.trim();
+
+        const email = document.getElementById("email").value.trim();
+
+        const interest = document.getElementById("interest").value;
+
+        const message = document.getElementById("message").value.trim();
+
+
+        /* Basic validation */
+
+        if (
+            name === "" ||
+            email === "" ||
+            interest === "" ||
+            message === ""
+        ) {
+
+            alert("Please fill in all the fields.");
+
             return;
+
         }
+
+
+        /* Demo message */
 
         alert(
             "Thank you, " +
             name +
-            "! Your message has been received by Pawverse."
+            "!\n\n" +
+            "Your interest in Pawverse has been recorded on this demo form.\n\n" +
+            "The form is currently not connected to an email/database."
         );
+
+
+        /* Clear form */
 
         contactForm.reset();
 
@@ -60,78 +116,34 @@ if (contactForm) {
 }
 
 
-/* =========================================
-   CURRENT YEAR
-========================================= */
+/* =====================================================
+   4. CLOSE MOBILE MENU WHEN CLICKING OUTSIDE
+   ===================================================== */
 
-const yearElement = document.querySelector("#current-year");
+document.addEventListener("click", function (event) {
 
-if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
-}
-
-
-/* =========================================
-   SCROLL REVEAL
-========================================= */
-
-const revealElements = document.querySelectorAll(
-    ".step-card, .opportunity-card, .why-card, .gallery-item, .about-box"
-);
-
-const observer = new IntersectionObserver(
-    (entries) => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
-
-            }
-
-        });
-
-    },
-    {
-        threshold: 0.12
+    if (!menuBtn || !navMenu) {
+        return;
     }
-);
 
 
-revealElements.forEach(element => {
+    const clickedInsideMenu =
+        navMenu.contains(event.target);
 
-    element.style.opacity = "0";
-    element.style.transform = "translateY(25px)";
-    element.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-
-    observer.observe(element);
-
-});
+    const clickedMenuButton =
+        menuBtn.contains(event.target);
 
 
-/* =========================================
-   SMOOTH INTERNAL LINKS
-========================================= */
+    if (
+        !clickedInsideMenu &&
+        !clickedMenuButton &&
+        navMenu.classList.contains("active")
+    ) {
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        navMenu.classList.remove("active");
 
-    anchor.addEventListener("click", function (event) {
+        menuBtn.textContent = "☰";
 
-        const target = document.querySelector(this.getAttribute("href"));
-
-        if (target) {
-
-            event.preventDefault();
-
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-        }
-
-    });
+    }
 
 });
