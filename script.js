@@ -1,322 +1,261 @@
-/* =========================================================
-   PAWVERSE
-   Main JavaScript
-   ========================================================= */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    /* =========================
-       MOBILE MENU
-       ========================= */
-
-    const menuToggle = document.querySelector(".menu-toggle");
-    const mainNav = document.querySelector(".main-nav");
-
-    if (menuToggle && mainNav) {
-
-        menuToggle.addEventListener("click", () => {
-
-            const isOpen = mainNav.classList.toggle("open");
-
-            menuToggle.classList.toggle("active", isOpen);
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                String(isOpen)
-            );
-
-            document.body.classList.toggle(
-                "menu-open",
-                isOpen
-            );
-
-        });
+/* =========================
+   PAWVERSE JAVASCRIPT
+========================= */
 
 
-        /* Close menu when navigation link is clicked */
+/* =========================
+   MOBILE MENU
+========================= */
 
-        const navLinks = mainNav.querySelectorAll("a");
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
 
-        navLinks.forEach((link) => {
+if (menuToggle && navMenu) {
 
-            link.addEventListener("click", () => {
+    menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+    });
 
-                mainNav.classList.remove("open");
-
-                menuToggle.classList.remove("active");
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-                document.body.classList.remove(
-                    "menu-open"
-                );
-
-            });
-
-        });
+}
 
 
-        /* Close menu when clicking outside */
+/* Close mobile menu after clicking a link */
 
-        document.addEventListener("click", (event) => {
+document.querySelectorAll(".nav a").forEach(link => {
 
-            const clickedInsideMenu =
-                mainNav.contains(event.target);
+    link.addEventListener("click", () => {
 
-            const clickedToggle =
-                menuToggle.contains(event.target);
-
-            if (
-                !clickedInsideMenu &&
-                !clickedToggle &&
-                mainNav.classList.contains("open")
-            ) {
-
-                mainNav.classList.remove("open");
-
-                menuToggle.classList.remove("active");
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-                document.body.classList.remove(
-                    "menu-open"
-                );
-            }
-
-        });
-
-    }
-
-
-    /* =========================
-       HEADER SCROLL EFFECT
-       ========================= */
-
-    const header = document.querySelector(".site-header");
-
-    if (header) {
-
-        const updateHeader = () => {
-
-            if (window.scrollY > 30) {
-                header.classList.add("scrolled");
-            } else {
-                header.classList.remove("scrolled");
-            }
-
-        };
-
-        updateHeader();
-
-        window.addEventListener(
-            "scroll",
-            updateHeader,
-            { passive: true }
-        );
-
-    }
-
-
-    /* =========================
-       SMOOTH INTERNAL LINKS
-       ========================= */
-
-    const internalLinks =
-        document.querySelectorAll(
-            'a[href^="#"]'
-        );
-
-    internalLinks.forEach((link) => {
-
-        link.addEventListener("click", (event) => {
-
-            const targetId =
-                link.getAttribute("href");
-
-            if (
-                !targetId ||
-                targetId === "#"
-            ) {
-                return;
-            }
-
-            const target =
-                document.querySelector(targetId);
-
-            if (!target) {
-                return;
-            }
-
-            event.preventDefault();
-
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-        });
+        if (navMenu) {
+            navMenu.classList.remove("active");
+        }
 
     });
 
-
-    /* =========================
-       REVEAL ANIMATION
-       ========================= */
-
-    const revealElements =
-        document.querySelectorAll(
-            ".intro-content, " +
-            ".section-heading, " +
-            ".animal-card, " +
-            ".story-image, " +
-            ".story-content, " +
-            ".founder-message, " +
-            ".involvement-card, " +
-            ".opportunity-inner, " +
-            ".preview-image, " +
-            ".final-cta-inner"
-        );
+});
 
 
-    revealElements.forEach((element) => {
+/* =========================
+   APPLICATION MODAL
+========================= */
 
-        element.classList.add("reveal-on-scroll");
+const modal = document.getElementById("applicationModal");
+const closeModal = document.getElementById("closeModal");
+
+const selectedRole = document.getElementById("selectedRole");
+const roleInput = document.getElementById("roleInput");
+
+
+/* Open application form */
+
+function openApplication(role) {
+
+    if (!modal) return;
+
+    selectedRole.textContent = role;
+    roleInput.value = role;
+
+    modal.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+}
+
+
+/* Team role cards */
+
+document.querySelectorAll(".role-card").forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        const role = card.dataset.role;
+
+        openApplication(role);
 
     });
 
-
-    if ("IntersectionObserver" in window) {
-
-        const observer =
-            new IntersectionObserver(
-                (entries, observerInstance) => {
-
-                    entries.forEach((entry) => {
-
-                        if (entry.isIntersecting) {
-
-                            entry.target.classList.add(
-                                "is-visible"
-                            );
-
-                            observerInstance.unobserve(
-                                entry.target
-                            );
-
-                        }
-
-                    });
-
-                },
-                {
-                    threshold: 0.12
-                }
-            );
+});
 
 
-        revealElements.forEach((element) => {
+/* Open-for-all cards */
 
-            observer.observe(element);
+document.querySelectorAll(".everyone-card").forEach(card => {
 
-        });
+    card.addEventListener("click", () => {
+
+        const role = card.dataset.role;
+
+        openApplication(role);
+
+    });
+
+});
+
+
+/* Main "I Want To Help" button */
+
+const openEveryoneForm = document.getElementById("openEveryoneForm");
+
+if (openEveryoneForm) {
+
+    openEveryoneForm.addEventListener("click", () => {
+
+        openApplication("Open For Everyone");
+
+    });
+
+}
+
+
+/* Close modal */
+
+if (closeModal) {
+
+    closeModal.addEventListener("click", closeApplication);
+
+}
+
+
+/* Click outside modal */
+
+if (modal) {
+
+    modal.addEventListener("click", event => {
+
+        if (event.target === modal) {
+            closeApplication();
+        }
+
+    });
+
+}
+
+
+/* Escape key */
+
+document.addEventListener("keydown", event => {
+
+    if (event.key === "Escape") {
+        closeApplication();
+    }
+
+});
+
+
+function closeApplication() {
+
+    if (!modal) return;
+
+    modal.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
+
+
+/* =========================
+   APPLICATION FORM
+========================= */
+
+const applicationForm =
+    document.getElementById("applicationForm");
+
+if (applicationForm) {
+
+    applicationForm.addEventListener("submit", event => {
+
+        event.preventDefault();
+
+        const formData = new FormData(applicationForm);
+
+        const role = formData.get("role");
+        const name = formData.get("name");
+        const phone = formData.get("phone");
+        const email = formData.get("email");
+        const message = formData.get("message");
+
+
+        /*
+            GitHub Pages is static hosting.
+            Therefore this version prepares an email
+            instead of pretending to store data on a server.
+        */
+
+        const subject =
+            `Pawverse Application - ${role}`;
+
+        const body =
+`Hello Pawverse,
+
+I would like to join Pawverse.
+
+Role / Category: ${role}
+
+Name: ${name}
+
+Phone: ${phone}
+
+Email: ${email}
+
+Why I want to join:
+${message}
+
+Thank you.`;
+
+
+        /*
+            CHANGE THIS EMAIL ADDRESS
+            to your official Pawverse email.
+        */
+
+        const pawverseEmail =
+            "yourpawverseemail@example.com";
+
+
+        const mailto =
+            `mailto:${pawverseEmail}` +
+            `?subject=${encodeURIComponent(subject)}` +
+            `&body=${encodeURIComponent(body)}`;
+
+
+        window.location.href = mailto;
+
+    });
+
+}
+
+
+/* =========================
+   FOOTER YEAR
+========================= */
+
+const yearElement = document.getElementById("year");
+
+if (yearElement) {
+
+    yearElement.textContent =
+        new Date().getFullYear();
+
+}
+
+
+/* =========================
+   HEADER SHADOW ON SCROLL
+========================= */
+
+const header = document.getElementById("header");
+
+window.addEventListener("scroll", () => {
+
+    if (!header) return;
+
+    if (window.scrollY > 30) {
+
+        header.style.boxShadow =
+            "0 8px 30px rgba(23, 63, 50, 0.10)";
 
     } else {
 
-        revealElements.forEach((element) => {
-
-            element.classList.add("is-visible");
-
-        });
+        header.style.boxShadow = "none";
 
     }
-
-
-    /* =========================
-       CURRENT YEAR
-       ========================= */
-
-    const yearElements =
-        document.querySelectorAll(
-            "[data-current-year]"
-        );
-
-    const currentYear =
-        new Date().getFullYear();
-
-    yearElements.forEach((element) => {
-
-        element.textContent =
-            currentYear;
-
-    });
-
-
-    /* =========================
-       ESC KEY
-       CLOSES MOBILE MENU
-       ========================= */
-
-    document.addEventListener(
-        "keydown",
-        (event) => {
-
-            if (
-                event.key === "Escape" &&
-                mainNav &&
-                mainNav.classList.contains("open")
-            ) {
-
-                mainNav.classList.remove("open");
-
-                if (menuToggle) {
-
-                    menuToggle.classList.remove(
-                        "active"
-                    );
-
-                    menuToggle.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-                }
-
-                document.body.classList.remove(
-                    "menu-open"
-                );
-
-            }
-
-        }
-    );
-
-
-    /* =========================
-       IMAGE ERROR HANDLING
-       ========================= */
-
-    const images =
-        document.querySelectorAll("img");
-
-    images.forEach((image) => {
-
-        image.addEventListener(
-            "error",
-            () => {
-
-                image.classList.add(
-                    "image-error"
-                );
-
-            }
-        );
-
-    });
 
 });
