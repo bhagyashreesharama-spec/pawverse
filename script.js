@@ -1,121 +1,322 @@
-/* =====================================================
-   PAWVERSE JAVASCRIPT
-   ===================================================== */
+/* =========================================================
+   PAWVERSE
+   Main JavaScript
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* =========================
+       MOBILE MENU
+       ========================= */
+
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainNav = document.querySelector(".main-nav");
+
+    if (menuToggle && mainNav) {
+
+        menuToggle.addEventListener("click", () => {
+
+            const isOpen = mainNav.classList.toggle("open");
+
+            menuToggle.classList.toggle("active", isOpen);
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+
+            document.body.classList.toggle(
+                "menu-open",
+                isOpen
+            );
+
+        });
 
 
-/* ===============================
-   MOBILE MENU
-   =============================== */
+        /* Close menu when navigation link is clicked */
 
-const menuBtn = document.getElementById("menuBtn");
-const navMenu = document.getElementById("navMenu");
+        const navLinks = mainNav.querySelectorAll("a");
 
-if (menuBtn && navMenu) {
+        navLinks.forEach((link) => {
 
-    menuBtn.addEventListener("click", function () {
+            link.addEventListener("click", () => {
 
-        navMenu.classList.toggle("active");
+                mainNav.classList.remove("open");
 
-        if (navMenu.classList.contains("active")) {
-            menuBtn.textContent = "✕";
-        } else {
-            menuBtn.textContent = "☰";
-        }
+                menuToggle.classList.remove("active");
 
-    });
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                document.body.classList.remove(
+                    "menu-open"
+                );
+
+            });
+
+        });
 
 
-    const navLinks = navMenu.querySelectorAll("a");
+        /* Close menu when clicking outside */
 
-    navLinks.forEach(function (link) {
+        document.addEventListener("click", (event) => {
 
-        link.addEventListener("click", function () {
+            const clickedInsideMenu =
+                mainNav.contains(event.target);
 
-            navMenu.classList.remove("active");
-            menuBtn.textContent = "☰";
+            const clickedToggle =
+                menuToggle.contains(event.target);
+
+            if (
+                !clickedInsideMenu &&
+                !clickedToggle &&
+                mainNav.classList.contains("open")
+            ) {
+
+                mainNav.classList.remove("open");
+
+                menuToggle.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                document.body.classList.remove(
+                    "menu-open"
+                );
+            }
+
+        });
+
+    }
+
+
+    /* =========================
+       HEADER SCROLL EFFECT
+       ========================= */
+
+    const header = document.querySelector(".site-header");
+
+    if (header) {
+
+        const updateHeader = () => {
+
+            if (window.scrollY > 30) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+
+        };
+
+        updateHeader();
+
+        window.addEventListener(
+            "scroll",
+            updateHeader,
+            { passive: true }
+        );
+
+    }
+
+
+    /* =========================
+       SMOOTH INTERNAL LINKS
+       ========================= */
+
+    const internalLinks =
+        document.querySelectorAll(
+            'a[href^="#"]'
+        );
+
+    internalLinks.forEach((link) => {
+
+        link.addEventListener("click", (event) => {
+
+            const targetId =
+                link.getAttribute("href");
+
+            if (
+                !targetId ||
+                targetId === "#"
+            ) {
+                return;
+            }
+
+            const target =
+                document.querySelector(targetId);
+
+            if (!target) {
+                return;
+            }
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
 
         });
 
     });
 
 
-    document.addEventListener("click", function (event) {
+    /* =========================
+       REVEAL ANIMATION
+       ========================= */
 
-        const clickedInsideNav = navMenu.contains(event.target);
-        const clickedButton = menuBtn.contains(event.target);
-
-        if (
-            !clickedInsideNav &&
-            !clickedButton &&
-            navMenu.classList.contains("active")
-        ) {
-
-            navMenu.classList.remove("active");
-            menuBtn.textContent = "☰";
-
-        }
-
-    });
-
-}
-
-
-/* ===============================
-   FOOTER YEAR
-   =============================== */
-
-const yearElement = document.getElementById("year");
-
-if (yearElement) {
-
-    yearElement.textContent = new Date().getFullYear();
-
-}
-
-
-/* ===============================
-   CONTACT FORM
-   =============================== */
-
-const contactForm = document.getElementById("contactForm");
-
-if (contactForm) {
-
-    contactForm.addEventListener("submit", function (event) {
-
-        event.preventDefault();
-
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const interest = document.getElementById("interest").value;
-        const message = document.getElementById("message").value.trim();
-
-
-        if (
-            name === "" ||
-            email === "" ||
-            interest === "" ||
-            message === ""
-        ) {
-
-            alert("Please fill in all the fields.");
-
-            return;
-
-        }
-
-
-        alert(
-            "Thank you, " +
-            name +
-            "!\n\n" +
-            "Your interest has been recorded on this demo form.\n\n" +
-            "The form will be connected to email/database later."
+    const revealElements =
+        document.querySelectorAll(
+            ".intro-content, " +
+            ".section-heading, " +
+            ".animal-card, " +
+            ".story-image, " +
+            ".story-content, " +
+            ".founder-message, " +
+            ".involvement-card, " +
+            ".opportunity-inner, " +
+            ".preview-image, " +
+            ".final-cta-inner"
         );
 
 
-        contactForm.reset();
+    revealElements.forEach((element) => {
+
+        element.classList.add("reveal-on-scroll");
 
     });
 
-}
+
+    if ("IntersectionObserver" in window) {
+
+        const observer =
+            new IntersectionObserver(
+                (entries, observerInstance) => {
+
+                    entries.forEach((entry) => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add(
+                                "is-visible"
+                            );
+
+                            observerInstance.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach((element) => {
+
+            observer.observe(element);
+
+        });
+
+    } else {
+
+        revealElements.forEach((element) => {
+
+            element.classList.add("is-visible");
+
+        });
+
+    }
+
+
+    /* =========================
+       CURRENT YEAR
+       ========================= */
+
+    const yearElements =
+        document.querySelectorAll(
+            "[data-current-year]"
+        );
+
+    const currentYear =
+        new Date().getFullYear();
+
+    yearElements.forEach((element) => {
+
+        element.textContent =
+            currentYear;
+
+    });
+
+
+    /* =========================
+       ESC KEY
+       CLOSES MOBILE MENU
+       ========================= */
+
+    document.addEventListener(
+        "keydown",
+        (event) => {
+
+            if (
+                event.key === "Escape" &&
+                mainNav &&
+                mainNav.classList.contains("open")
+            ) {
+
+                mainNav.classList.remove("open");
+
+                if (menuToggle) {
+
+                    menuToggle.classList.remove(
+                        "active"
+                    );
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+
+                document.body.classList.remove(
+                    "menu-open"
+                );
+
+            }
+
+        }
+    );
+
+
+    /* =========================
+       IMAGE ERROR HANDLING
+       ========================= */
+
+    const images =
+        document.querySelectorAll("img");
+
+    images.forEach((image) => {
+
+        image.addEventListener(
+            "error",
+            () => {
+
+                image.classList.add(
+                    "image-error"
+                );
+
+            }
+        );
+
+    });
+
+});
