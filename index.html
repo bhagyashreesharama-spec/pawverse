@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pawverse - Every Paw Deserves a Home</title>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -52,24 +50,25 @@
         }
 
         .logo-container img {
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid var(--primary-green);
         }
 
         .logo-text h1 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: var(--primary-green);
             font-weight: 700;
             letter-spacing: 1px;
         }
 
         .logo-text p {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             color: var(--accent-green);
             font-style: italic;
+            font-weight: 500;
         }
 
         nav ul {
@@ -89,40 +88,7 @@
             color: var(--primary-green);
         }
 
-        /* Hero Section */
-        .hero {
-            padding: 60px 5%;
-            background: linear-gradient(135deg, var(--cream) 0%, var(--white) 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .hero-quote {
-            font-size: 1.8rem;
-            color: var(--primary-green);
-            font-weight: 600;
-            max-width: 800px;
-            margin-bottom: 30px;
-        }
-
-        .hero-img-box {
-            width: 100%;
-            max-width: 600px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            border: 5px solid var(--white);
-        }
-
-        .hero-img-box img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Section Styling */
+        /* Section Commons */
         section {
             padding: 60px 5%;
         }
@@ -143,6 +109,51 @@
             font-style: italic;
         }
 
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--white) 100%);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .hero-left {
+            flex: 1;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .hero-left img {
+            width: 100%;
+            max-width: 450px;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: 5px solid var(--white);
+        }
+
+        .hero-right {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-quote {
+            font-size: 1.8rem;
+            color: var(--primary-green);
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            color: #555;
+            font-style: italic;
+        }
+
         /* About Us Section */
         .about {
             background-color: var(--white);
@@ -154,8 +165,8 @@
         }
 
         .about-img {
-            width: 280px;
-            height: 280px;
+            width: 250px;
+            height: 250px;
             border-radius: 50%;
             overflow: hidden;
             border: 6px solid var(--cream);
@@ -173,7 +184,7 @@
         }
 
         .about-content h2 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--primary-green);
             margin-bottom: 5px;
         }
@@ -185,13 +196,26 @@
             margin-bottom: 20px;
         }
 
-        .about-content p {
-            font-size: 1.05rem;
-            color: #444;
-            line-height: 1.8;
+        .motive-box {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid var(--primary-green);
         }
 
-        /* Animals We Help */
+        .motive-box h4 {
+            color: var(--primary-green);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .motive-box p {
+            font-size: 1rem;
+            color: #444;
+            line-height: 1.7;
+        }
+
+        /* Animals Section */
         .animals-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -231,7 +255,7 @@
             font-style: italic;
         }
 
-        /* Join Team Section */
+        /* Team Section */
         .team-section {
             background-color: var(--cream);
         }
@@ -254,7 +278,7 @@
 
         .team-role-card:hover {
             border-color: var(--primary-green);
-            background-color: #f3f9f6;
+            transform: translateY(-5px);
         }
 
         .team-role-card i {
@@ -264,16 +288,16 @@
         }
 
         .team-role-card h3 {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             margin-bottom: 15px;
             color: var(--text-dark);
         }
 
-        .apply-btn {
+        .click-btn {
             display: inline-block;
             background-color: var(--primary-green);
             color: var(--white);
-            padding: 8px 20px;
+            padding: 8px 22px;
             border-radius: 25px;
             text-decoration: none;
             font-size: 0.9rem;
@@ -281,7 +305,7 @@
             transition: background 0.3s;
         }
 
-        .apply-btn:hover {
+        .click-btn:hover {
             background-color: var(--accent-green);
         }
 
@@ -314,6 +338,7 @@
             border-radius: 10px;
             border: 1px solid rgba(255,255,255,0.2);
             transition: transform 0.3s;
+            text-align: center;
         }
 
         .everyone-card:hover {
@@ -322,19 +347,20 @@
         }
 
         .everyone-card h4 {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+            color: var(--white);
         }
 
-        .everyone-card a {
-            color: var(--gold);
-            text-decoration: none;
+        .everyone-card .click-btn {
+            background-color: var(--gold);
+            color: var(--text-dark);
             font-weight: 600;
-            font-size: 0.9rem;
         }
 
-        .everyone-card a:hover {
-            text-decoration: underline;
+        .everyone-card .click-btn:hover {
+            background-color: #c39162;
+            color: var(--white);
         }
 
         /* Contact & Social Section */
@@ -384,10 +410,9 @@
             font-size: 0.9rem;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             nav ul { display: none; }
-            .hero-quote { font-size: 1.3rem; }
+            .hero { text-align: center; }
         }
     </style>
 </head>
@@ -416,61 +441,65 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <h2 class="hero-quote">"Be the voice for the voiceless because they shower unconditional love without asking for words."</h2>
-        <div class="hero-img-box">
-            <!-- Yahan aap apni cute dog & cat ki real photo file laga sakti hain -->
-            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1" alt="Cute Dog and Cat">
+        <div class="hero-left">
+            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1" alt="Cute Real Dog and Cat">
+        </div>
+        <div class="hero-right">
+            <h2 class="hero-quote">"Be the voice for the voiceless because they shower unconditional love without asking for words."</h2>
+            <p class="hero-desc">"Giving every helpless soul a safe haven and a family to call their own."</p>
         </div>
     </section>
 
     <!-- About Us Section -->
     <section class="about" id="about">
         <div class="about-img">
-            <!-- Yahan Bhagyashri ji ki photo lagegi -->
             <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2" alt="Bhagyashri Sharma">
         </div>
         <div class="about-content">
             <h2>Bhagyashri Sharma</h2>
             <div class="location"><i class="fas fa-map-marker-alt"></i> Delhi, India</div>
-            <p><strong>Motive Message:</strong> Hamara maksad sadko par rehne wale bejubaan janwaro ko safe shelter, medical aid aur ek pyaar bhara ghar dena hai. Har ek jaan keemti hai aur hum sab mil kar unke liye ek behtar aur surakshit duniya bana sakte hain. Aapka ek chhota sa kadam bhi unki zindagi badal sakta hai!</p>
+            <div class="motive-box">
+                <h4>Our Core Motive</h4>
+                <p>Hamara maksad sadko par rehne wale bejubaan janwaro ko safe shelter, medical help aur ek pyaar bhara ghar dena hai. Har ek jaan keemti hai aur hum sab mil kar unke liye ek behtar, dayalu aur surakshit duniya bana sakte hain!</p>
+            </div>
         </div>
     </section>
 
     <!-- Animals We Help Section -->
     <section id="animals">
         <h2 class="section-title">Animals We Care For</h2>
-        <p class="section-subtitle">"The greatness of a nation can be judged by the way its animals are treated."</p>
+        <p class="section-subtitle">"The greatness of a nation and its moral progress can be judged by the way its animals are treated."</p>
         
         <div class="animals-grid">
             <div class="animal-card">
                 <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e" alt="Dog">
                 <h3>Dogs</h3>
-                <p>"Loyal protectors needing a warm lap and a safe street."</p>
+                <p>"Loyal protectors needing warmth, shelter, and unconditional love."</p>
             </div>
             <div class="animal-card">
                 <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba" alt="Cat">
                 <h3>Cats</h3>
-                <p>"Gentle souls bringing warmth, purrs, and peace to homes."</p>
+                <p>"Gentle souls bringing comforting purrs and peace to our lives."</p>
             </div>
             <div class="animal-card">
                 <img src="https://images.unsplash.com/photo-1570042225831-d98fa7577f1e" alt="Cow">
                 <h3>Cows</h3>
-                <p>"Sacred and gentle providers requiring love and protection."</p>
+                <p>"Sacred and gentle providers requiring respect, feed, and protection."</p>
             </div>
             <div class="animal-card">
                 <img src="https://images.unsplash.com/photo-1444464666168-49d633b86797" alt="Birds">
                 <h3>Birds</h3>
-                <p>"Free spirits soaring high, deserving skies free of danger."</p>
+                <p>"Free spirits soaring high, deserving safe skies and grain water stations."</p>
             </div>
             <div class="animal-card">
                 <img src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9" alt="Monkey">
                 <h3>Monkeys</h3>
-                <p>"Playful beings of nature needing compassion and space."</p>
+                <p>"Playful beings of nature needing compassion and natural habitat space."</p>
             </div>
             <div class="animal-card">
                 <img src="https://images.unsplash.com/photo-1453227588063-bb302b62f50b" alt="Other Animals">
                 <h3>Other Animals</h3>
-                <p>"Every single creature matters in this wonderful universe."</p>
+                <p>"Every single creature matters and deserves kindness in this world."</p>
             </div>
         </div>
     </section>
@@ -478,67 +507,67 @@
     <!-- Join Our Team Section -->
     <section class="team-section" id="team">
         <h2 class="section-title">Join Our Team</h2>
-        <p class="section-subtitle">"Alone we can do so little; together we can do so much." Choose your role and step up!</p>
+        <p class="section-subtitle">"Alone we can do so little; together we can do so much." Click below to apply!</p>
         
         <div class="team-grid">
             <div class="team-role-card">
                 <i class="fas fa-car"></i>
                 <h3>Driver</h3>
-                <a href="#contact" class="apply-btn">Fill Form</a>
+                <a href="#contact" class="click-btn">Click to Apply</a>
             </div>
             <div class="team-role-card">
                 <i class="fas fa-hands-helping"></i>
                 <h3>Rescue Volunteer</h3>
-                <a href="#contact" class="apply-btn">Fill Form</a>
+                <a href="#contact" class="click-btn">Click to Apply</a>
             </div>
             <div class="team-role-card">
                 <i class="fas fa-stethoscope"></i>
                 <h3>Doctor / Vet Support</h3>
-                <a href="#contact" class="apply-btn">Fill Form</a>
+                <a href="#contact" class="click-btn">Click to Apply</a>
             </div>
             <div class="team-role-card">
                 <i class="fas fa-share-alt"></i>
                 <h3>Social Media Creator</h3>
-                <a href="#contact" class="apply-btn">Fill Form</a>
+                <a href="#contact" class="click-btn">Click to Apply</a>
             </div>
             <div class="team-role-card">
                 <i class="fas fa-laptop-code"></i>
                 <h3>Website Handler</h3>
-                <a href="#contact" class="apply-btn">Fill Form</a>
+                <a href="#contact" class="click-btn">Click to Apply</a>
             </div>
             <div class="team-role-card">
                 <i class="fas fa-video"></i>
-                <h3>Reel & Photo Maker</h3>
-                <a href="#contact" class="apply-btn">Fill Form</a>
+                <h3>Reel / Photo Maker</h3>
+                <a href="#contact" class="click-btn">Click to Apply</a>
             </div>
         </div>
     </section>
 
     <!-- Open For Everyone Section -->
     <section class="everyone-section" id="everyone">
-        <h2 class="section-title">No Skills? No Problem!</h2>
-        <p class="section-subtitle">"Passion matters more than perfection. Everyone is welcome to serve humanity and animals."</p>
+        <h2 class="section-title">No Skills? No Problem! Join Us</h2>
+        <p class="section-subtitle">"Passion matters more than perfection. Everyone is welcome to serve animals."</p>
         
         <div class="everyone-grid">
             <div class="everyone-card">
-                <h4>Students & School/College Kids</h4>
-                <a href="#contact">Click to Join &rarr;</a>
+                <h4>Students & School / College Kids</h4>
+                <a href="#contact" class="click-btn">Join Now</a>
             </div>
             <div class="everyone-card">
                 <h4>Working Professionals</h4>
-                <a href="#contact">Click to Join &rarr;</a>
+                <a href="#contact" class="click-btn">Join Now</a>
             </div>
             <div class="everyone-card">
                 <h4>Unskilled / Beginners</h4>
-                <a href="#contact">Click to Join &rarr;</a>
+                <a href="#contact" class="click-btn">Join Now</a>
             </div>
             <div class="everyone-card">
                 <h4>Uneducated / Daily Helpers</h4>
-                <a href="#contact">Click to Join &rarr;</a>
+                <a href="#contact" class="click-btn">Join Now</a>
             </div>
             <div class="everyone-card">
                 <h4>Business Owners & Others</h4>
-                <a href="#contact">Click to Join &rarr;</a>
+                <a href="#contact" class="click-btn">Join Now</a>
             </div>
         </div>
     </section>
@@ -546,7 +575,7 @@
     <!-- Contact & Social Media Section -->
     <section class="contact-section" id="contact">
         <h2 class="section-title">Connect With Us</h2>
-        <p class="section-subtitle">"Stay updated, connect with our mission, and let's build a compassionate community together."</p>
+        <p class="section-subtitle">"Stay connected with our mission and be a part of our growing animal welfare family."</p>
         
         <div class="social-links">
             <a href="https://instagram.com" target="_blank" class="social-btn instagram">
@@ -571,5 +600,4 @@
 
 </body>
 </html>
-
 
