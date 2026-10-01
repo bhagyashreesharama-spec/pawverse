@@ -1,8 +1,8 @@
-// Pawverse Interactive Enhancements
+// Pawverse Website Interactivity
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Pawverse website loaded successfully!");
     
-    // Smooth scroll support for internal navigation links
+    // Smooth scroll for navigation links
     const links = document.querySelectorAll('nav a[href^="#"]');
     links.forEach(link => {
         link.addEventListener('click', function(e) {
