@@ -2,460 +2,67 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Gallery | Pawverse</title>
-
-    <meta
-        name="description"
-        content="Explore the Pawverse animal gallery featuring real photographs of dogs, cats, cows, birds, monkeys and other animals."
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Pawverse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- ================= HEADER ================= -->
-
-    <header class="site-header">
-
-        <div class="container nav-wrapper">
-
-            <a href="index.html" class="logo-link">
-                <img
-                    src="images/logo.png"
-                    alt="Pawverse Logo"
-                    class="site-logo"
-                >
-            </a>
-
-            <button
-                class="menu-toggle"
-                type="button"
-                aria-label="Open navigation menu"
-            >
-                ☰
-            </button>
-
-            <nav class="main-nav">
-
-                <a href="index.html">Home</a>
-
-                <a href="index.html#animals">
-                    Animals
-                </a>
-
-                <a href="index.html#why-pawverse">
-                    Why Pawverse
-                </a>
-
-                <a href="index.html#get-involved">
-                    Get Involved
-                </a>
-
-                <a href="gallery.html" class="active">
-                    Gallery
-                </a>
-
-                <a href="index.html#contact">
-                    Contact
-                </a>
-
-            </nav>
-
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Pawverse Logo">
+            <div class="logo-text">
+                <h1>PAWVERSE</h1>
+                <p>Every Paw Deserves a Home</p>
+            </div>
         </div>
-
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#team">Join Team</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-
-    <!-- ================= GALLERY INTRO ================= -->
-
-    <main>
-
-        <section class="gallery-preview">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <span class="section-label">
-                        Pawverse Gallery
-                    </span>
-
-                    <h1>
-                        A World Full of
-                        <em>Life</em>
-                    </h1>
-
-                    <p>
-                        Every animal has a story, a personality and
-                        a place in our world. Explore the Pawverse
-                        collection of real animal photographs.
-                    </p>
-
-                </div>
-
-
-                <!-- ================= ANIMAL GALLERY ================= -->
-
-                <div class="preview-grid">
-
-
-                    <!-- DOGS -->
-
-                    <a
-                        id="dogs"
-                        class="preview-image"
-                        href="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1600&q=90"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-
-                        <img
-                            src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1600&q=90"
-                            alt="Dog"
-                            loading="lazy"
-                        >
-
-                        <span>
-                            Dogs
-                        </span>
-
-                    </a>
-
-
-                    <!-- CATS -->
-
-                    <a
-                        id="cats"
-                        class="preview-image"
-                        href="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1600&q=90"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-
-                        <img
-                            src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1600&q=90"
-                            alt="Cat"
-                            loading="lazy"
-                        >
-
-                        <span>
-                            Cats
-                        </span>
-
-                    </a>
-
-
-                    <!-- COWS -->
-
-                    <a
-                        id="cows"
-                        class="preview-image"
-                        href="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1600&q=90"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-
-                        <img
-                            src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1600&q=90"
-                            alt="Cow"
-                            loading="lazy"
-                        >
-
-                        <span>
-                            Cows
-                        </span>
-
-                    </a>
-
-
-                    <!-- BIRDS -->
-
-                    <a
-                        id="birds"
-                        class="preview-image"
-                        href="https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=1600&q=90"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-
-                        <img
-                            src="https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=1600&q=90"
-                            alt="Bird"
-                            loading="lazy"
-                        >
-
-                        <span>
-                            Birds
-                        </span>
-
-                    </a>
-
-
-                    <!-- MONKEYS -->
-
-                    <a
-                        id="monkeys"
-                        class="preview-image"
-                        href="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?auto=format&fit=crop&w=1600&q=90"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-
-                        <img
-                            src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?auto=format&fit=crop&w=1600&q=90"
-                            alt="Monkey"
-                            loading="lazy"
-                        >
-
-                        <span>
-                            Monkeys
-                        </span>
-
-                    </a>
-
-
-                    <!-- OTHER ANIMALS -->
-
-                    <a
-                        id="other-animals"
-                        class="preview-image"
-                        href="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=1600&q=90"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-
-                        <img
-                            src="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=1600&q=90"
-                            alt="Wild animal"
-                            loading="lazy"
-                        >
-
-                        <span>
-                            Other Animals
-                        </span>
-
-                    </a>
-
-                </div>
-
+    <!-- Gallery Section -->
+    <section class="gallery-page" style="padding: 60px 5%;">
+        <h2 class="section-title">Rescue & Animal Gallery</h2>
+        <p class="section-subtitle">"Glimpses of love, care, and second chances at Pawverse."</p>
+        
+        <div class="animals-grid">
+            <div class="animal-card">
+                <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1" alt="Rescue 1">
+                <h3>Happy Dog Rescue</h3>
+                <p>"Safe and sound in our shelter."</p>
             </div>
-
-        </section>
-
-
-        <!-- ================= GALLERY MESSAGE ================= -->
-
-        <section class="story-section">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <span class="section-label">
-                        More Than a Photograph
-                    </span>
-
-                    <h2>
-                        See them.
-                        <em>Notice them.</em>
-                        Care about them.
-                    </h2>
-
-                    <p>
-                        The Pawverse gallery is more than a collection
-                        of beautiful photographs. It is a reminder that
-                        animals share our world with us and deserve
-                        kindness, attention and responsible care.
-                    </p>
-
-                </div>
-
+            <div class="animal-card">
+                <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba" alt="Rescue 2">
+                <h3>Protected Kittens</h3>
+                <p>"Enjoying cozy moments."</p>
             </div>
-
-        </section>
-
-
-        <!-- ================= GET INVOLVED CTA ================= -->
-
-        <section class="final-cta">
-
-            <div class="container">
-
-                <div class="final-cta-inner">
-
-                    <span class="section-label">
-                        Be Part of Pawverse
-                    </span>
-
-                    <h2>
-                        Every small act of care
-                        can become a bigger change.
-                    </h2>
-
-                    <p>
-                        Whether you want to volunteer, learn,
-                        support animals, share your skills or simply
-                        understand animal care better, there is a
-                        place for you here.
-                    </p>
-
-                    <div class="hero-actions">
-
-                        <a
-                            href="index.html#get-involved"
-                            class="btn btn-primary"
-                        >
-                            Get Involved
-                        </a>
-
-                        <a
-                            href="index.html#contact"
-                            class="btn btn-secondary"
-                        >
-                            Contact Pawverse
-                        </a>
-
-                    </div>
-
-                </div>
-
+            <div class="animal-card">
+                <img src="https://images.unsplash.com/photo-1570042225831-d98fa7577f1e" alt="Rescue 3">
+                <h3>Cattle Care</h3>
+                <p>"Shelter and feed for sacred souls."</p>
             </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer
-        class="site-footer"
-        id="contact"
-    >
-
-        <div class="container footer-grid">
-
-
-            <!-- BRAND -->
-
-            <div class="footer-column">
-
-                <a
-                    href="index.html"
-                    class="logo-link"
-                >
-
-                    <img
-                        src="images/logo.png"
-                        alt="Pawverse Logo"
-                        class="site-logo"
-                    >
-
-                </a>
-
-                <p>
-                    A growing vision for a kinder and more
-                    responsible relationship between people
-                    and animals.
-                </p>
-
+            <div class="animal-card">
+                <img src="https://images.unsplash.com/photo-1444464666168-49d633b86797" alt="Rescue 4">
+                <h3>Bird Feeding Drive</h3>
+                <p>"Giving them freedom in safe skies."</p>
             </div>
-
-
-            <!-- QUICK LINKS -->
-
-            <div class="footer-column">
-
-                <h3>
-                    Explore
-                </h3>
-
-                <a href="index.html">
-                    Home
-                </a>
-
-                <a href="index.html#animals">
-                    Animals
-                </a>
-
-                <a href="index.html#why-pawverse">
-                    Why Pawverse
-                </a>
-
-                <a href="index.html#get-involved">
-                    Get Involved
-                </a>
-
-                <a href="gallery.html">
-                    Gallery
-                </a>
-
-            </div>
-
-
-            <!-- CONTACT -->
-
-            <div class="footer-column">
-
-                <h3>
-                    Connect
-                </h3>
-
-                <a href="mailto:pawverseindia2004@gmail.com">
-                    pawverseindia2004@gmail.com
-                </a>
-
-                <a
-                    href="https://www.instagram.com/pawverseindia/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Instagram
-                </a>
-
-                <a
-                    href="https://www.facebook.com/pawverseindia/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Facebook
-                </a>
-
-                <a
-                    href="#"
-                    aria-label="LinkedIn"
-                >
-                    LinkedIn
-                </a>
-
-            </div>
-
         </div>
+    </section>
 
-
-        <div class="container footer-bottom">
-
-            <p>
-                © 2026 Pawverse. Built with care for animals.
-            </p>
-
-            <p>
-                Delhi, India
-            </p>
-
-        </div>
-
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Pawverse (Founder: Bhagyashri Sharma, Delhi, India). Every Paw Deserves a Home.</p>
     </footer>
-
-
-    <script src="script.js"></script>
 
 </body>
 </html>
