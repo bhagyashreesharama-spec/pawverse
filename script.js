@@ -1,424 +1,137 @@
-/* =========================================================
-   PAWVERSE — JAVASCRIPT
-   ========================================================= */
+/* =========================================
+   PAWVERSE - JAVASCRIPT
+========================================= */
 
 
-/* ================= MOBILE MENU ================= */
+/* =========================================
+   MOBILE MENU
+========================================= */
 
-const menuBtn = document.getElementById("menuBtn");
-const navMenu = document.getElementById("navMenu");
+const menuButton = document.querySelector(".menu-button");
+const navLinks = document.querySelector(".nav-links");
 
-if (menuBtn && navMenu) {
-
-    menuBtn.addEventListener("click", () => {
-
-        navMenu.classList.toggle("active");
-
-        menuBtn.textContent =
-            navMenu.classList.contains("active")
-                ? "×"
-                : "☰";
-
+if (menuButton && navLinks) {
+    menuButton.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
     });
-
-
-    navMenu.querySelectorAll("a").forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            navMenu.classList.remove("active");
-
-            menuBtn.textContent = "☰";
-
-        });
-
-    });
-
 }
 
 
-/* ================= SMOOTH SCROLL ================= */
+/* Close mobile menu after clicking a link */
 
-document.querySelectorAll('a[href^="#"]').forEach(link => {
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks?.classList.remove("show");
+    });
+});
 
-    link.addEventListener("click", event => {
 
-        const targetId =
-            link.getAttribute("href");
+/* =========================================
+   CONTACT FORM
+========================================= */
 
-        if (!targetId || targetId === "#") {
-            return;
-        }
+const contactForm = document.querySelector(".contact-form");
 
-        const target =
-            document.querySelector(targetId);
+if (contactForm) {
 
-        if (!target) {
-            return;
-        }
+    contactForm.addEventListener("submit", function (event) {
 
         event.preventDefault();
 
-        const header =
-            document.querySelector(".site-header");
-
-        const headerHeight =
-            header ? header.offsetHeight : 70;
-
-        const targetPosition =
-            target.getBoundingClientRect().top +
-            window.scrollY -
-            headerHeight;
-
-        window.scrollTo({
-            top: targetPosition,
-            behavior: "smooth"
-        });
-
-    });
-
-});
-
-
-/* ================= MODAL ================= */
-
-const modal =
-    document.getElementById("infoModal");
-
-const modalTitle =
-    document.getElementById("modalTitle");
-
-const modalText =
-    document.getElementById("modalText");
-
-const modalClose =
-    document.getElementById("modalClose");
-
-const modalAction =
-    document.getElementById("modalAction");
-
-
-function openModal(title, text) {
-
-    if (!modal || !modalTitle || !modalText) {
-        return;
-    }
-
-    modalTitle.textContent = title;
-
-    modalText.textContent = text;
-
-    modal.classList.add("active");
-
-    modal.setAttribute("aria-hidden", "false");
-
-    document.body.style.overflow = "hidden";
-
-}
-
-
-function closeModal() {
-
-    if (!modal) {
-        return;
-    }
-
-    modal.classList.remove("active");
-
-    modal.setAttribute("aria-hidden", "true");
-
-    document.body.style.overflow = "";
-
-}
-
-
-if (modalClose) {
-
-    modalClose.addEventListener(
-        "click",
-        closeModal
-    );
-
-}
-
-
-if (modal) {
-
-    modal.addEventListener("click", event => {
-
-        if (event.target === modal) {
-            closeModal();
-        }
-
-    });
-
-}
-
-
-document.addEventListener("keydown", event => {
-
-    if (event.key === "Escape") {
-        closeModal();
-    }
-
-});
-
-
-/* ================= MISSION CARDS ================= */
-
-document.querySelectorAll(".mission-card").forEach(card => {
-
-    card.addEventListener("click", () => {
-
-        const title =
-            card.dataset.title || "PAWVERSE";
-
-        const text =
-            card.dataset.text ||
-            "Learn more about this area of PAWVERSE.";
-
-        openModal(title, text);
-
-    });
-
-});
-
-
-/* ================= ANIMAL CARDS ================= */
-
-document.querySelectorAll(".animal-card").forEach(card => {
-
-    card.addEventListener("click", () => {
-
-        const title =
-            card.dataset.title || "PAWVERSE";
-
-        const text =
-            card.dataset.text ||
-            "Learn more about this animal and ways to support compassionate care.";
-
-        openModal(title, text);
-
-    });
-
-});
-
-
-/* ================= CHOICE SELECTION ================= */
-
-const choiceSelect =
-    document.getElementById("choiceSelect");
-
-
-function selectChoice(choice) {
-
-    if (!choiceSelect) {
-        return;
-    }
-
-    const options =
-        Array.from(choiceSelect.options);
-
-    const exactOption =
-        options.find(
-            option =>
-                option.value.toLowerCase() ===
-                choice.toLowerCase()
-        );
-
-    if (exactOption) {
-
-        choiceSelect.value =
-            exactOption.value;
-
-    } else {
-
-        const partialOption =
-            options.find(
-                option =>
-                    option.textContent
-                        .toLowerCase()
-                        .includes(choice.toLowerCase())
-            );
-
-        if (partialOption) {
-            choiceSelect.value =
-                partialOption.value;
-        }
-
-    }
-
-}
-
-
-/* ================= SCROLL TO JOIN ================= */
-
-function goToJoin(choice = "") {
-
-    if (choice) {
-        selectChoice(choice);
-    }
-
-    const joinSection =
-        document.getElementById("join");
-
-    if (!joinSection) {
-        return;
-    }
-
-    const header =
-        document.querySelector(".site-header");
-
-    const headerHeight =
-        header ? header.offsetHeight : 70;
-
-    const position =
-        joinSection.getBoundingClientRect().top +
-        window.scrollY -
-        headerHeight;
-
-    window.scrollTo({
-        top: position,
-        behavior: "smooth"
-    });
-
-}
-
-
-/* ================= PATH CARDS ================= */
-
-document.querySelectorAll("[data-choice]").forEach(element => {
-
-    element.addEventListener("click", () => {
-
-        const choice =
-            element.dataset.choice;
-
-        if (!choice) {
-            return;
-        }
-
-        goToJoin(choice);
-
-    });
-
-});
-
-
-/* ================= MODAL ACTION ================= */
-
-if (modalAction) {
-
-    modalAction.addEventListener("click", () => {
-
-        closeModal();
-
-        goToJoin();
-
-    });
-
-}
-
-
-/* ================= TEXT BUTTONS ================= */
-
-document.querySelectorAll("[data-scroll]").forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        const targetId =
-            button.dataset.scroll;
-
-        const target =
-            document.querySelector(targetId);
-
-        if (!target) {
-            return;
-        }
-
-        const header =
-            document.querySelector(".site-header");
-
-        const headerHeight =
-            header ? header.offsetHeight : 70;
-
-        window.scrollTo({
-
-            top:
-                target.getBoundingClientRect().top +
-                window.scrollY -
-                headerHeight,
-
-            behavior: "smooth"
-
-        });
-
-    });
-
-});
-
-
-/* ================= FORM ================= */
-
-const pawForm =
-    document.getElementById("pawForm");
-
-if (pawForm) {
-
-    pawForm.addEventListener("submit", event => {
-
-        event.preventDefault();
-
-        const name =
-            pawForm.elements["name"]?.value.trim();
-
-        if (!name) {
-            alert("Please enter your name.");
+        const name = document.querySelector("#name")?.value.trim();
+        const email = document.querySelector("#email")?.value.trim();
+        const message = document.querySelector("#message")?.value.trim();
+
+        if (!name || !email || !message) {
+            alert("Please fill all required fields.");
             return;
         }
 
         alert(
-            `Thank you, ${name}! 💚\n\n` +
-            "Your PAWVERSE interest form is ready.\n\n" +
-            "The real submission system will be connected when PAWVERSE is ready to accept registrations."
+            "Thank you, " +
+            name +
+            "! Your message has been received by Pawverse."
         );
+
+        contactForm.reset();
 
     });
 
 }
 
 
-/* ================= YEAR ================= */
+/* =========================================
+   CURRENT YEAR
+========================================= */
 
-const year =
-    document.getElementById("year");
+const yearElement = document.querySelector("#current-year");
 
-if (year) {
-
-    year.textContent =
-        new Date().getFullYear();
-
+if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
 }
 
 
-/* ================= CLOSE MENU OUTSIDE ================= */
+/* =========================================
+   SCROLL REVEAL
+========================================= */
 
-document.addEventListener("click", event => {
+const revealElements = document.querySelectorAll(
+    ".step-card, .opportunity-card, .why-card, .gallery-item, .about-box"
+);
 
-    if (!navMenu || !menuBtn) {
-        return;
+const observer = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.12
     }
+);
 
-    if (
-        navMenu.classList.contains("active") &&
-        !navMenu.contains(event.target) &&
-        !menuBtn.contains(event.target)
-    ) {
 
-        navMenu.classList.remove("active");
+revealElements.forEach(element => {
 
-        menuBtn.textContent = "☰";
+    element.style.opacity = "0";
+    element.style.transform = "translateY(25px)";
+    element.style.transition = "opacity 0.6s ease, transform 0.6s ease";
 
-    }
+    observer.observe(element);
+
+});
+
+
+/* =========================================
+   SMOOTH INTERNAL LINKS
+========================================= */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function (event) {
+
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if (target) {
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }
+
+    });
 
 });
