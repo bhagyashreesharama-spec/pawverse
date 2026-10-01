@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +8,7 @@
 
     <meta
         name="description"
-        content="Pawverse is a growing community-focused animal welfare initiative connecting people, skills, learning and compassionate action."
+        content="Pawverse is a growing animal-focused community built around compassion, care, responsible action and opportunities to contribute."
     >
 
     <link rel="stylesheet" href="style.css">
@@ -17,28 +16,35 @@
 
 <body>
 
-    <!-- HEADER -->
+    <!-- ================= HEADER ================= -->
+
     <header class="site-header">
 
-        <div class="header-inner">
+        <div class="container nav-wrapper">
 
-            <a href="#home" class="site-logo">
+            <a href="index.html" class="logo-link">
                 <img src="images/logo.png" alt="Pawverse Logo">
+                <span>Pawverse</span>
             </a>
 
-            <button class="menu-btn" id="menuBtn" type="button">
-                ☰
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
 
-            <nav class="main-nav" id="navMenu">
+            <nav class="main-nav" aria-label="Main navigation">
 
                 <a href="#home">Home</a>
-                <a href="#about">About</a>
                 <a href="#animals">Animals</a>
-                <a href="#help">Help Us</a>
-                <a href="#learn">Learn</a>
+                <a href="#why-pawverse">Why Pawverse</a>
+                <a href="#get-involved">Get Involved</a>
                 <a href="gallery.html">Gallery</a>
-                <a href="#founder">Founder</a>
                 <a href="#contact">Contact</a>
 
             </nav>
@@ -50,67 +56,97 @@
 
     <main>
 
-        <!-- HERO -->
-        <section class="hero" id="home">
+        <!-- ================= HERO ================= -->
 
-            <div class="hero-inner">
+        <section class="hero-section" id="home">
 
-                <div class="hero-text">
+            <div class="hero-image"></div>
+
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content">
+
+                <span class="eyebrow">
+                    PAWVERSE • DELHI, INDIA
+                </span>
+
+                <h1>
+                    Where Compassion
+                    <span>Meets Opportunity.</span>
+                </h1>
+
+                <p class="hero-lead">
+                    A growing space for people who care about animals
+                    and want to turn compassion into meaningful action.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a href="#animals" class="btn btn-primary">
+                        Explore Pawverse
+                    </a>
+
+                    <a href="#get-involved" class="btn btn-secondary">
+                        Get Involved
+                    </a>
+
+                </div>
+
+                <div class="hero-quote">
+
+                    <span class="quote-mark">“</span>
+
+                    <p>
+                        A kinder world starts with the choice to care.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= INTRO ================= -->
+
+        <section class="intro-section">
+
+            <div class="container intro-grid">
+
+                <div class="section-label">
+                    <span>01</span>
+                    <p>THE IDEA</p>
+                </div>
+
+                <div class="intro-content">
 
                     <span class="eyebrow">
-                        WELCOME TO PAWVERSE
+                        MORE THAN JUST AN ANIMAL SPACE
                     </span>
 
-                    <h1>
-                        Every animal deserves kindness.
-                        <span>Every person can make a difference.</span>
-                    </h1>
+                    <h2>
+                        Compassion can become
+                        <span>action.</span>
+                    </h2>
 
-                    <p class="hero-quote">
-                        “A kinder world begins with one small act of care.”
+                    <p>
+                        Pawverse is a growing vision created around one simple
+                        belief: caring for animals should not be limited to
+                        a single type of person or a single way of helping.
                     </p>
 
-                    <p class="hero-description">
-                        Pawverse is a growing community-focused initiative
-                        created to bring together people who care about animals
-                        and want to learn, volunteer, contribute or support
-                        animal welfare in responsible ways.
+                    <p>
+                        Whether someone wants to volunteer, support rescue
+                        efforts, learn about animal care, contribute creative
+                        or digital skills, help responsibly with adoption,
+                        or simply become more aware, there should be a place
+                        to start.
                     </p>
 
-                    <div class="hero-buttons">
-
-                        <a href="#animals" class="btn btn-primary">
-                            Meet the Animals
-                        </a>
-
-                        <a href="#help" class="btn btn-outline">
-                            I Want to Help
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <div class="hero-visual">
-
-                    <div class="hero-circle"></div>
-
-                    <div class="hero-dog">
-                        🐕
-                    </div>
-
-                    <div class="hero-paw paw-a">
-                        🐾
-                    </div>
-
-                    <div class="hero-paw paw-b">
-                        🐾
-                    </div>
-
-                    <div class="hero-label">
-                        🐾 Care • Learn • Connect
-                    </div>
+                    <a href="#why-pawverse" class="text-link">
+                        Discover the idea behind Pawverse
+                        <span>→</span>
+                    </a>
 
                 </div>
 
@@ -119,708 +155,668 @@
         </section>
 
 
-        <!-- ABOUT -->
-        <section class="section" id="about">
+        <!-- ================= ANIMALS ================= -->
 
-            <div class="section-heading">
+        <section class="animals-section" id="animals">
 
-                <span class="eyebrow">
-                    ABOUT PAWVERSE
-                </span>
+            <div class="container">
 
-                <h2>
-                    A place where compassion can become action.
-                </h2>
-
-                <p>
-                    Pawverse is being built as a space where caring people
-                    can discover meaningful and responsible ways to contribute
-                    towards animals and the community around them.
-                </p>
-
-            </div>
-
-
-            <div class="three-grid">
-
-                <article class="info-card">
-                    <div class="card-icon">🐾</div>
-
-                    <h3>
-                        A Growing Vision
-                    </h3>
-
-                    <p>
-                        Pawverse is a growing idea and community. We want
-                        to build it step by step, honestly and responsibly.
-                    </p>
-                </article>
-
-
-                <article class="info-card">
-                    <div class="card-icon">🤝</div>
-
-                    <h3>
-                        Everyone Can Contribute
-                    </h3>
-
-                    <p>
-                        Some people have skills, some have time, and some
-                        simply want to learn where they can begin.
-                    </p>
-                </article>
-
-
-                <article class="info-card">
-                    <div class="card-icon">🌱</div>
-
-                    <h3>
-                        Learn Before You Act
-                    </h3>
-
-                    <p>
-                        Responsible learning can help people understand
-                        animal care, safety and their own role.
-                    </p>
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- ANIMALS -->
-        <section class="section animals-section" id="animals">
-
-            <div class="section-heading centered">
-
-                <span class="eyebrow">
-                    ANIMALS WE CARE ABOUT
-                </span>
-
-                <h2>
-                    Meet the Pawverse Family
-                </h2>
-
-                <p>
-                    Every animal matters. Explore different categories and
-                    discover ways to understand, care and contribute responsibly.
-                </p>
-
-            </div>
-
-
-            <div class="animal-grid">
-
-                <a href="#help" class="animal-card">
-                    <div class="animal-visual dog">
-                        🐕
-                    </div>
-
-                    <div class="animal-info">
-                        <h3>Dogs</h3>
-
-                        <p>
-                            Responsible care, safety, rescue support and adoption.
-                        </p>
-
-                        <span>Explore →</span>
-                    </div>
-                </a>
-
-
-                <a href="#help" class="animal-card">
-                    <div class="animal-visual cat">
-                        🐈
-                    </div>
-
-                    <div class="animal-info">
-                        <h3>Cats</h3>
-
-                        <p>
-                            Compassionate care, safety and responsible support.
-                        </p>
-
-                        <span>Explore →</span>
-                    </div>
-                </a>
-
-
-                <a href="#help" class="animal-card">
-                    <div class="animal-visual cow">
-                        🐄
-                    </div>
-
-                    <div class="animal-info">
-                        <h3>Cows</h3>
-
-                        <p>
-                            Awareness, kindness and responsible animal care.
-                        </p>
-
-                        <span>Explore →</span>
-                    </div>
-                </a>
-
-
-                <a href="#help" class="animal-card">
-                    <div class="animal-visual bird">
-                        🐦
-                    </div>
-
-                    <div class="animal-info">
-                        <h3>Birds</h3>
-
-                        <p>
-                            Safe support and compassionate care for birds.
-                        </p>
-
-                        <span>Explore →</span>
-                    </div>
-                </a>
-
-
-                <a href="#help" class="animal-card">
-                    <div class="animal-visual monkey">
-                        🐒
-                    </div>
-
-                    <div class="animal-info">
-                        <h3>Monkeys</h3>
-
-                        <p>
-                            Awareness and responsible coexistence with wildlife.
-                        </p>
-
-                        <span>Explore →</span>
-                    </div>
-                </a>
-
-
-                <a href="#help" class="animal-card">
-                    <div class="animal-visual other">
-                        🐾
-                    </div>
-
-                    <div class="animal-info">
-                        <h3>Other Animals</h3>
-
-                        <p>
-                            Every animal deserves kindness, awareness and respect.
-                        </p>
-
-                        <span>Explore →</span>
-                    </div>
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- WHY PAWVERSE -->
-        <section class="section motive-section">
-
-            <div class="motive-photo">
-
-                <img
-                    src="images/bhagyashri.jpg"
-                    alt="Bhagyashri Sharma"
-                >
-
-            </div>
-
-
-            <div class="motive-text">
-
-                <span class="eyebrow">
-                    WHY PAWVERSE
-                </span>
-
-                <h2>
-                    A simple idea, with a bigger purpose.
-                </h2>
-
-                <p>
-                    I believe caring for animals should not feel like something
-                    only a few people are capable of doing.
-                </p>
-
-                <p>
-                    A person may have a professional skill. A student may
-                    have time and curiosity. A driver may help with transportation.
-                    A creative person may help through design, photography,
-                    writing or storytelling.
-                </p>
-
-                <p>
-                    And someone with no experience at all may simply be ready
-                    to learn.
-                </p>
-
-                <p>
-                    That is the thought behind Pawverse — creating a space where
-                    compassion can turn into practical and responsible contribution.
-                </p>
-
-                <div class="highlight-box">
-                    <strong>My motive is simple:</strong>
-
-                    <p>
-                        create more awareness for animals, create meaningful
-                        opportunities for people and build a community where
-                        learning and kindness can lead to responsible action.
-                    </p>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- HELP -->
-        <section class="section" id="help">
-
-            <div class="section-heading centered">
-
-                <span class="eyebrow">
-                    I WANT TO HELP
-                </span>
-
-                <h2>
-                    There is a place for your contribution.
-                </h2>
-
-                <p>
-                    Pawverse can grow through different kinds of people,
-                    skills and support.
-                </p>
-
-            </div>
-
-
-            <div class="help-grid">
-
-                <a href="#contact" class="help-card">
-                    <div class="help-icon">🤝</div>
+                <div class="section-heading">
 
                     <div>
+
+                        <span class="eyebrow">
+                            THE LIVES WE CARE ABOUT
+                        </span>
+
+                        <h2>
+                            Every life has
+                            <span>value.</span>
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        Pawverse welcomes compassion for animals across
+                        different species — because kindness should not
+                        have a category.
+                    </p>
+
+                </div>
+
+
+                <div class="animal-grid">
+
+                    <!-- DOGS -->
+
+                    <a
+                        href="gallery.html#dogs"
+                        class="animal-card animal-card-large"
+                    >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85"
+                            alt="Dog"
+                            loading="lazy"
+                        >
+
+                        <div class="animal-card-overlay">
+
+                            <span>01</span>
+
+                            <div>
+                                <h3>Dogs</h3>
+                                <p>
+                                    Companions who deserve safety,
+                                    care and kindness.
+                                </p>
+                            </div>
+
+                            <strong>→</strong>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- CATS -->
+
+                    <a
+                        href="gallery.html#cats"
+                        class="animal-card"
+                    >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1000&q=85"
+                            alt="Cat"
+                            loading="lazy"
+                        >
+
+                        <div class="animal-card-overlay">
+
+                            <span>02</span>
+
+                            <div>
+                                <h3>Cats</h3>
+                                <p>
+                                    Small lives with big personalities.
+                                </p>
+                            </div>
+
+                            <strong>→</strong>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- COWS -->
+
+                    <a
+                        href="gallery.html#cows"
+                        class="animal-card"
+                    >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1000&q=85"
+                            alt="Cow"
+                            loading="lazy"
+                        >
+
+                        <div class="animal-card-overlay">
+
+                            <span>03</span>
+
+                            <div>
+                                <h3>Cows</h3>
+                                <p>
+                                    Gentle lives deserving dignity
+                                    and responsible care.
+                                </p>
+                            </div>
+
+                            <strong>→</strong>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- BIRDS -->
+
+                    <a
+                        href="gallery.html#birds"
+                        class="animal-card"
+                    >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=1000&q=85"
+                            alt="Bird"
+                            loading="lazy"
+                        >
+
+                        <div class="animal-card-overlay">
+
+                            <span>04</span>
+
+                            <div>
+                                <h3>Birds</h3>
+                                <p>
+                                    Every wing deserves freedom
+                                    and care.
+                                </p>
+                            </div>
+
+                            <strong>→</strong>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- MONKEYS -->
+
+                    <a
+                        href="gallery.html#monkeys"
+                        class="animal-card"
+                    >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?auto=format&fit=crop&w=1000&q=85"
+                            alt="Monkey"
+                            loading="lazy"
+                        >
+
+                        <div class="animal-card-overlay">
+
+                            <span>05</span>
+
+                            <div>
+                                <h3>Monkeys</h3>
+                                <p>
+                                    Wild lives that deserve respect
+                                    and understanding.
+                                </p>
+                            </div>
+
+                            <strong>→</strong>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- OTHER ANIMALS -->
+
+                    <a
+                        href="gallery.html#other-animals"
+                        class="animal-card"
+                    >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=1000&q=85"
+                            alt="Wild animal"
+                            loading="lazy"
+                        >
+
+                        <div class="animal-card-overlay">
+
+                            <span>06</span>
+
+                            <div>
+                                <h3>Other Animals</h3>
+                                <p>
+                                    Compassion has no species limit.
+                                </p>
+                            </div>
+
+                            <strong>→</strong>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+
+                <div class="center-action">
+
+                    <a href="gallery.html" class="btn btn-outline">
+                        View Full Gallery
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= WHY I STARTED ================= -->
+
+        <section class="story-section" id="why-pawverse">
+
+            <div class="container story-grid">
+
+                <div class="story-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=1200&q=85"
+                        alt="Person caring for a dog"
+                        loading="lazy"
+                    >
+
+                    <div class="story-image-caption">
+                        <span>THE BEGINNING</span>
+                        <strong>
+                            Care begins with noticing.
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="story-content">
+
+                    <span class="eyebrow">
+                        WHY I STARTED PAWVERSE
+                    </span>
+
+                    <h2>
+                        Because caring
+                        <span>should have a place.</span>
+                    </h2>
+
+                    <p>
+                        Pawverse began from a simple thought: there are many
+                        people who care about animals, but not everyone knows
+                        where they can begin or how they can contribute.
+                    </p>
+
+                    <p>
+                        Someone may want to volunteer. Someone may want to
+                        help with rescue support. Someone may have skills in
+                        design, writing, photography, technology or social
+                        media. Someone else may simply want to learn how to
+                        care for animals more responsibly.
+                    </p>
+
+                    <p>
+                        Pawverse is my attempt to bring those possibilities
+                        closer together and create a space where compassion
+                        can meet opportunity.
+                    </p>
+
+                    <div class="story-quote">
+
+                        <span>“</span>
+
+                        <p>
+                            You do not always need to do something huge.
+                            Sometimes, choosing to care is where everything
+                            begins.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FOUNDER MESSAGE ================= -->
+
+        <section class="founder-section">
+
+            <div class="container founder-card">
+
+                <div class="founder-message">
+
+                    <span class="eyebrow">
+                        MY MESSAGE
+                    </span>
+
+                    <h2>
+                        I want Pawverse to become
+                        <span>a place to begin.</span>
+                    </h2>
+
+                    <p>
+                        My hope for Pawverse is to create something that feels
+                        welcoming rather than intimidating — a place where
+                        someone can arrive with an idea, a skill, a question,
+                        or simply the desire to help.
+                    </p>
+
+                    <p>
+                        It is a growing vision, and its future can be shaped
+                        by the people who choose to become part of it.
+                    </p>
+
+                    <div class="founder-signature">
+
+                        <strong>Bhagyashri Sharma</strong>
+
+                        <span>Founder, Pawverse</span>
+
+                        <span>Delhi, India</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= GET INVOLVED ================= -->
+
+        <section class="involved-section" id="get-involved">
+
+            <div class="container">
+
+                <div class="section-heading centered">
+
+                    <span class="eyebrow">
+                        THERE IS MORE THAN ONE WAY TO HELP
+                    </span>
+
+                    <h2>
+                        Find your way to
+                        <span>contribute.</span>
+                    </h2>
+
+                    <p>
+                        You do not need to have the same skills or the same
+                        experience as someone else. Start with what you can
+                        genuinely contribute.
+                    </p>
+
+                </div>
+
+
+                <div class="involvement-grid">
+
+                    <a href="mailto:pawverseindia2004@gmail.com?subject=Volunteer%20with%20Pawverse"
+                       class="involvement-card">
+
+                        <span class="card-number">01</span>
+
                         <h3>Volunteer</h3>
 
                         <p>
-                            Give your time to awareness, activities and
-                            community support.
+                            Give your time and become part of meaningful
+                            animal-focused activities.
                         </p>
 
-                        <span>Join →</span>
-                    </div>
-                </a>
+                        <span class="card-arrow">→</span>
+
+                    </a>
 
 
-                <a href="#contact" class="help-card">
-                    <div class="help-icon">🏠</div>
+                    <a href="mailto:pawverseindia2004@gmail.com?subject=Rescue%20Support%20with%20Pawverse"
+                       class="involvement-card">
 
-                    <div>
-                        <h3>Responsible Adoption</h3>
+                        <span class="card-number">02</span>
 
-                        <p>
-                            Learn about the commitment involved before
-                            bringing an animal home.
-                        </p>
-
-                        <span>Learn →</span>
-                    </div>
-                </a>
-
-
-                <a href="#contact" class="help-card">
-                    <div class="help-icon">🚗</div>
-
-                    <div>
-                        <h3>Rescue Driver</h3>
-
-                        <p>
-                            Help with responsible animal transportation.
-                        </p>
-
-                        <span>Join →</span>
-                    </div>
-                </a>
-
-
-                <a href="#contact" class="help-card">
-                    <div class="help-icon">🚑</div>
-
-                    <div>
                         <h3>Rescue Support</h3>
 
                         <p>
-                            Support responsible rescue efforts and awareness.
+                            Help connect rescue-related needs with people
+                            who can support them responsibly.
                         </p>
 
-                        <span>Join →</span>
-                    </div>
-                </a>
+                        <span class="card-arrow">→</span>
+
+                    </a>
 
 
-                <a href="#contact" class="help-card">
-                    <div class="help-icon">🩺</div>
+                    <a href="mailto:pawverseindia2004@gmail.com?subject=Animal%20Care%20with%20Pawverse"
+                       class="involvement-card">
 
-                    <div>
-                        <h3>Veterinary & Animal Professionals</h3>
+                        <span class="card-number">03</span>
+
+                        <h3>Animal Care</h3>
 
                         <p>
-                            Share expertise, guidance or future collaboration.
+                            Learn, share knowledge and support responsible
+                            animal care.
                         </p>
 
-                        <span>Connect →</span>
-                    </div>
-                </a>
+                        <span class="card-arrow">→</span>
+
+                    </a>
 
 
-                <a href="#contact" class="help-card">
-                    <div class="help-icon">💻</div>
+                    <a href="mailto:pawverseindia2004@gmail.com?subject=Creative%20Skills%20for%20Pawverse"
+                       class="involvement-card">
 
-                    <div>
-                        <h3>Skilled People</h3>
+                        <span class="card-number">04</span>
+
+                        <h3>Creative Skills</h3>
 
                         <p>
-                            Developers, designers, writers, photographers
-                            and social-media professionals can contribute.
+                            Designers, writers, photographers and creators
+                            can contribute their skills.
                         </p>
 
-                        <span>Share Skill →</span>
-                    </div>
-                </a>
+                        <span class="card-arrow">→</span>
+
+                    </a>
 
 
-                <a href="#contact" class="help-card">
-                    <div class="help-icon">🏢</div>
+                    <a href="mailto:pawverseindia2004@gmail.com?subject=Digital%20Skills%20for%20Pawverse"
+                       class="involvement-card">
 
-                    <div>
-                        <h3>Businesses & Organisations</h3>
+                        <span class="card-number">05</span>
+
+                        <h3>Digital Skills</h3>
 
                         <p>
-                            Explore responsible collaboration and future
-                            partnership opportunities.
+                            Developers, social media people and digital
+                            learners can contribute online.
                         </p>
 
-                        <span>Partner →</span>
-                    </div>
-                </a>
+                        <span class="card-arrow">→</span>
+
+                    </a>
 
 
-                <a href="#contact" class="help-card">
-                    <div class="help-icon">📚</div>
+                    <a href="mailto:pawverseindia2004@gmail.com?subject=Learn%20with%20Pawverse"
+                       class="involvement-card">
 
-                    <div>
-                        <h3>Students & Beginners</h3>
+                        <span class="card-number">06</span>
+
+                        <h3>Learn & Grow</h3>
 
                         <p>
-                            Start learning, contribute your time and discover
-                            where you can begin.
+                            Students, beginners and curious people can
+                            start by learning.
                         </p>
 
-                        <span>Start →</span>
-                    </div>
-                </a>
+                        <span class="card-arrow">→</span>
 
-            </div>
+                    </a>
 
-        </section>
-
-
-        <!-- LEARN -->
-        <section class="section learning-section" id="learn">
-
-            <div class="section-heading">
-
-                <span class="eyebrow">
-                    I WANT TO LEARN
-                </span>
-
-                <h2>
-                    You do not need to be an expert to begin.
-                </h2>
-
-                <p>
-                    If you are a student, job seeker, beginner or simply
-                    someone who wants to learn, you can start with understanding.
-                </p>
-
-            </div>
-
-
-            <div class="learning-grid">
-
-                <a href="#contact" class="learning-card">
-                    <div class="learning-icon">🎓</div>
-                    <h3>Students</h3>
-                    <p>
-                        Explore future volunteering, projects and learning.
-                    </p>
-                    <span>Explore →</span>
-                </a>
-
-
-                <a href="#contact" class="learning-card">
-                    <div class="learning-icon">🌱</div>
-                    <h3>Beginners</h3>
-                    <p>
-                        Start with basic knowledge, guidance and responsible steps.
-                    </p>
-                    <span>Start Learning →</span>
-                </a>
-
-
-                <a href="#contact" class="learning-card">
-                    <div class="learning-icon">💼</div>
-                    <h3>Job Seekers</h3>
-                    <p>
-                        Explore ways to develop practical and useful skills.
-                    </p>
-                    <span>Learn More →</span>
-                </a>
-
-
-                <a href="#contact" class="learning-card">
-                    <div class="learning-icon">🐾</div>
-                    <h3>Animal Care</h3>
-                    <p>
-                        Understand safe, compassionate and responsible care.
-                    </p>
-                    <span>Learn →</span>
-                </a>
-
-
-                <a href="#contact" class="learning-card">
-                    <div class="learning-icon">🎨</div>
-                    <h3>Creative Skills</h3>
-                    <p>
-                        Learn how design, photography and writing can help.
-                    </p>
-                    <span>Learn →</span>
-                </a>
-
-
-                <a href="#contact" class="learning-card">
-                    <div class="learning-icon">📱</div>
-                    <h3>Digital Skills</h3>
-                    <p>
-                        Explore social media, content creation and communication.
-                    </p>
-                    <span>Learn →</span>
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- CTA -->
-        <section class="cta">
-
-            <div>
-
-                <span class="eyebrow">
-                    START WHERE YOU ARE
-                </span>
-
-                <h2>
-                    Care can start with a single step.
-                </h2>
-
-                <p>
-                    Help, learn or share a skill.
-                </p>
-
-            </div>
-
-            <a href="#contact" class="btn btn-gold">
-                Connect with Pawverse
-            </a>
-
-        </section>
-
-
-        <!-- FOUNDER -->
-        <section class="section founder-section" id="founder">
-
-            <div class="founder-text">
-
-                <span class="eyebrow">
-                    MEET THE FOUNDER
-                </span>
-
-                <h2>
-                    Bhagyashri Sharma
-                </h2>
-
-                <h3>
-                    Founder, Pawverse
-                </h3>
-
-                <p>
-                    My vision is to build Pawverse patiently and honestly —
-                    creating a community where animals are treated with kindness
-                    and people are given meaningful ways to learn, participate
-                    and contribute.
-                </p>
-
-                <p>
-                    I want Pawverse to remain open to different kinds of people —
-                    those with experience, professional skills, students looking
-                    for practical learning and beginners who simply want to understand
-                    where they can start.
-                </p>
-
-                <div class="location">
-                    📍 Delhi, India
                 </div>
 
             </div>
 
+        </section>
 
-            <div class="founder-photo">
 
-                <img
-                    src="images/bhagyashri.jpg"
-                    alt="Bhagyashri Sharma"
-                >
+        <!-- ================= OPPORTUNITY ================= -->
+
+        <section class="opportunity-section">
+
+            <div class="container opportunity-inner">
+
+                <div>
+
+                    <span class="eyebrow">
+                        YOUR SKILL CAN HAVE A PURPOSE
+                    </span>
+
+                    <h2>
+                        What can you
+                        <span>bring?</span>
+                    </h2>
+
+                </div>
+
+                <div class="opportunity-copy">
+
+                    <p>
+                        Maybe you can build a website. Maybe you can design
+                        a poster, take photographs, write, organise people,
+                        manage social media, help with communication, or
+                        simply give your time.
+                    </p>
+
+                    <p>
+                        Pawverse is intended to make space for different
+                        kinds of contribution.
+                    </p>
+
+                    <a href="#contact" class="btn btn-primary">
+                        Start a Conversation
+                    </a>
+
+                </div>
 
             </div>
 
         </section>
 
 
-        <!-- CONTACT -->
-        <section class="section contact-section" id="contact">
+        <!-- ================= GALLERY PREVIEW ================= -->
 
-            <div class="section-heading">
+        <section class="gallery-preview">
 
-                <span class="eyebrow">
-                    CONNECT WITH PAWVERSE
-                </span>
+            <div class="container">
 
-                <h2>
-                    Have an idea, skill or willingness to help?
-                </h2>
+                <div class="section-heading">
 
-                <p>
-                    Tell us how you would like to learn, contribute or collaborate.
-                </p>
+                    <div>
+
+                        <span class="eyebrow">
+                            MOMENTS MATTER
+                        </span>
+
+                        <h2>
+                            See the Pawverse
+                            <span>gallery.</span>
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        A growing collection of animals, people and moments
+                        connected by compassion.
+                    </p>
+
+                </div>
+
+
+                <div class="preview-grid">
+
+                    <a
+                        href="gallery.html#dogs"
+                        class="preview-image preview-image-wide"
+                    >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=85"
+                            alt="Dog"
+                            loading="lazy"
+                        >
+
+                        <span>Dogs →</span>
+
+                    </a>
+
+
+                    <a
+                        href="gallery.html#cats"
+                        class="preview-image"
+                    >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1000&q=85"
+                            alt="Cat"
+                            loading="lazy"
+                        >
+
+                        <span>Cats →</span>
+
+                    </a>
+
+
+                    <a
+                        href="gallery.html#birds"
+                        class="preview-image"
+                    >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=1000&q=85"
+                            alt="Bird"
+                            loading="lazy"
+                        >
+
+                        <span>Birds →</span>
+
+                    </a>
+
+                </div>
+
+
+                <div class="center-action">
+
+                    <a href="gallery.html" class="btn btn-outline">
+                        Open Full Gallery
+                    </a>
+
+                </div>
 
             </div>
 
-
-            <div class="contact-grid">
-
-                <form id="contactForm">
-
-                    <label for="name">Your Name</label>
-
-                    <input
-                        type="text"
-                        id="name"
-                        placeholder="Enter your name"
-                        required
-                    >
+        </section>
 
 
-                    <label for="email">Your Email</label>
+        <!-- ================= FINAL CTA ================= -->
 
-                    <input
-                        type="email"
-                        id="email"
-                        placeholder="Enter your email"
-                        required
-                    >
+        <section class="final-cta">
 
+            <div class="container final-cta-inner">
 
-                    <label for="interest">I am interested in</label>
+                <span class="eyebrow">
+                    THE JOURNEY STARTS SOMEWHERE
+                </span>
 
-                    <select id="interest" required>
+                <h2>
+                    Care.
+                    <span>Connect.</span>
+                    Contribute.
+                </h2>
 
-                        <option value="">
-                            Select an option
-                        </option>
+                <p>
+                    Pawverse is growing. If you believe animals deserve
+                    compassion and people deserve opportunities to help,
+                    there is a place for you to begin.
+                </p>
 
-                        <option>Volunteering</option>
-                        <option>Responsible Adoption</option>
-                        <option>Rescue Driver</option>
-                        <option>Rescue Support</option>
-                        <option>Professional Contribution</option>
-                        <option>Learning</option>
-                        <option>Student Opportunity</option>
-                        <option>Business Collaboration</option>
+                <div class="hero-actions">
 
-                    </select>
+                    <a href="#get-involved" class="btn btn-primary">
+                        Get Involved
+                    </a>
 
-
-                    <label for="message">Your Message</label>
-
-                    <textarea
-                        id="message"
-                        rows="6"
-                        placeholder="Tell us about yourself..."
-                        required
-                    ></textarea>
-
-
-                    <button type="submit" class="btn btn-primary">
-                        Send Interest
-                    </button>
-
-                </form>
-
-
-                <div class="contact-info">
-
-                    <img
-                        src="images/logo.png"
-                        alt="Pawverse Logo"
-                        class="contact-logo"
-                    >
-
-                    <h3>
-                        Pawverse
-                    </h3>
-
-                    <p>
-                        Where compassion meets opportunity.
-                    </p>
-
-                    <div class="contact-detail">
-                        📍 Delhi, India
-                    </div>
-
-                    <div class="contact-detail">
-                        📧
-                        <a href="mailto:pawverseindia2004@gmail.com">
-                            pawverseindia2004@gmail.com
-                        </a>
-                    </div>
-
-
-                    <div class="social-links">
-
-                        <a
-                            href="https://www.instagram.com/pawverseindia/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Instagram
-                        </a>
-
-                        <a
-                            href="https://www.facebook.com/pawverseindia/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Facebook
-                        </a>
-
-                    </div>
+                    <a href="gallery.html" class="btn btn-secondary">
+                        Explore Gallery
+                    </a>
 
                 </div>
 
@@ -831,18 +827,93 @@
     </main>
 
 
-    <!-- FOOTER -->
-    <footer class="footer">
+    <!-- ================= FOOTER ================= -->
 
-        <img src="images/logo.png" alt="Pawverse Logo">
+    <footer class="site-footer" id="contact">
 
-        <p>
-            Where compassion meets opportunity.
-        </p>
+        <div class="container footer-grid">
 
-        <p>
-            © <span id="year"></span> Pawverse. All rights reserved.
-        </p>
+            <div class="footer-brand">
+
+                <a href="#home" class="logo-link">
+
+                    <img
+                        src="images/logo.png"
+                        alt="Pawverse Logo"
+                    >
+
+                    <span>Pawverse</span>
+
+                </a>
+
+                <p>
+                    Where compassion meets opportunity.
+                </p>
+
+                <p class="footer-location">
+                    Delhi, India
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Explore</h3>
+
+                <a href="#home">Home</a>
+                <a href="#animals">Animals</a>
+                <a href="#why-pawverse">Why Pawverse</a>
+                <a href="#get-involved">Get Involved</a>
+                <a href="gallery.html">Gallery</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Connect</h3>
+
+                <a href="mailto:pawverseindia2004@gmail.com">
+                    Email
+                </a>
+
+                <a
+                    href="https://www.instagram.com/pawverseindia/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Instagram
+                </a>
+
+                <a
+                    href="https://www.facebook.com/pawverseindia/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Facebook
+                </a>
+
+                <a href="#" aria-label="LinkedIn coming soon">
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="container footer-bottom">
+
+            <p>
+                © 2026 Pawverse. Built with compassion for every life.
+            </p>
+
+            <a href="#home">
+                Back to top ↑
+            </a>
+
+        </div>
 
     </footer>
 
@@ -850,7 +921,6 @@
     <script src="script.js"></script>
 
 </body>
-
 </html>
 
 
