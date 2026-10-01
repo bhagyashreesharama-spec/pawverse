@@ -50,22 +50,22 @@
         }
 
         .logo-container img {
-            width: 65px;
-            height: 65px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid var(--primary-green);
         }
 
         .logo-text h1 {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             color: var(--primary-green);
             font-weight: 700;
             letter-spacing: 1px;
         }
 
         .logo-text p {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--accent-green);
             font-style: italic;
             font-weight: 500;
@@ -81,6 +81,7 @@
             text-decoration: none;
             color: var(--text-dark);
             font-weight: 500;
+            font-size: 0.95rem;
             transition: color 0.3s;
         }
 
@@ -88,9 +89,11 @@
             color: var(--primary-green);
         }
 
-        /* Section Commons */
+        /* Common Section Layout */
         section {
             padding: 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .section-title {
@@ -113,21 +116,39 @@
         .hero {
             background: linear-gradient(135deg, var(--cream) 0%, var(--white) 100%);
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
             gap: 40px;
+            padding: 80px 5%;
+            max-width: 100%;
         }
 
         .hero-left {
             flex: 1;
-            max-width: 500px;
-            text-align: center;
+            text-align: right;
         }
 
-        .hero-left img {
+        .hero-left h2 {
+            font-size: 2.2rem;
+            color: var(--primary-green);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 15px;
+        }
+
+        .hero-left p {
+            font-size: 1.1rem;
+            color: #555;
+            font-style: italic;
+        }
+
+        .hero-right {
+            flex: 1;
+        }
+
+        .hero-right img {
             width: 100%;
-            max-width: 450px;
+            max-width: 480px;
             height: 320px;
             object-fit: cover;
             border-radius: 20px;
@@ -135,42 +156,28 @@
             border: 5px solid var(--white);
         }
 
-        .hero-right {
-            flex: 1;
-            max-width: 600px;
-        }
-
-        .hero-quote {
-            font-size: 1.8rem;
-            color: var(--primary-green);
-            font-weight: 700;
-            line-height: 1.4;
-            margin-bottom: 15px;
-        }
-
-        .hero-desc {
-            font-size: 1.05rem;
-            color: #555;
-            font-style: italic;
-        }
-
         /* About Us Section */
         .about {
             background-color: var(--white);
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
             justify-content: center;
             gap: 50px;
+            border-radius: 20px;
+            margin: 40px auto;
+            padding: 50px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            max-width: 1100px;
         }
 
         .about-img {
-            width: 250px;
-            height: 250px;
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
             overflow: hidden;
-            border: 6px solid var(--cream);
+            border: 5px solid var(--cream);
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            flex-shrink: 0;
         }
 
         .about-img img {
@@ -180,7 +187,7 @@
         }
 
         .about-content {
-            max-width: 600px;
+            max-width: 650px;
         }
 
         .about-content h2 {
@@ -258,6 +265,13 @@
         /* Team Section */
         .team-section {
             background-color: var(--cream);
+            max-width: 100%;
+            padding: 60px 5%;
+        }
+
+        .team-container {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .team-grid {
@@ -314,6 +328,13 @@
             background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green) 100%);
             color: var(--white);
             text-align: center;
+            max-width: 100%;
+            padding: 60px 5%;
+        }
+
+        .everyone-container {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .everyone-section .section-title {
@@ -326,7 +347,7 @@
 
         .everyone-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             margin-top: 30px;
         }
@@ -347,9 +368,10 @@
         }
 
         .everyone-card h4 {
-            font-size: 1.05rem;
+            font-size: 1rem;
             margin-bottom: 15px;
             color: var(--white);
+            min-height: 40px;
         }
 
         .everyone-card .click-btn {
@@ -410,9 +432,13 @@
             font-size: 0.9rem;
         }
 
-        @media (max-width: 768px) {
+        /* Responsive */
+        @media (max-width: 900px) {
             nav ul { display: none; }
-            .hero { text-align: center; }
+            .hero { flex-direction: column-reverse; text-align: center; padding: 40px 20px; }
+            .hero-left { text-align: center; }
+            .about { flex-direction: column; text-align: center; padding: 30px 20px; }
+            .motive-box { border-left: none; border-top: 5px solid var(--primary-green); }
         }
     </style>
 </head>
@@ -442,28 +468,30 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-left">
-            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1" alt="Cute Real Dog and Cat">
+            <h2>"Be the voice for the voiceless because they shower unconditional love."</h2>
+            <p>"Giving every helpless soul a safe haven and a family."</p>
         </div>
         <div class="hero-right">
-            <h2 class="hero-quote">"Be the voice for the voiceless because they shower unconditional love without asking for words."</h2>
-            <p class="hero-desc">"Giving every helpless soul a safe haven and a family to call their own."</p>
+            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1" alt="Cute Real Dog and Cat">
         </div>
     </section>
 
     <!-- About Us Section -->
-    <section class="about" id="about">
-        <div class="about-img">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2" alt="Bhagyashri Sharma">
-        </div>
-        <div class="about-content">
-            <h2>Bhagyashri Sharma</h2>
-            <div class="location"><i class="fas fa-map-marker-alt"></i> Delhi, India</div>
-            <div class="motive-box">
-                <h4>Our Core Motive</h4>
-                <p>Hamara maksad sadko par rehne wale bejubaan janwaro ko safe shelter, medical help aur ek pyaar bhara ghar dena hai. Har ek jaan keemti hai aur hum sab mil kar unke liye ek behtar, dayalu aur surakshit duniya bana sakte hain!</p>
+    <div style="background-color: var(--white); padding: 20px 0;">
+        <section class="about" id="about">
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2" alt="Bhagyashri Sharma">
             </div>
-        </div>
-    </section>
+            <div class="about-content">
+                <h2>Bhagyashri Sharma</h2>
+                <div class="location"><i class="fas fa-map-marker-alt"></i> Delhi, India</div>
+                <div class="motive-box">
+                    <h4>Our Core Motive</h4>
+                    <p>Hamara maksad sadko par rehne wale bejubaan janwaro ko safe shelter, medical help aur ek pyaar bhara ghar dena hai. Har ek jaan keemti hai aur hum sab mil kar unke liye ek behtar, dayalu aur surakshit duniya bana sakte hain!</p>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <!-- Animals We Help Section -->
     <section id="animals">
@@ -505,72 +533,76 @@
     </section>
 
     <!-- Join Our Team Section -->
-    <section class="team-section" id="team">
-        <h2 class="section-title">Join Our Team</h2>
-        <p class="section-subtitle">"Alone we can do so little; together we can do so much." Click below to apply!</p>
-        
-        <div class="team-grid">
-            <div class="team-role-card">
-                <i class="fas fa-car"></i>
-                <h3>Driver</h3>
-                <a href="#contact" class="click-btn">Click to Apply</a>
-            </div>
-            <div class="team-role-card">
-                <i class="fas fa-hands-helping"></i>
-                <h3>Rescue Volunteer</h3>
-                <a href="#contact" class="click-btn">Click to Apply</a>
-            </div>
-            <div class="team-role-card">
-                <i class="fas fa-stethoscope"></i>
-                <h3>Doctor / Vet Support</h3>
-                <a href="#contact" class="click-btn">Click to Apply</a>
-            </div>
-            <div class="team-role-card">
-                <i class="fas fa-share-alt"></i>
-                <h3>Social Media Creator</h3>
-                <a href="#contact" class="click-btn">Click to Apply</a>
-            </div>
-            <div class="team-role-card">
-                <i class="fas fa-laptop-code"></i>
-                <h3>Website Handler</h3>
-                <a href="#contact" class="click-btn">Click to Apply</a>
-            </div>
-            <div class="team-role-card">
-                <i class="fas fa-video"></i>
-                <h3>Reel / Photo Maker</h3>
-                <a href="#contact" class="click-btn">Click to Apply</a>
+    <div class="team-section" id="team">
+        <div class="team-container">
+            <h2 class="section-title">Join Our Team</h2>
+            <p class="section-subtitle">"Alone we can do so little; together we can do so much." Click below to apply!</p>
+            
+            <div class="team-grid">
+                <div class="team-role-card">
+                    <i class="fas fa-car"></i>
+                    <h3>Driver</h3>
+                    <a href="#contact" class="click-btn">Click to Apply</a>
+                </div>
+                <div class="team-role-card">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Rescue Volunteer</h3>
+                    <a href="#contact" class="click-btn">Click to Apply</a>
+                </div>
+                <div class="team-role-card">
+                    <i class="fas fa-stethoscope"></i>
+                    <h3>Doctor / Vet Support</h3>
+                    <a href="#contact" class="click-btn">Click to Apply</a>
+                </div>
+                <div class="team-role-card">
+                    <i class="fas fa-share-alt"></i>
+                    <h3>Social Media Creator</h3>
+                    <a href="#contact" class="click-btn">Click to Apply</a>
+                </div>
+                <div class="team-role-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Website Handler</h3>
+                    <a href="#contact" class="click-btn">Click to Apply</a>
+                </div>
+                <div class="team-role-card">
+                    <i class="fas fa-video"></i>
+                    <h3>Reel / Photo Maker</h3>
+                    <a href="#contact" class="click-btn">Click to Apply</a>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Open For Everyone Section -->
-    <section class="everyone-section" id="everyone">
-        <h2 class="section-title">No Skills? No Problem! Join Us</h2>
-        <p class="section-subtitle">"Passion matters more than perfection. Everyone is welcome to serve animals."</p>
-        
-        <div class="everyone-grid">
-            <div class="everyone-card">
-                <h4>Students & School / College Kids</h4>
-                <a href="#contact" class="click-btn">Join Now</a>
-            </div>
-            <div class="everyone-card">
-                <h4>Working Professionals</h4>
-                <a href="#contact" class="click-btn">Join Now</a>
-            </div>
-            <div class="everyone-card">
-                <h4>Unskilled / Beginners</h4>
-                <a href="#contact" class="click-btn">Join Now</a>
-            </div>
-            <div class="everyone-card">
-                <h4>Uneducated / Daily Helpers</h4>
-                <a href="#contact" class="click-btn">Join Now</a>
-            </div>
-            <div class="everyone-card">
-                <h4>Business Owners & Others</h4>
-                <a href="#contact" class="click-btn">Join Now</a>
+    <div class="everyone-section" id="everyone">
+        <div class="everyone-container">
+            <h2 class="section-title">No Skills? No Problem! Join Us</h2>
+            <p class="section-subtitle">"Passion matters more than perfection. Everyone is welcome to serve animals."</p>
+            
+            <div class="everyone-grid">
+                <div class="everyone-card">
+                    <h4>Students & School / College Kids</h4>
+                    <a href="#contact" class="click-btn">Join Now</a>
+                </div>
+                <div class="everyone-card">
+                    <h4>Working Professionals</h4>
+                    <a href="#contact" class="click-btn">Join Now</a>
+                </div>
+                <div class="everyone-card">
+                    <h4>Unskilled / Beginners</h4>
+                    <a href="#contact" class="click-btn">Join Now</a>
+                </div>
+                <div class="everyone-card">
+                    <h4>Uneducated / Daily Helpers</h4>
+                    <a href="#contact" class="click-btn">Join Now</a>
+                </div>
+                <div class="everyone-card">
+                    <h4>Business Owners & Others</h4>
+                    <a href="#contact" class="click-btn">Join Now</a>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Contact & Social Media Section -->
     <section class="contact-section" id="contact">
