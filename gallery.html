@@ -3,66 +3,653 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - Pawverse</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <title>Gallery | PAWVERSE</title>
+
+    <meta
+        name="description"
+        content="PAWVERSE gallery — a future collection of rescue animals, volunteers, team members and meaningful moments."
+    >
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- Header -->
-    <header>
-        <div class="logo-container">
-            <img src="images/logo.png" alt="Pawverse Logo">
-            <div class="logo-text">
-                <h1>PAWVERSE</h1>
-                <p>Every Paw Deserves a Home</p>
-            </div>
+    <!-- ================= HEADER ================= -->
+
+    <header class="site-header">
+
+        <div class="container header-container">
+
+            <a href="index.html" class="logo-link">
+                <img
+                    src="images/logo.png"
+                    alt="PAWVERSE Logo"
+                    class="site-logo"
+                >
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+            >
+                ☰
+            </button>
+
+            <nav class="main-nav" id="mainNav">
+
+                <a href="index.html">Home</a>
+
+                <a href="about.html">About Us</a>
+
+                <a href="animals.html">Our Animals</a>
+
+                <a href="team-join.html">Join Our Team</a>
+
+                <a href="no-skills.html">No Skills Welcome</a>
+
+                <a href="gallery.html" class="active">Gallery</a>
+
+                <a href="contact.html">Contact</a>
+
+            </nav>
+
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="gallery.html" class="active">Gallery</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#team">Join Team</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-        </nav>
+
     </header>
 
-    <!-- Gallery Section -->
-    <section class="gallery-page" style="padding: 60px 5%;">
-        <h2 class="section-title">Rescue & Animal Gallery</h2>
-        <p class="section-subtitle">"Glimpses of love, care, and second chances at Pawverse."</p>
-        
-        <div class="animals-grid">
-            <div class="animal-card">
-                <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1" alt="Rescue 1">
-                <h3>Happy Dog Rescue</h3>
-                <p>"Safe and sound in our shelter."</p>
-            </div>
-            <div class="animal-card">
-                <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba" alt="Rescue 2">
-                <h3>Protected Kittens</h3>
-                <p>"Enjoying cozy moments."</p>
-            </div>
-            <div class="animal-card">
-                <img src="https://images.unsplash.com/photo-1570042225831-d98fa7577f1e" alt="Rescue 3">
-                <h3>Cattle Care</h3>
-                <p>"Shelter and feed for sacred souls."</p>
-            </div>
-            <div class="animal-card">
-                <img src="https://images.unsplash.com/photo-1444464666168-49d633b86797" alt="Rescue 4">
-                <h3>Bird Feeding Drive</h3>
-                <p>"Giving them freedom in safe skies."</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Pawverse (Founder: Bhagyashri Sharma, Delhi, India). Every Paw Deserves a Home.</p>
+    <!-- ================= PAGE HERO ================= -->
+
+    <main>
+
+        <section class="page-hero">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    PAWVERSE GALLERY
+                </p>
+
+                <h1>
+                    Moments That Deserve To Be Remembered.
+                </h1>
+
+                <p>
+                    Every rescue, every helping hand and every small
+                    moment of care can become part of a bigger story.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= INTRO ================= -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow">
+                        OUR JOURNEY
+                    </p>
+
+                    <h2>
+                        Real moments. Real people. Real compassion.
+                    </h2>
+
+                    <p>
+                        This gallery will gradually become a visual
+                        record of the PAWVERSE journey — including
+                        animals we help, people who volunteer,
+                        awareness activities and meaningful moments
+                        from our community.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ANIMAL GALLERY ================= -->
+
+        <section class="gallery-section">
+
+            <div class="container">
+
+                <div class="gallery-heading">
+
+                    <p class="eyebrow">
+                        ANIMAL STORIES
+                    </p>
+
+                    <h2>
+                        Our Animal Family
+                    </h2>
+
+                    <p>
+                        Real photographs of animals helped, supported
+                        or encountered through the PAWVERSE journey
+                        will be added here.
+                    </p>
+
+                </div>
+
+
+                <div class="gallery-grid">
+
+                    <!-- Future Image 1 -->
+                    <div class="gallery-placeholder">
+
+                        <span>🐾</span>
+
+                        <h3>
+                            Rescue Story
+                        </h3>
+
+                        <p>
+                            Real animal photograph will be added here.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Future Image 2 -->
+                    <div class="gallery-placeholder">
+
+                        <span>🐕</span>
+
+                        <h3>
+                            A New Beginning
+                        </h3>
+
+                        <p>
+                            Real animal photograph will be added here.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Future Image 3 -->
+                    <div class="gallery-placeholder">
+
+                        <span>🐈</span>
+
+                        <h3>
+                            Gentle Souls
+                        </h3>
+
+                        <p>
+                            Real animal photograph will be added here.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Future Image 4 -->
+                    <div class="gallery-placeholder">
+
+                        <span>🐄</span>
+
+                        <h3>
+                            Every Life Matters
+                        </h3>
+
+                        <p>
+                            Real animal photograph will be added here.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Future Image 5 -->
+                    <div class="gallery-placeholder">
+
+                        <span>🐦</span>
+
+                        <h3>
+                            Wings Of Hope
+                        </h3>
+
+                        <p>
+                            Real animal photograph will be added here.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Future Image 6 -->
+                    <div class="gallery-placeholder">
+
+                        <span>🐾</span>
+
+                        <h3>
+                            Another Story
+                        </h3>
+
+                        <p>
+                            Real animal photograph will be added here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TEAM GALLERY ================= -->
+
+        <section class="gallery-section alternate-gallery">
+
+            <div class="container">
+
+                <div class="gallery-heading">
+
+                    <p class="eyebrow">
+                        PEOPLE BEHIND THE MISSION
+                    </p>
+
+                    <h2>
+                        Our People
+                    </h2>
+
+                    <p>
+                        Volunteers, creators, rescuers and supporters
+                        who contribute their time and skills can be
+                        featured here in the future.
+                    </p>
+
+                </div>
+
+
+                <div class="gallery-grid">
+
+                    <div class="gallery-placeholder">
+
+                        <span>🤝</span>
+
+                        <h3>
+                            Volunteers
+                        </h3>
+
+                        <p>
+                            Team photographs will be added here.
+                        </p>
+
+                    </div>
+
+
+                    <div class="gallery-placeholder">
+
+                        <span>📸</span>
+
+                        <h3>
+                            Team Moments
+                        </h3>
+
+                        <p>
+                            Team photographs will be added here.
+                        </p>
+
+                    </div>
+
+
+                    <div class="gallery-placeholder">
+
+                        <span>❤️</span>
+
+                        <h3>
+                            Community
+                        </h3>
+
+                        <p>
+                            Community moments will be added here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= EVENTS ================= -->
+
+        <section class="gallery-section">
+
+            <div class="container">
+
+                <div class="gallery-heading">
+
+                    <p class="eyebrow">
+                        AWARENESS & ACTIVITIES
+                    </p>
+
+                    <h2>
+                        Moments From The Journey
+                    </h2>
+
+                    <p>
+                        Future awareness activities, community
+                        initiatives, rescue visits and other
+                        meaningful moments can be documented here.
+                    </p>
+
+                </div>
+
+
+                <div class="gallery-grid">
+
+                    <div class="gallery-placeholder">
+
+                        <span>🌿</span>
+
+                        <h3>
+                            Awareness Activity
+                        </h3>
+
+                        <p>
+                            Activity photographs will be added here.
+                        </p>
+
+                    </div>
+
+
+                    <div class="gallery-placeholder">
+
+                        <span>📷</span>
+
+                        <h3>
+                            Rescue Visit
+                        </h3>
+
+                        <p>
+                            Rescue photographs will be added here.
+                        </p>
+
+                    </div>
+
+
+                    <div class="gallery-placeholder">
+
+                        <span>🐾</span>
+
+                        <h3>
+                            A Meaningful Moment
+                        </h3>
+
+                        <p>
+                            Future photographs will be added here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= HOW TO ADD PHOTOS ================= -->
+
+        <section class="gallery-instructions">
+
+            <div class="container">
+
+                <div class="instruction-box">
+
+                    <p class="eyebrow">
+                        FUTURE PHOTO UPDATES
+                    </p>
+
+                    <h2>
+                        How will real photos be added?
+                    </h2>
+
+                    <p>
+                        As the PAWVERSE journey grows, real photographs
+                        can be added to the website through the GitHub
+                        repository.
+                    </p>
+
+                    <div class="instruction-steps">
+
+                        <div>
+                            <span>01</span>
+
+                            <h3>
+                                Take the real photo
+                            </h3>
+
+                            <p>
+                                Rescue animals, volunteers, events or
+                                awareness activities can be photographed.
+                            </p>
+                        </div>
+
+
+                        <div>
+                            <span>02</span>
+
+                            <h3>
+                                Add it to the images folder
+                            </h3>
+
+                            <p>
+                                The photograph can be uploaded to the
+                                website's image folder.
+                            </p>
+                        </div>
+
+
+                        <div>
+                            <span>03</span>
+
+                            <h3>
+                                Add it to the gallery
+                            </h3>
+
+                            <p>
+                                The image can then be connected to a
+                                gallery card in the website code.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= QUOTE ================= -->
+
+        <section class="quote-section">
+
+            <div class="container">
+
+                <div class="quote-box">
+
+                    <span class="quote-mark">
+                        “
+                    </span>
+
+                    <p>
+                        A photograph captures a moment,
+                        but compassion creates the memory.
+                    </p>
+
+                    <span class="quote-author">
+                        — PAWVERSE
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CTA ================= -->
+
+        <section class="join-section">
+
+            <div class="container join-container">
+
+                <div>
+
+                    <p class="eyebrow">
+                        BECOME PART OF THE STORY
+                    </p>
+
+                    <h2>
+                        Your contribution could be our next story.
+                    </h2>
+
+                    <p>
+                        You can contribute your time, skills,
+                        creativity or simply your willingness to help.
+                    </p>
+
+                </div>
+
+                <div class="join-buttons">
+
+                    <a
+                        href="team-join.html"
+                        class="btn btn-primary"
+                    >
+                        Join Our Team
+                    </a>
+
+                    <a
+                        href="no-skills.html"
+                        class="btn btn-secondary"
+                    >
+                        No Skills? Start Here
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-container">
+
+            <div class="footer-brand">
+
+                <img
+                    src="images/logo.png"
+                    alt="PAWVERSE Logo"
+                    class="footer-logo"
+                >
+
+                <p>
+                    Every Paw Deserves a Home.
+                </p>
+
+                <p>
+                    Building a more compassionate world,
+                    one life at a time.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Explore
+                </h3>
+
+                <a href="index.html">Home</a>
+
+                <a href="about.html">About Us</a>
+
+                <a href="animals.html">Our Animals</a>
+
+                <a href="team-join.html">Join Our Team</a>
+
+                <a href="no-skills.html">No Skills Welcome</a>
+
+                <a href="gallery.html">Gallery</a>
+
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+
+            <div class="footer-social">
+
+                <h3>
+                    Connect
+                </h3>
+
+                <!-- Actual social links baad mein add karenge -->
+
+                <a href="#" target="_blank">
+                    Instagram
+                </a>
+
+                <a href="#" target="_blank">
+                    Facebook
+                </a>
+
+                <a href="#" target="_blank">
+                    LinkedIn
+                </a>
+
+                <a href="#" target="_blank">
+                    WhatsApp Channel
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 PAWVERSE. All rights reserved.
+            </p>
+
+            <p>
+                Delhi, India
+            </p>
+
+        </div>
+
     </footer>
 
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+
 </body>
+
 </html>
