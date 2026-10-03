@@ -1507,3 +1507,413 @@ footer {
     align-items: flex-start;
   }
 }
+/* =========================================================
+   PAWVERSE ABOUT SECTION - FINAL FIX
+   LEFT = FOUNDER
+   RIGHT = MOTIVE CONTENT
+========================================================= */
+
+#about.about-section {
+    width: 100% !important;
+    padding: 100px 6% !important;
+    background: #fbf9f1 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+}
+
+#about .about-container {
+    width: 100% !important;
+    max-width: 1250px !important;
+    margin: 0 auto !important;
+
+    display: grid !important;
+    grid-template-columns: 400px minmax(0, 1fr) !important;
+
+    column-gap: 90px !important;
+    row-gap: 50px !important;
+
+    align-items: center !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   LEFT SIDE - FOUNDER
+========================================================= */
+
+#about .about-founder {
+    width: 100% !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+}
+
+#about .founder-photo {
+    width: 360px !important;
+    height: 360px !important;
+
+    margin: 0 auto 28px !important;
+
+    border-radius: 50% !important;
+    overflow: hidden !important;
+
+    border: 10px solid #ffffff !important;
+
+    box-shadow: 0 20px 45px rgba(48, 64, 49, 0.14) !important;
+
+    box-sizing: border-box !important;
+}
+
+#about .founder-photo img {
+    width: 100% !important;
+    height: 100% !important;
+
+    display: block !important;
+
+    object-fit: cover !important;
+}
+
+#about .about-founder h3 {
+    margin: 0 0 8px !important;
+
+    color: #3b4d3c !important;
+
+    font-family: Georgia, "Times New Roman", serif !important;
+
+    font-size: 30px !important;
+    line-height: 1.2 !important;
+}
+
+#about .founder-role {
+    margin: 0 0 20px !important;
+
+    color: #6d786d !important;
+
+    font-size: 14px !important;
+}
+
+#about .founder-line {
+    width: 55px !important;
+    height: 2px !important;
+
+    margin: 0 auto 20px !important;
+
+    background: #c99b3b !important;
+}
+
+#about .founder-quote {
+    width: 100% !important;
+    max-width: 360px !important;
+
+    margin: 0 auto !important;
+
+    color: #687267 !important;
+
+    font-family: Georgia, "Times New Roman", serif !important;
+
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+
+    font-style: italic !important;
+}
+
+
+/* =========================================================
+   RIGHT SIDE - WRITTEN CONTENT
+========================================================= */
+
+#about .about-content {
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+
+    text-align: left !important;
+}
+
+#about .section-label {
+    display: block !important;
+
+    margin: 0 0 18px !important;
+
+    color: #9b7425 !important;
+
+    font-size: 13px !important;
+    font-weight: 800 !important;
+
+    letter-spacing: 4px !important;
+
+    text-align: left !important;
+}
+
+#about .about-content h2 {
+    width: 100% !important;
+    max-width: 850px !important;
+
+    margin: 0 0 30px !important;
+
+    color: #3b4d3c !important;
+
+    font-family: Georgia, "Times New Roman", serif !important;
+
+    font-size: 64px !important;
+    line-height: 1.02 !important;
+
+    letter-spacing: -1px !important;
+
+    text-align: left !important;
+}
+
+#about .about-content h2 em {
+    color: #82947e !important;
+    font-weight: 400 !important;
+}
+
+#about .about-content p {
+    width: 100% !important;
+    max-width: 760px !important;
+
+    margin: 0 0 20px !important;
+
+    color: #5f695f !important;
+
+    font-size: 16px !important;
+    line-height: 1.8 !important;
+
+    text-align: left !important;
+}
+
+#about .about-content .about-lead {
+    max-width: 700px !important;
+
+    margin-bottom: 25px !important;
+
+    color: #3b4d3c !important;
+
+    font-size: 19px !important;
+    line-height: 1.6 !important;
+}
+
+
+/* =========================================================
+   PROTECT / CARE / SPEAK UP
+========================================================= */
+
+#about .motive-points {
+    width: 100% !important;
+    max-width: 760px !important;
+
+    margin: 35px 0 0 !important;
+
+    display: grid !important;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+
+    gap: 16px !important;
+
+    box-sizing: border-box !important;
+}
+
+#about .motive-point {
+    width: 100% !important;
+    min-width: 0 !important;
+
+    padding: 22px 20px !important;
+
+    background: #ffffff !important;
+
+    border: 1px solid #e8e4d8 !important;
+
+    border-radius: 14px !important;
+
+    box-sizing: border-box !important;
+
+    text-align: left !important;
+
+    transition: 0.3s ease !important;
+}
+
+#about .motive-point:hover {
+    transform: translateY(-5px) !important;
+
+    box-shadow: 0 15px 35px rgba(48, 64, 49, 0.09) !important;
+}
+
+#about .motive-point > span {
+    display: block !important;
+
+    color: #b4872e !important;
+
+    font-size: 12px !important;
+    font-weight: 800 !important;
+
+    letter-spacing: 2px !important;
+}
+
+#about .motive-point h4 {
+    margin: 12px 0 8px !important;
+
+    color: #3b4d3c !important;
+
+    font-size: 19px !important;
+
+    text-align: left !important;
+}
+
+#about .motive-point p {
+    width: auto !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+
+    color: #687267 !important;
+
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+
+    text-align: left !important;
+}
+
+
+/* =========================================================
+   FINAL MESSAGE
+========================================================= */
+
+#about .motive-ending {
+    width: 100% !important;
+    max-width: 760px !important;
+
+    margin: 35px 0 0 !important;
+
+    padding: 22px 25px !important;
+
+    display: flex !important;
+    align-items: flex-start !important;
+
+    gap: 15px !important;
+
+    background: #f1eee3 !important;
+
+    border-left: 4px solid #c99b3b !important;
+
+    box-sizing: border-box !important;
+
+    text-align: left !important;
+}
+
+#about .motive-ending > span {
+    flex-shrink: 0 !important;
+
+    color: #b4872e !important;
+
+    font-size: 25px !important;
+}
+
+#about .motive-ending p {
+    width: auto !important;
+
+    margin: 0 !important;
+
+    color: #3b4d3c !important;
+
+    font-family: Georgia, "Times New Roman", serif !important;
+
+    font-size: 17px !important;
+
+    line-height: 1.6 !important;
+
+    text-align: left !important;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    #about .about-container {
+        grid-template-columns: 330px minmax(0, 1fr) !important;
+        column-gap: 50px !important;
+    }
+
+    #about .founder-photo {
+        width: 300px !important;
+        height: 300px !important;
+    }
+
+    #about .about-content h2 {
+        font-size: 50px !important;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+    #about.about-section {
+        padding: 75px 6% !important;
+    }
+
+    #about .about-container {
+        display: flex !important;
+        flex-direction: column !important;
+
+        gap: 55px !important;
+    }
+
+    #about .about-founder {
+        width: 100% !important;
+    }
+
+    #about .about-content {
+        width: 100% !important;
+    }
+
+    #about .founder-photo {
+        width: 290px !important;
+        height: 290px !important;
+    }
+
+    #about .about-content h2 {
+        font-size: 46px !important;
+    }
+
+    #about .motive-points {
+        grid-template-columns: 1fr !important;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    #about.about-section {
+        padding: 60px 20px !important;
+    }
+
+    #about .founder-photo {
+        width: 250px !important;
+        height: 250px !important;
+    }
+
+    #about .about-content h2 {
+        font-size: 39px !important;
+    }
+
+    #about .about-content p {
+        font-size: 15px !important;
+    }
+
+}
