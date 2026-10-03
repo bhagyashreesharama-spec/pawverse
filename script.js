@@ -1,53 +1,86 @@
 /* =====================================================
-   PAWVERSE COLLECTIVE
-   Main JavaScript
+   PAWVERSE
+   JAVASCRIPT
 ===================================================== */
 
 
 /* =====================================================
-   NAVBAR SCROLL
+   MOBILE NAVIGATION
 ===================================================== */
 
-const navbar = document.getElementById("navbar");
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
 
-window.addEventListener("scroll", () => {
-
-  if (window.scrollY > 40) {
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-  }
-
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
 });
 
+
+/* Close mobile menu after clicking */
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+    });
+
+});
 
 
 /* =====================================================
-   MOBILE MENU
+   ANIMAL DATA
 ===================================================== */
 
-const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-const mobileNav = document.getElementById("mobileNav");
+const animalData = {
 
-mobileMenuBtn.addEventListener("click", () => {
+    dogs: {
+        title: "Dogs",
+        text:
+            "Dogs are among the most visible animals on our streets. " +
+            "PAWVERSE believes they deserve safety, medical attention, " +
+            "food, affection and responsible forever homes."
+    },
 
-  mobileNav.classList.toggle("active");
+    cats: {
+        title: "Cats",
+        text:
+            "Cats quietly share our streets and neighbourhoods. " +
+            "A little care, safe spaces and responsible communities " +
+            "can make a huge difference to their lives."
+    },
 
-});
+    cows: {
+        title: "Cows",
+        text:
+            "Cows are gentle and sentient beings. Their lives deserve " +
+            "dignity, protection, proper nutrition and compassionate care."
+    },
 
+    birds: {
+        title: "Birds",
+        text:
+            "Birds belong in the sky. Injured, trapped or exhausted " +
+            "birds may need human help, and responsible action can " +
+            "give them another chance."
+    },
 
-const mobileLinks = mobileNav.querySelectorAll("a");
+    monkeys: {
+        title: "Monkeys",
+        text:
+            "Monkeys are intelligent wild animals. The goal should be " +
+            "respectful coexistence, protection of their habitat and " +
+            "responsible human behaviour."
+    },
 
-mobileLinks.forEach(link => {
+    other: {
+        title: "Every Other Animal",
+        text:
+            "PAWVERSE believes compassion should not stop at the animals " +
+            "we see every day. Every living creature deserves empathy, " +
+            "respect and protection."
+    }
 
-  link.addEventListener("click", () => {
-
-    mobileNav.classList.remove("active");
-
-  });
-
-});
-
+};
 
 
 /* =====================================================
@@ -55,283 +88,256 @@ mobileLinks.forEach(link => {
 ===================================================== */
 
 const animalModal = document.getElementById("animalModal");
-const animalModalClose = document.getElementById("animalModalClose");
 
-const animalModalTitle =
-  document.getElementById("animalModalTitle");
+const animalTitle = document.getElementById("animalTitle");
 
-const animalModalText =
-  document.getElementById("animalModalText");
+const animalText = document.getElementById("animalText");
 
+const animalClose = document.getElementById("animalClose");
 
-const animalInformation = {
+const animalBack = document.getElementById("animalBack");
 
-  dogs: {
-    title: "Dogs",
-    text:
-      "Street dogs need more than food. They need safety, medical care, responsible community support and people willing to stand beside them."
-  },
-
-  cats: {
-    title: "Cats",
-    text:
-      "From tiny kittens to injured community cats, compassionate care can give vulnerable animals a safer chance at life."
-  },
-
-  cows: {
-    title: "Cows",
-    text:
-      "Abandoned and injured cattle can require food, medical attention, shelter and long-term responsible care."
-  },
-
-  monkeys: {
-    title: "Monkeys",
-    text:
-      "Wild animals need responsible rescue and rehabilitation rather than unnecessary interference. Professional wildlife support matters."
-  },
-
-  birds: {
-    title: "Birds",
-    text:
-      "Injured birds often need immediate first aid and trained rehabilitation before they can safely return to the wild."
-  },
-
-  others: {
-    title: "Every Other Life",
-    text:
-      "Dogs, cats, cows, birds, monkeys and countless other animals all share one thing: their lives matter."
-  }
-
-};
+const animalJoin = document.getElementById("animalJoin");
 
 
-const animalCards =
-  document.querySelectorAll(".animal-card");
+let selectedAnimal = "";
 
 
-animalCards.forEach(card => {
+/* Open animal modal */
 
-  card.addEventListener("click", () => {
+document.querySelectorAll(".animal-card").forEach(card => {
 
-    const animal = card.dataset.animal;
+    card.addEventListener("click", () => {
 
-    const data = animalInformation[animal];
+        const animal = card.dataset.animal;
 
-    if (!data) return;
+        selectedAnimal = animal;
 
-    animalModalTitle.textContent = data.title;
+        animalTitle.textContent = animalData[animal].title;
 
-    animalModalText.textContent = data.text;
+        animalText.textContent = animalData[animal].text;
 
-    animalModal.classList.add("active");
+        animalModal.classList.add("active");
 
-    document.body.classList.add("modal-open");
+        document.body.style.overflow = "hidden";
 
-  });
+    });
 
 });
 
 
-animalModalClose.addEventListener("click", closeAnimalModal);
-
-
-animalModal.addEventListener("click", event => {
-
-  if (event.target === animalModal) {
-    closeAnimalModal();
-  }
-
-});
-
+/* Close animal modal */
 
 function closeAnimalModal() {
 
-  animalModal.classList.remove("active");
+    animalModal.classList.remove("active");
 
-  document.body.classList.remove("modal-open");
+    document.body.style.overflow = "";
 
 }
 
 
+animalClose.addEventListener("click", closeAnimalModal);
 
-/* =====================================================
-   PROFESSIONAL ROLE APPLICATION
-===================================================== */
-
-const applicationModal =
-  document.getElementById("applicationModal");
-
-const applicationClose =
-  document.getElementById("applicationClose");
-
-const applicationTitle =
-  document.getElementById("applicationTitle");
-
-const appRole =
-  document.getElementById("appRole");
-
-const applicationForm =
-  document.getElementById("applicationForm");
-
-const formSuccess =
-  document.getElementById("formSuccess");
+animalBack.addEventListener("click", closeAnimalModal);
 
 
-const roleCards =
-  document.querySelectorAll(".role-card");
+/* Animal modal -> application */
 
+animalJoin.addEventListener("click", () => {
 
-roleCards.forEach(card => {
+    closeAnimalModal();
 
-  card.addEventListener("click", () => {
+    setTimeout(() => {
 
-    const role = card.dataset.role;
+        openApplication(
+            "Help " + animalData[selectedAnimal].title
+        );
 
-    applicationTitle.textContent =
-      "Join as " + role + ".";
-
-    appRole.value = role;
-
-    applicationForm.style.display = "grid";
-
-    formSuccess.style.display = "none";
-
-    applicationModal.classList.add("active");
-
-    document.body.classList.add("modal-open");
-
-  });
+    }, 250);
 
 });
 
 
+/* =====================================================
+   PROFESSIONAL APPLICATION
+===================================================== */
+
+const applicationModal =
+    document.getElementById("applicationModal");
+
+const applicationTitle =
+    document.getElementById("applicationTitle");
+
+const applicationClose =
+    document.getElementById("applicationClose");
+
+
+function openApplication(role) {
+
+    applicationTitle.textContent =
+        "Apply as " + role;
+
+    applicationModal.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+function closeApplication() {
+
+    applicationModal.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
+
+
 applicationClose.addEventListener(
-  "click",
-  closeApplicationModal
+    "click",
+    closeApplication
 );
+
+
+/* Role cards */
+
+document.querySelectorAll(".role-card").forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        const role = card.dataset.role;
+
+        openApplication(role);
+
+    });
+
+});
+
+
+/* Community cards */
+
+document.querySelectorAll(".community-card").forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        const community = card.dataset.community;
+
+        openApplication(community);
+
+    });
+
+});
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+const joinForm = document.getElementById("joinForm");
+
+const successMessage =
+    document.getElementById("successMessage");
+
+
+joinForm.addEventListener("submit", event => {
+
+    event.preventDefault();
+
+    /*
+        This is currently a front-end form.
+
+        Later you can connect this form to:
+        - Formspree
+        - Google Forms
+        - EmailJS
+        - your own backend
+    */
+
+    joinForm.style.display = "none";
+
+    successMessage.classList.add("show");
+
+});
+
+
+/* =====================================================
+   CLOSE MODALS WHEN CLICKING BACKGROUND
+===================================================== */
+
+animalModal.addEventListener("click", event => {
+
+    if (event.target === animalModal) {
+        closeAnimalModal();
+    }
+
+});
 
 
 applicationModal.addEventListener("click", event => {
 
-  if (event.target === applicationModal) {
-
-    closeApplicationModal();
-
-  }
+    if (event.target === applicationModal) {
+        closeApplication();
+    }
 
 });
 
 
-function closeApplicationModal() {
-
-  applicationModal.classList.remove("active");
-
-  document.body.classList.remove("modal-open");
-
-}
-
-
-
 /* =====================================================
-   APPLICATION FORM
-===================================================== */
-
-applicationForm.addEventListener("submit", event => {
-
-  event.preventDefault();
-
-  applicationForm.style.display = "none";
-
-  formSuccess.style.display = "block";
-
-});
-
-
-
-/* =====================================================
-   COMMUNITY OPTIONS
-===================================================== */
-
-const communityCards =
-  document.querySelectorAll(".community-card");
-
-
-communityCards.forEach(card => {
-
-  card.addEventListener("click", () => {
-
-    const community =
-      card.dataset.community;
-
-    applicationTitle.textContent =
-      "Join as " + community + ".";
-
-    appRole.value = community;
-
-    applicationForm.style.display = "grid";
-
-    formSuccess.style.display = "none";
-
-    applicationModal.classList.add("active");
-
-    document.body.classList.add("modal-open");
-
-  });
-
-});
-
-
-
-/* =====================================================
-   ESCAPE KEY
+   ESC KEY
 ===================================================== */
 
 document.addEventListener("keydown", event => {
 
-  if (event.key === "Escape") {
+    if (event.key === "Escape") {
 
-    closeAnimalModal();
+        closeAnimalModal();
 
-    closeApplicationModal();
+        closeApplication();
 
-  }
+    }
 
 });
 
 
-
 /* =====================================================
-   SMOOTH INTERNAL LINKS
+   IMAGE FALLBACK
 ===================================================== */
 
-document.querySelectorAll('a[href^="#"]').forEach(link => {
+document.querySelectorAll("img").forEach(image => {
 
-  link.addEventListener("click", event => {
+    image.addEventListener("error", () => {
 
-    const targetId =
-      link.getAttribute("href");
+        image.style.background =
+            "linear-gradient(135deg, #3b4d3c, #657663)";
 
-    if (
-      targetId &&
-      targetId !== "#"
-    ) {
+        image.removeAttribute("src");
 
-      const target =
-        document.querySelector(targetId);
+        image.alt = "PAWVERSE Animal";
 
-      if (target) {
+    });
 
-        event.preventDefault();
+});
 
-        target.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
 
-      }
+/* =====================================================
+   NAVBAR SHADOW ON SCROLL
+===================================================== */
+
+window.addEventListener("scroll", () => {
+
+    const navbar =
+        document.getElementById("navbar");
+
+    if (window.scrollY > 30) {
+
+        navbar.style.boxShadow =
+            "0 8px 30px rgba(30,45,32,0.08)";
+
+    } else {
+
+        navbar.style.boxShadow = "none";
 
     }
-
-  });
 
 });
