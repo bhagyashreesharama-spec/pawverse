@@ -1521,18 +1521,7 @@ footer {
     overflow: hidden !important;
 }
 
-#about .about-container {
-    width: 100% !important;
-    max-width: 1250px !important;
-    margin: 0 auto !important;
-
-    display: grid !important;
-    grid-template-columns: 400px minmax(0, 1fr) !important;
-
-    column-gap: 90px !important;
-    row-gap: 50px !important;
-
-    align-items: center !important;
+align-items: start !important;
 
     box-sizing: border-box !important;
 }
