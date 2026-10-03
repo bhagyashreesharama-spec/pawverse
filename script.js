@@ -1,486 +1,462 @@
 /* =========================================================
    PAWVERSE JAVASCRIPT
-   ========================================================= */
+========================================================= */
 
 
 /* =========================================================
-   MOBILE NAVIGATION
-   ========================================================= */
+   MOBILE MENU
+========================================================= */
 
-const menuBtn = document.getElementById("menuBtn");
-const navMenu = document.getElementById("navMenu");
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
 
-if (menuBtn) {
-  menuBtn.addEventListener("click", () => {
-    navMenu.classList.toggle("open");
+if (menuToggle && navLinks) {
 
-    if (navMenu.classList.contains("open")) {
-      menuBtn.textContent = "×";
-    } else {
-      menuBtn.textContent = "☰";
-    }
-  });
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+
 }
 
 
-/* Close mobile menu after clicking a link */
+/* Close mobile menu after clicking a navigation link */
 
-document.querySelectorAll("#navMenu a").forEach(link => {
+document.querySelectorAll(".nav-links a").forEach(link => {
 
-  link.addEventListener("click", () => {
+    link.addEventListener("click", () => {
 
-    navMenu.classList.remove("open");
+        if (navLinks) {
+            navLinks.classList.remove("active");
+        }
 
-    menuBtn.textContent = "☰";
-
-  });
+    });
 
 });
 
 
 /* =========================================================
-   MODAL FUNCTIONS
-   ========================================================= */
+   MODAL HELPERS
+========================================================= */
 
-function openModal(id) {
+function openModal(modal) {
 
-  const modal = document.getElementById(id);
+    if (!modal) return;
 
-  if (modal) {
     modal.classList.add("active");
+
     document.body.style.overflow = "hidden";
-  }
-
 }
 
 
-function closeModal(id) {
+function closeAllModals() {
 
-  const modal = document.getElementById(id);
-
-  if (modal) {
-    modal.classList.remove("active");
-    document.body.style.overflow = "";
-  }
-
-}
-
-
-/* Click outside modal */
-
-document.querySelectorAll(".modal").forEach(modal => {
-
-  modal.addEventListener("click", function(event) {
-
-    if (event.target === modal) {
-      modal.classList.remove("active");
-      document.body.style.overflow = "";
-    }
-
-  });
-
-});
-
-
-/* Escape key */
-
-document.addEventListener("keydown", event => {
-
-  if (event.key === "Escape") {
-
-    document.querySelectorAll(".modal.active").forEach(modal => {
-      modal.classList.remove("active");
+    document.querySelectorAll(".modal").forEach(modal => {
+        modal.classList.remove("active");
     });
 
     document.body.style.overflow = "";
+}
 
-  }
+
+/* Close buttons / backgrounds */
+
+document.querySelectorAll(".close-modal").forEach(element => {
+
+    element.addEventListener("click", closeAllModals);
+
+});
+
+
+/* ESC key */
+
+document.addEventListener("keydown", event => {
+
+    if (event.key === "Escape") {
+        closeAllModals();
+    }
 
 });
 
 
 /* =========================================================
    ANIMAL DATA
-   ========================================================= */
+========================================================= */
 
 const animalData = {
 
-  "Dogs": {
-    description:
-      "Dogs living on streets or in vulnerable situations may need food, medical attention, rescue support, temporary shelter, fostering or responsible adoption. If you want to help a dog, submit your details and tell us what kind of support you can offer."
-  },
+    dogs: {
+        title: "Dogs",
+        text:
+            "Dogs are one of the most visible parts of our communities. " +
+            "Street dogs may face hunger, injuries, illness, traffic risks " +
+            "and abandonment. PAWVERSE believes they deserve responsible " +
+            "care, safety and compassion."
+    },
 
-  "Cats": {
-    description:
-      "Cats and kittens can face injuries, abandonment, illness and unsafe living conditions. PAWVERSE aims to encourage responsible care, fostering, awareness and support for vulnerable feline companions."
-  },
+    cats: {
+        title: "Cats",
+        text:
+            "Cats often live quietly around us, but they can still face " +
+            "injury, abandonment, illness and unsafe environments. " +
+            "Responsible feeding, medical attention and safe spaces can " +
+            "make a meaningful difference."
+    },
 
-  "Cows": {
-    description:
-      "Injured, abandoned or vulnerable cattle deserve humane treatment and responsible care. If you know of a cow that needs attention, use the PAWVERSE form to share the situation."
-  },
+    cows: {
+        title: "Cows",
+        text:
+            "Cows and other large animals can be vulnerable when they are " +
+            "left on roads or without proper care. Awareness, responsible " +
+            "action and compassionate treatment matter."
+    },
 
-  "Birds": {
-    description:
-      "Birds can become injured or trapped in urban environments. Responsible intervention matters. If you find a bird in distress, provide accurate information through our help form."
-  },
+    birds: {
+        title: "Birds",
+        text:
+            "Birds are small lives with important needs. Injuries, unsafe " +
+            "environments and human activity can put them at risk. " +
+            "PAWVERSE supports awareness and responsible action."
+    },
 
-  "Monkeys": {
-    description:
-      "Urban wildlife should be approached responsibly and safely. If a monkey appears injured or distressed, avoid unnecessary contact and seek appropriate wildlife assistance."
-  },
+    monkeys: {
+        title: "Monkeys",
+        text:
+            "Urban wildlife often has to adapt to human environments. " +
+            "Monkeys deserve humane treatment and responsible coexistence " +
+            "rather than unnecessary harm."
+    },
 
-  "Other Animals": {
-    description:
-      "PAWVERSE believes compassion should not stop at a particular species. If another animal needs attention, tell us what happened and provide as much useful information as possible."
-  }
+    other: {
+        title: "Other Animals",
+        text:
+            "PAWVERSE believes compassion should not depend on species. " +
+            "If you come across an animal that needs help, care or attention, " +
+            "you can contact us and share the situation."
+    }
 
 };
 
 
 /* =========================================================
-   ANIMAL MODAL
-   ========================================================= */
+   ANIMAL CARDS
+========================================================= */
 
-function openAnimal(animalName) {
+const animalModal = document.getElementById("animalModal");
+const animalModalTitle = document.getElementById("animalModalTitle");
+const animalModalText = document.getElementById("animalModalText");
 
-  const title = document.getElementById("animalTitle");
-  const description = document.getElementById("animalDescription");
-  const helpButton = document.getElementById("animalHelpButton");
+document.querySelectorAll(".animal-card").forEach(card => {
 
-  title.textContent = animalName;
+    const openAnimal = () => {
 
-  if (animalData[animalName]) {
-    description.textContent = animalData[animalName].description;
-  } else {
-    description.textContent =
-      "Every animal deserves compassion, safety and responsible care.";
-  }
+        const animalName = card.dataset.animal;
+        const data = animalData[animalName];
 
-  helpButton.onclick = function() {
+        if (!data) return;
 
-    closeModal("animalModal");
+        animalModalTitle.textContent = data.title;
+        animalModalText.textContent = data.text;
 
-    openApplication(
-      animalName + " Support / Volunteer"
-    );
-
-  };
-
-  openModal("animalModal");
-}
+        openModal(animalModal);
+    };
 
 
-/* =========================================================
-   APPLICATION FORM
-   ========================================================= */
-
-function openApplication(type) {
-
-  const title = document.getElementById("formTitle");
-  const selectedType = document.getElementById("selectedType");
-  const interestSelect = document.getElementById("interestSelect");
-
-  title.textContent = type;
-
-  selectedType.value = type;
-
-  /* Automatically select matching option if possible */
-
-  const options = Array.from(interestSelect.options);
-
-  const matchingOption = options.find(option =>
-    option.text.toLowerCase().includes(type.toLowerCase())
-  );
-
-  if (matchingOption) {
-    interestSelect.value = matchingOption.value;
-  }
-
-  openModal("applicationModal");
-}
+    card.addEventListener("click", openAnimal);
 
 
-/* =========================================================
-   FORM SUBMISSION
-   ========================================================= */
+    card.addEventListener("keydown", event => {
 
+        if (event.key === "Enter" || event.key === " ") {
 
-/*
-   IMPORTANT:
+            event.preventDefault();
 
-   GitHub Pages is static hosting.
-
-   To actually receive form submissions in Gmail,
-   connect this form to a form backend/service.
-
-   Put your endpoint below.
-
-   Example:
-
-   const FORM_ENDPOINT =
-   "YOUR_CONNECTED_FORM_ENDPOINT";
-
-   Do NOT put your Gmail password here.
-
-   The endpoint/service should forward the submitted
-   information to your chosen email address.
-*/
-
-const FORM_ENDPOINT = "YOUR_FORM_ENDPOINT";
-
-
-const pawForm = document.getElementById("pawForm");
-const formMessage = document.getElementById("formMessage");
-const submitButton = document.getElementById("submitButton");
-
-
-if (pawForm) {
-
-  pawForm.addEventListener("submit", async function(event) {
-
-    event.preventDefault();
-
-    formMessage.className = "form-message";
-    formMessage.textContent = "";
-
-    submitButton.disabled = true;
-    submitButton.textContent = "Submitting...";
-
-
-    /* -----------------------------------------
-       CHECK ENDPOINT
-       ----------------------------------------- */
-
-    if (
-      !FORM_ENDPOINT ||
-      FORM_ENDPOINT === "YOUR_FORM_ENDPOINT"
-    ) {
-
-      formMessage.className = "form-message error";
-
-      formMessage.innerHTML =
-        "Form design is ready. Connect the form endpoint to receive applications in Gmail.";
-
-      submitButton.disabled = false;
-      submitButton.textContent = "Submit Details →";
-
-      return;
-    }
-
-
-    /* -----------------------------------------
-       SEND FORM
-       ----------------------------------------- */
-
-    try {
-
-      const formData = new FormData(pawForm);
-
-      const response = await fetch(
-        FORM_ENDPOINT,
-        {
-          method: "POST",
-          body: formData
+            openAnimal();
         }
-      );
 
-
-      if (!response.ok) {
-        throw new Error("Submission failed");
-      }
-
-
-      formMessage.className = "form-message success";
-
-      formMessage.innerHTML =
-        "✓ Thank you. Your details have been submitted successfully to PAWVERSE.";
-
-
-      pawForm.reset();
-
-
-      submitButton.textContent = "Submitted ✓";
-
-
-      setTimeout(() => {
-
-        closeModal("applicationModal");
-
-        submitButton.disabled = false;
-        submitButton.textContent = "Submit Details →";
-
-        formMessage.className = "form-message";
-
-      }, 3000);
-
-
-    } catch (error) {
-
-      formMessage.className = "form-message error";
-
-      formMessage.innerHTML =
-        "Something went wrong. Please try again or contact PAWVERSE directly.";
-
-      submitButton.disabled = false;
-      submitButton.textContent = "Submit Details →";
-
-    }
-
-  });
-
-}
-
-
-/* =========================================================
-   FOUNDER
-   ========================================================= */
-
-function openFounderModal() {
-
-  openModal("founderModal");
-
-}
-
-
-/* =========================================================
-   GALLERY
-   ========================================================= */
-
-const galleryStories = {
-
-  1: {
-    title: "Healing lives, one paw at a time.",
-    text:
-      "Recovery is rarely instant. It takes patience, medical attention, safety, nourishment and people who refuse to look away."
-  },
-
-  2: {
-    title: "Compassion creates connection.",
-    text:
-      "Animals may not speak our language, but their trust, fear and happiness can be understood through responsible care."
-  },
-
-  3: {
-    title: "Every small life deserves safety.",
-    text:
-      "A safe environment, responsible care and kindness can make an enormous difference to a vulnerable animal."
-  },
-
-  4: {
-    title: "A second chance can change everything.",
-    text:
-      "Every animal deserves the opportunity to recover, feel safe and experience kindness."
-  }
-
-};
-
-
-function openGallery(number) {
-
-  const story = galleryStories[number];
-
-  document.getElementById("galleryTitle").textContent =
-    story.title;
-
-  document.getElementById("galleryText").textContent =
-    story.text;
-
-  openModal("galleryModal");
-}
-
-
-/* =========================================================
-   COMING SOON SOCIALS
-   ========================================================= */
-
-function showComingSoon(event, platform) {
-
-  event.preventDefault();
-
-  alert(
-    platform +
-    " link will be added when the official PAWVERSE account is ready."
-  );
-
-}
-
-
-/* =========================================================
-   IMAGE FALLBACK
-   ========================================================= */
-
-/*
-   If an external animal image ever becomes unavailable,
-   the card will not show a broken-image icon.
-*/
-
-document.querySelectorAll("img").forEach(img => {
-
-  img.addEventListener("error", function() {
-
-    if (
-      this.src.includes("images/logo.png") ||
-      this.src.includes("images/bhagyashri.jpg")
-    ) {
-      return;
-    }
-
-    this.style.display = "none";
-
-    const parent = this.parentElement;
-
-    if (parent) {
-      parent.style.background =
-        "linear-gradient(135deg, #dfe5d8, #b8c5b1)";
-    }
-
-  });
+    });
 
 });
 
 
 /* =========================================================
-   SCROLL REVEAL
-   ========================================================= */
+   FOUNDER MODAL
+========================================================= */
 
-const revealElements = document.querySelectorAll(
-  ".animal-card, .work-box, .role-card, .community-card, .gallery-item"
-);
+const founderButton = document.getElementById("founderButton");
+const founderModal = document.getElementById("founderModal");
 
-const revealObserver = new IntersectionObserver(
+if (founderButton && founderModal) {
 
-  entries => {
+    founderButton.addEventListener("click", () => {
+        openModal(founderModal);
+    });
 
-    entries.forEach(entry => {
+}
 
-      if (entry.isIntersecting) {
 
-        entry.target.style.opacity = "1";
-        entry.target.style.transform = "translateY(0)";
+/* =========================================================
+   MISSION BUTTON
+========================================================= */
 
-        revealObserver.unobserve(entry.target);
+const missionButton = document.getElementById("missionButton");
 
-      }
+if (missionButton) {
+
+    missionButton.addEventListener("click", () => {
+
+        document.getElementById("work").scrollIntoView({
+            behavior: "smooth"
+        });
 
     });
 
-  },
-
-  {
-    threshold: 0.12
-  }
-
-);
+}
 
 
-revealElements.forEach(element => {
+/* =========================================================
+   APPLICATION MODAL
+========================================================= */
 
-  element.style.opacity = "0";
-  element.style.transform = "translateY(20px)";
-  element.style.transition =
-    "opacity .6s ease, transform .6s ease";
+const applicationModal = document.getElementById("applicationModal");
+const applicationTitle = document.getElementById("applicationTitle");
+const selectedRole = document.getElementById("selectedRole");
 
-  revealObserver.observe(element);
+function openApplication(role) {
+
+    if (!applicationModal) return;
+
+    applicationTitle.textContent = "Join as " + role;
+
+    selectedRole.value = role;
+
+    openModal(applicationModal);
+}
+
+
+/* Role cards */
+
+document.querySelectorAll(".role-card, .community-card").forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        const role = card.dataset.role;
+
+        if (role) {
+            openApplication(role);
+        }
+
+    });
+
+});
+
+
+/* =========================================================
+   GALLERY MODAL
+========================================================= */
+
+const galleryModal = document.getElementById("galleryModal");
+const galleryModalImage = document.getElementById("galleryModalImage");
+const galleryModalTitle = document.getElementById("galleryModalTitle");
+
+document.querySelectorAll(".gallery-item").forEach(item => {
+
+    item.addEventListener("click", () => {
+
+        const image = item.dataset.image;
+        const title = item.dataset.title;
+
+        galleryModalImage.src = image;
+        galleryModalImage.alt = title;
+        galleryModalTitle.textContent = title;
+
+        openModal(galleryModal);
+
+    });
+
+});
+
+
+/* =========================================================
+   FUTURE SOCIAL LINKS
+========================================================= */
+
+document.querySelectorAll(".future-link").forEach(link => {
+
+    link.addEventListener("click", event => {
+
+        event.preventDefault();
+
+        const platform = link.dataset.platform || "Social Media";
+
+        alert(
+            platform +
+            " link will be connected here. " +
+            "Once you have the exact PAWVERSE link, replace the # in index.html."
+        );
+
+    });
+
+});
+
+
+/* =========================================================
+   FORM SYSTEM
+========================================================= */
+
+/*
+   IMPORTANT:
+
+   GitHub Pages is static hosting.
+   It cannot directly store form submissions.
+
+   When you are ready, put your Formspree / Google Apps Script
+   endpoint here.
+
+   Example:
+
+   const FORM_ENDPOINT = "https://formspree.io/f/xxxxxxxx";
+
+*/
+
+const FORM_ENDPOINT = "YOUR_FORM_ENDPOINT";
+
+
+function submitFormWithBackend(form, statusElement) {
+
+    if (FORM_ENDPOINT === "YOUR_FORM_ENDPOINT") {
+
+        statusElement.textContent =
+            "The form is ready. Connect a form endpoint to receive submissions.";
+
+        return;
+    }
+
+
+    const formData = new FormData(form);
+
+
+    fetch(FORM_ENDPOINT, {
+
+        method: "POST",
+
+        body: formData,
+
+        headers: {
+            "Accept": "application/json"
+        }
+
+    })
+
+    .then(response => {
+
+        if (!response.ok) {
+            throw new Error("Form submission failed.");
+        }
+
+        return response.json().catch(() => ({}));
+
+    })
+
+    .then(() => {
+
+        statusElement.textContent =
+            "Thank you. Your message has been submitted.";
+
+        form.reset();
+
+    })
+
+    .catch(() => {
+
+        statusElement.textContent =
+            "Something went wrong. Please email pawversecollective@gmail.com.";
+
+    });
+
+}
+
+
+/* =========================================================
+   CONTACT FORM
+========================================================= */
+
+const contactForm = document.getElementById("contactForm");
+const contactStatus = document.getElementById("contactStatus");
+
+if (contactForm) {
+
+    contactForm.addEventListener("submit", event => {
+
+        event.preventDefault();
+
+        contactStatus.textContent = "Preparing your message...";
+
+        submitFormWithBackend(
+            contactForm,
+            contactStatus
+        );
+
+    });
+
+}
+
+
+/* =========================================================
+   APPLICATION FORM
+========================================================= */
+
+const applicationForm =
+    document.getElementById("applicationForm");
+
+const applicationStatus =
+    document.getElementById("applicationStatus");
+
+
+if (applicationForm) {
+
+    applicationForm.addEventListener("submit", event => {
+
+        event.preventDefault();
+
+        applicationStatus.textContent =
+            "Preparing your application...";
+
+        submitFormWithBackend(
+            applicationForm,
+            applicationStatus
+        );
+
+    });
+
+}
+
+
+/* =========================================================
+   FOOTER YEAR
+========================================================= */
+
+const currentYear = document.getElementById("currentYear");
+
+if (currentYear) {
+
+    currentYear.textContent =
+        new Date().getFullYear();
+
+}
+
+
+/* =========================================================
+   PREVENT BODY SCROLL WHEN MODAL IS OPEN
+========================================================= */
+
+document.querySelectorAll(".modal").forEach(modal => {
+
+    modal.addEventListener("click", event => {
+
+        if (event.target === modal) {
+            closeAllModals();
+        }
+
+    });
 
 });
