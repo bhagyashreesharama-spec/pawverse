@@ -1,153 +1,100 @@
-/* =========================================
-   PAWVERSE — MAIN JAVASCRIPT
-   ========================================= */
+// MOBILE MENU
 
-document.addEventListener("DOMContentLoaded", function () {
+const menuBtn = document.getElementById("menuBtn");
+const navMenu = document.getElementById("navMenu");
 
-    /* =====================================
-       MOBILE MENU
-       ===================================== */
-
-    const menuToggle = document.getElementById("menuToggle");
-    const mainNav = document.getElementById("mainNav");
-
-    if (menuToggle && mainNav) {
-
-        menuToggle.addEventListener("click", function () {
-
-            mainNav.classList.toggle("show");
-
-            if (mainNav.classList.contains("show")) {
-                menuToggle.innerHTML = "✕";
-                menuToggle.setAttribute("aria-label", "Close navigation");
-            } else {
-                menuToggle.innerHTML = "☰";
-                menuToggle.setAttribute("aria-label", "Open navigation");
-            }
-
-        });
+menuBtn.addEventListener("click", () => {
+  navMenu.classList.toggle("mobile-open");
+});
 
 
-        /* Close menu after clicking a link */
+// CLOSE MOBILE MENU AFTER CLICK
 
-        const navLinks = mainNav.querySelectorAll("a");
+const navLinks = document.querySelectorAll("#navMenu a");
 
-        navLinks.forEach(function (link) {
-
-            link.addEventListener("click", function () {
-
-                mainNav.classList.remove("show");
-
-                menuToggle.innerHTML = "☰";
-
-                menuToggle.setAttribute(
-                    "aria-label",
-                    "Open navigation"
-                );
-
-            });
-
-        });
-
-    }
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("mobile-open");
+  });
+});
 
 
-    /* =====================================
-       ACTIVE NAVIGATION
-       ===================================== */
+// JOIN MODAL
 
-    const currentPage =
-        window.location.pathname.split("/").pop() || "index.html";
+const joinBtn = document.getElementById("joinBtn");
+const joinModal = document.getElementById("joinModal");
+const closeModal = document.getElementById("closeModal");
 
-    const navigationLinks =
-        document.querySelectorAll(".main-nav a");
+joinBtn.addEventListener("click", () => {
+  joinModal.classList.add("active");
+});
 
-    navigationLinks.forEach(function (link) {
-
-        const linkPage =
-            link.getAttribute("href").split("/").pop();
-
-        if (linkPage === currentPage) {
-            link.classList.add("active");
-        } else {
-            link.classList.remove("active");
-        }
-
-    });
+closeModal.addEventListener("click", () => {
+  joinModal.classList.remove("active");
+});
 
 
-    /* =====================================
-       SIMPLE SCROLL REVEAL
-       ===================================== */
+// CLOSE WHEN CLICKING OUTSIDE
 
-    const revealElements = document.querySelectorAll(
-        ".motto-card, .animal-card, .section-heading, .join-content, .final-message"
-    );
+joinModal.addEventListener("click", (event) => {
 
-    if ("IntersectionObserver" in window) {
-
-        const observer = new IntersectionObserver(
-            function (entries, observer) {
-
-                entries.forEach(function (entry) {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.classList.add("visible");
-
-                        observer.unobserve(entry.target);
-
-                    }
-
-                });
-
-            },
-            {
-                threshold: 0.12
-            }
-        );
-
-        revealElements.forEach(function (element) {
-
-            element.classList.add("reveal");
-
-            observer.observe(element);
-
-        });
-
-    }
-
-
-    /* =====================================
-       SMOOTH INTERNAL LINKS
-       ===================================== */
-
-    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-
-        link.addEventListener("click", function (event) {
-
-            const targetId = this.getAttribute("href");
-
-            if (targetId === "#") {
-                return;
-            }
-
-            const target =
-                document.querySelector(targetId);
-
-            if (target) {
-
-                event.preventDefault();
-
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-
-            }
-
-        });
-
-    });
+  if (event.target === joinModal) {
+    joinModal.classList.remove("active");
+  }
 
 });
+
+
+// FORM
+
+const joinForm = document.getElementById("joinForm");
+const successMessage = document.getElementById("successMessage");
+
+joinForm.addEventListener("submit", (event) => {
+
+  event.preventDefault();
+
+  joinForm.style.display = "none";
+  successMessage.style.display = "block";
+
+});
+
+
+// ESCAPE KEY
+
+document.addEventListener("keydown", (event) => {
+
+  if (event.key === "Escape") {
+    joinModal.classList.remove("active");
+  }
+
+});
+
+
+// SIMPLE SCROLL REVEAL
+
+const revealElements = document.querySelectorAll(
+  ".work-card, .value, .mission-grid, .founder-content"
+);
+
+const observer = new IntersectionObserver(
+  (entries) => {
+
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+
+    });
+
+  },
+  {
+    threshold: 0.12
+  }
+);
+
+revealElements.forEach(element => {
+  observer.observe(element);
+});
+
