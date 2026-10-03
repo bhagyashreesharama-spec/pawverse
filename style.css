@@ -1507,128 +1507,315 @@ footer {
     align-items: flex-start;
   }
 }
-<!-- =========================
-     ABOUT PAWVERSE
-========================= -->
-<section class="about-section" id="about">
+/* =========================================================
+   PAWVERSE - NEW ABOUT SECTION
+========================================================= */
 
-    <div class="about-heading">
-        <span>ABOUT PAWVERSE</span>
-        <h2>Built With Compassion.<br>Driven By Purpose.</h2>
-        <p>
-            PAWVERSE is an animal-welfare collective created to protect,
-            support and speak up for animals who need care, safety and a chance
-            at a better life.
-        </p>
-    </div>
+.about-section {
+    width: 100%;
+    padding: 110px 6%;
+    background: #fbf9f1;
+    box-sizing: border-box;
+    overflow: hidden;
+}
 
-    <div class="about-main">
+.about-heading {
+    max-width: 850px;
+    margin: 0 auto 70px;
+    text-align: center;
+}
 
-        <!-- FOUNDER -->
-        <div class="founder-card">
+.about-heading > span,
+.small-label {
+    display: inline-block;
+    margin-bottom: 15px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: #66735d;
+}
 
-            <div class="founder-image">
-                <img src="images/bhagyashri.jpg"
-                     alt="Bhagyashri Sharma - Founder of PAWVERSE">
-            </div>
+.about-heading h2 {
+    margin: 0 0 20px;
+    color: #29382d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.05;
+    font-weight: 500;
+}
 
-            <div class="founder-details">
-                <span class="small-label">FOUNDER & DIRECTOR</span>
-
-                <h3>Bhagyashri Sharma</h3>
-
-                <p class="founder-location">
-                    Delhi, India · PAWVERSE
-                </p>
-
-                <div class="founder-divider"></div>
-
-                <p class="founder-quote">
-                    “I wanted to build something where compassion becomes
-                    action — where animals are not ignored, forgotten or left
-                    without a voice.”
-                </p>
-
-                <button class="founder-btn" onclick="openFounderModal()">
-                    Read My Story →
-                </button>
-            </div>
-
-        </div>
+.about-heading p {
+    max-width: 700px;
+    margin: auto;
+    color: #697067;
+    font-size: 16px;
+    line-height: 1.8;
+}
 
 
-        <!-- MOTIVE -->
-        <div class="about-motive">
+/* MAIN TWO COLUMN AREA */
 
-            <span class="small-label">WHY PAWVERSE EXISTS</span>
+.about-main {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
 
-            <h2>
-                Every animal deserves
-                <em>safety, care & compassion.</em>
-            </h2>
+    display: grid;
+    grid-template-columns: 400px minmax(0, 1fr);
+    gap: 90px;
 
-            <p>
-                We see animals on streets, injured, hungry, abandoned or
-                simply trying to survive. Too often their pain goes unnoticed.
-            </p>
-
-            <p>
-                PAWVERSE was created with a simple belief:
-                <strong>their lives matter.</strong>
-            </p>
-
-            <p>
-                Our purpose is to bring people together to rescue, care,
-                create awareness, support animals in need and help build a
-                more compassionate community.
-            </p>
+    align-items: center;
+}
 
 
-            <div class="about-values">
+/* FOUNDER CARD */
 
-                <div class="value-box">
-                    <span>01</span>
-                    <h4>Protect</h4>
-                    <p>
-                        Stand against cruelty, neglect and harm.
-                    </p>
-                </div>
+.founder-card {
+    background: #3b4d3c;
+    padding: 22px;
+    border-radius: 4px;
+    box-shadow: 0 20px 50px rgba(41, 56, 45, 0.15);
+}
 
-                <div class="value-box">
-                    <span>02</span>
-                    <h4>Care</h4>
-                    <p>
-                        Support animals with kindness and responsible action.
-                    </p>
-                </div>
+.founder-image {
+    width: 100%;
+    height: 430px;
+    overflow: hidden;
+    background: #d9d5c9;
+}
 
-                <div class="value-box">
-                    <span>03</span>
-                    <h4>Speak Up</h4>
-                    <p>
-                        Create awareness for those who cannot speak for themselves.
-                    </p>
-                </div>
+.founder-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center top;
+}
 
-            </div>
+.founder-details {
+    padding: 28px 10px 12px;
+}
 
-        </div>
+.founder-details .small-label {
+    color: #d8ddce;
+    margin-bottom: 10px;
+}
 
-    </div>
+.founder-details h3 {
+    margin: 0;
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 31px;
+    font-weight: 500;
+}
+
+.founder-location {
+    margin: 8px 0 20px;
+    color: #d5dacd;
+    font-size: 13px;
+    letter-spacing: .4px;
+}
+
+.founder-divider {
+    width: 45px;
+    height: 1px;
+    background: #c8d0bd;
+    margin: 20px 0;
+}
+
+.founder-quote {
+    margin: 0;
+    color: #f1f1e9;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.65;
+    font-style: italic;
+}
+
+.founder-btn {
+    margin-top: 25px;
+    padding: 12px 18px;
+    border: 1px solid rgba(255,255,255,.45);
+    background: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 13px;
+    letter-spacing: .5px;
+    transition: .3s ease;
+}
+
+.founder-btn:hover {
+    background: #ffffff;
+    color: #3b4d3c;
+}
 
 
-    <!-- BOTTOM STATEMENT -->
-    <div class="about-bottom">
+/* MOTIVE SIDE */
 
-        <div class="about-bottom-line"></div>
+.about-motive {
+    max-width: 680px;
+}
 
-        <p>
-            <strong>Our Promise</strong>
-            — Every paw print, every life, every story matters.
-        </p>
+.about-motive .small-label {
+    color: #66735d;
+}
 
-        <div class="about-bottom-line"></div>
+.about-motive h2 {
+    margin: 0 0 28px;
+    color: #29382d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(34px, 4vw, 52px);
+    line-height: 1.12;
+    font-weight: 500;
+}
 
-    </div>
+.about-motive h2 em {
+    display: block;
+    color: #66735d;
+    font-style: italic;
+}
 
-</section>
+.about-motive > p {
+    margin: 0 0 17px;
+    color: #656b65;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.about-motive > p strong {
+    color: #3b4d3c;
+}
+
+
+/* VALUES */
+
+.about-values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 38px;
+}
+
+.value-box {
+    padding: 22px 18px;
+    border-top: 1px solid #cbd0c5;
+    background: rgba(255,255,255,.45);
+}
+
+.value-box span {
+    display: block;
+    margin-bottom: 12px;
+    color: #7b876f;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.value-box h4 {
+    margin: 0 0 8px;
+    color: #344338;
+    font-size: 17px;
+}
+
+.value-box p {
+    margin: 0;
+    color: #747a73;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* BOTTOM PROMISE */
+
+.about-bottom {
+    width: 100%;
+    max-width: 1250px;
+    margin: 75px auto 0;
+
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.about-bottom-line {
+    height: 1px;
+    flex: 1;
+    background: #d3d5cd;
+}
+
+.about-bottom p {
+    margin: 0;
+    color: #737970;
+    font-size: 14px;
+    text-align: center;
+}
+
+.about-bottom p strong {
+    color: #3b4d3c;
+}
+
+
+/* =========================================================
+   ABOUT RESPONSIVE
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .about-section {
+        padding: 80px 6%;
+    }
+
+    .about-main {
+        grid-template-columns: 1fr;
+        gap: 55px;
+        max-width: 650px;
+    }
+
+    .about-motive {
+        max-width: none;
+    }
+
+    .founder-card {
+        max-width: 430px;
+        margin: auto;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .about-section {
+        padding: 70px 5%;
+    }
+
+    .about-heading {
+        margin-bottom: 45px;
+    }
+
+    .about-heading h2 {
+        font-size: 38px;
+    }
+
+    .founder-image {
+        height: 370px;
+    }
+
+    .about-motive h2 {
+        font-size: 36px;
+    }
+
+    .about-values {
+        grid-template-columns: 1fr;
+    }
+
+    .about-bottom {
+        margin-top: 50px;
+        display: block;
+    }
+
+    .about-bottom-line {
+        margin: 15px 0;
+    }
+
+}
