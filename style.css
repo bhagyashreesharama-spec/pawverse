@@ -1507,197 +1507,353 @@ footer {
     align-items: flex-start;
   }
 }
-/* =========================
-   ABOUT / OUR MOTIVE
-========================= */
+/* =====================================================
+   PAWVERSE - ABOUT / OUR MOTIVE
+   CORRECTED RESPONSIVE LAYOUT
+===================================================== */
 
 .about-section {
-  padding: 110px 7%;
+  width: 100%;
+  padding: 110px 6%;
   background: #fbf9f1;
+  box-sizing: border-box;
 }
 
 .about-container {
-  max-width: 1250px;
-  margin: auto;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+
   display: grid;
-  grid-template-columns: 0.85fr 1.35fr;
+  grid-template-columns: 420px minmax(0, 1fr);
   gap: 90px;
+
   align-items: center;
+  box-sizing: border-box;
 }
 
 
-/* FOUNDER */
+/* =====================================================
+   FOUNDER SIDE
+===================================================== */
 
 .about-founder {
+  width: 100%;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .founder-photo {
-  width: 390px;
-  height: 390px;
+  width: 360px;
+  height: 360px;
   max-width: 100%;
+
   margin: 0 auto 28px;
+
   border-radius: 50%;
   overflow: hidden;
+
   border: 10px solid #ffffff;
-  box-shadow: 0 18px 45px rgba(48, 64, 49, 0.14);
+
+  box-shadow:
+    0 20px 45px rgba(48, 64, 49, 0.14);
+
+  box-sizing: border-box;
 }
 
 .founder-photo img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+
   display: block;
+
+  object-fit: cover;
 }
 
 .about-founder h3 {
   margin: 0;
+
   color: #3b4d3c;
-  font-family: Georgia, serif;
+
+  font-family: Georgia, "Times New Roman", serif;
+
   font-size: 30px;
+  line-height: 1.2;
 }
 
 .founder-role {
-  margin: 8px 0 20px;
+  margin: 9px 0 20px;
+
   color: #6d786d;
+
   font-size: 14px;
+  line-height: 1.5;
 }
 
 .founder-line {
   width: 55px;
   height: 2px;
-  background: #c99b3b;
+
   margin: 0 auto 20px;
+
+  background: #c99b3b;
 }
 
 .founder-quote {
+  width: 100%;
   max-width: 360px;
-  margin: auto;
+
+  margin: 0 auto;
+
   color: #687267;
-  font-family: Georgia, serif;
-  font-style: italic;
-  line-height: 1.7;
+
+  font-family: Georgia, "Times New Roman", serif;
+
   font-size: 15px;
+  line-height: 1.7;
+
+  font-style: italic;
 }
 
 
-/* CONTENT */
+/* =====================================================
+   RIGHT CONTENT
+===================================================== */
+
+.about-content {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
 
 .section-label {
   display: inline-block;
+
+  margin-bottom: 18px;
+
   color: #9b7425;
+
   font-size: 13px;
   font-weight: 800;
+
   letter-spacing: 4px;
-  margin-bottom: 18px;
 }
 
 .about-content h2 {
+  width: 100%;
+
   margin: 0 0 28px;
+
   color: #3b4d3c;
-  font-family: Georgia, serif;
-  font-size: clamp(45px, 5vw, 72px);
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(48px, 5vw, 70px);
+
   line-height: 0.98;
+
+  letter-spacing: -1px;
 }
 
 .about-content h2 em {
   color: #82947e;
+
   font-weight: 400;
 }
 
 .about-content p {
-  color: #5f695f;
-  font-size: 16px;
-  line-height: 1.8;
+  max-width: 760px;
+
   margin: 0 0 20px;
+
+  color: #5f695f;
+
+  font-size: 16px;
+
+  line-height: 1.8;
 }
 
 .about-content .about-lead {
+  max-width: 700px;
+
+  margin-bottom: 25px;
+
   color: #3b4d3c;
+
   font-size: 19px;
+
   line-height: 1.6;
 }
 
 
-/* MOTIVE POINTS */
+/* =====================================================
+   MOTIVE CARDS
+===================================================== */
 
 .motive-points {
+  width: 100%;
+
   margin-top: 35px;
+
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+
+  box-sizing: border-box;
 }
 
 .motive-point {
-  padding: 22px 18px;
+  min-width: 0;
+
+  padding: 22px 20px;
+
   background: #ffffff;
+
   border: 1px solid #e8e4d8;
-  border-radius: 12px;
-  transition: 0.3s ease;
+
+  border-radius: 14px;
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .motive-point:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(48, 64, 49, 0.08);
+
+  box-shadow:
+    0 15px 35px rgba(48, 64, 49, 0.09);
 }
 
 .motive-point > span {
+  display: block;
+
   color: #b4872e;
+
   font-size: 12px;
+
   font-weight: 800;
+
   letter-spacing: 2px;
 }
 
 .motive-point h4 {
-  margin: 12px 0 7px;
+  margin: 12px 0 8px;
+
   color: #3b4d3c;
-  font-size: 18px;
+
+  font-size: 19px;
+
+  line-height: 1.2;
 }
 
 .motive-point p {
   margin: 0;
-  font-size: 13px;
+
+  color: #687267;
+
+  font-size: 14px;
+
   line-height: 1.6;
 }
 
 
-/* FINAL MESSAGE */
+/* =====================================================
+   FINAL MOTIVE BOX
+===================================================== */
 
 .motive-ending {
-  margin-top: 35px;
+  width: 100%;
+
+  margin-top: 36px;
+
   padding: 22px 25px;
+
   display: flex;
   align-items: flex-start;
+
   gap: 15px;
+
   background: #f1eee3;
+
   border-left: 4px solid #c99b3b;
+
+  box-sizing: border-box;
 }
 
 .motive-ending > span {
+  flex-shrink: 0;
+
   color: #b4872e;
+
   font-size: 25px;
+
+  line-height: 1;
 }
 
 .motive-ending p {
   margin: 0;
+
   color: #3b4d3c;
-  font-family: Georgia, serif;
+
+  font-family: Georgia, "Times New Roman", serif;
+
   font-size: 17px;
+
   line-height: 1.6;
 }
 
 
-/* MOBILE */
+/* =====================================================
+   TABLET
+===================================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
+
+  .about-container {
+    grid-template-columns: 340px minmax(0, 1fr);
+
+    gap: 55px;
+  }
+
+  .founder-photo {
+    width: 300px;
+    height: 300px;
+  }
+
+  .about-content h2 {
+    font-size: 52px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 800px) {
 
   .about-section {
-    padding: 75px 6%;
+    padding: 80px 6%;
   }
 
   .about-container {
     grid-template-columns: 1fr;
+
     gap: 55px;
+  }
+
+  .about-founder {
+    order: 1;
+  }
+
+  .about-content {
+    order: 2;
   }
 
   .founder-photo {
@@ -1715,19 +1871,40 @@ footer {
 
 }
 
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
 @media (max-width: 500px) {
+
+  .about-section {
+    padding: 65px 20px;
+  }
+
+  .founder-photo {
+    width: 250px;
+    height: 250px;
+  }
+
+  .about-founder h3 {
+    font-size: 26px;
+  }
 
   .about-content h2 {
     font-size: 40px;
   }
 
-  .founder-photo {
-    width: 260px;
-    height: 260px;
-  }
-
   .about-content p {
     font-size: 15px;
+  }
+
+  .about-content .about-lead {
+    font-size: 17px;
+  }
+
+  .motive-ending {
+    padding: 20px;
   }
 
 }
