@@ -19,7 +19,7 @@ if (menuToggle && navLinks) {
 }
 
 
-/* Close mobile menu after clicking a navigation link */
+/* Close mobile menu after clicking navigation link */
 
 document.querySelectorAll(".nav-links a").forEach(link => {
 
@@ -221,6 +221,7 @@ const applicationModal = document.getElementById("applicationModal");
 const applicationTitle = document.getElementById("applicationTitle");
 const selectedRole = document.getElementById("selectedRole");
 
+
 function openApplication(role) {
 
     if (!applicationModal) return;
@@ -258,6 +259,7 @@ const galleryModal = document.getElementById("galleryModal");
 const galleryModalImage = document.getElementById("galleryModalImage");
 const galleryModalTitle = document.getElementById("galleryModalTitle");
 
+
 document.querySelectorAll(".gallery-item").forEach(item => {
 
     item.addEventListener("click", () => {
@@ -286,7 +288,8 @@ document.querySelectorAll(".future-link").forEach(link => {
 
         event.preventDefault();
 
-        const platform = link.dataset.platform || "Social Media";
+        const platform =
+            link.dataset.platform || "Social Media";
 
         alert(
             platform +
@@ -304,18 +307,11 @@ document.querySelectorAll(".future-link").forEach(link => {
 ========================================================= */
 
 /*
-   IMPORTANT:
-
    GitHub Pages is static hosting.
    It cannot directly store form submissions.
 
    When you are ready, put your Formspree / Google Apps Script
    endpoint here.
-
-   Example:
-
-   const FORM_ENDPOINT = "https://formspree.io/f/xxxxxxxx";
-
 */
 
 const FORM_ENDPOINT = "YOUR_FORM_ENDPOINT";
@@ -383,13 +379,15 @@ function submitFormWithBackend(form, statusElement) {
 const contactForm = document.getElementById("contactForm");
 const contactStatus = document.getElementById("contactStatus");
 
+
 if (contactForm) {
 
     contactForm.addEventListener("submit", event => {
 
         event.preventDefault();
 
-        contactStatus.textContent = "Preparing your message...";
+        contactStatus.textContent =
+            "Preparing your message...";
 
         submitFormWithBackend(
             contactForm,
@@ -435,7 +433,9 @@ if (applicationForm) {
    FOOTER YEAR
 ========================================================= */
 
-const currentYear = document.getElementById("currentYear");
+const currentYear =
+    document.getElementById("currentYear");
+
 
 if (currentYear) {
 
