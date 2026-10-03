@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bhagyashreesharama-spec.github.io/pawverse/sitemap.xml
